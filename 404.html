@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>404 | Page Not Found - Free Tools Hub</title>
+
+<meta name="description"
+      content="The page you are looking for was not found. Return to Free Tools Hub and use our free online tools.">
+
+<meta name="robots" content="noindex, follow">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    background:#050816;
+    color:#ffffff;
+    font-family:Arial,Helvetica,sans-serif;
+    display:flex;
+    flex-direction:column;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background-image:
+        radial-gradient(circle,rgba(255,255,255,.7) 1px,transparent 1px);
+
+    background-size:45px 45px;
+
+    opacity:.08;
+
+    pointer-events:none;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+
+    width:420px;
+    height:420px;
+
+    left:-180px;
+    top:-180px;
+
+    border-radius:50%;
+
+    background:#00ffff;
+
+    filter:blur(150px);
+
+    opacity:.10;
+
+    pointer-events:none;
+}
+
+/* HEADER */
+
+header{
+    width:100%;
+
+    padding:16px 6%;
+
+    background:rgba(5,8,22,.90);
+
+    border-bottom:1px solid rgba(0,255,255,.18);
+
+    position:relative;
+    z-index:10;
+}
+
+.nav{
+    max-width:1150px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    text-decoration:none;
+
+    font-size:23px;
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00ffff,
+            #7c5cff,
+            #ff00cc,
+            #00ffff
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    animation:logoMove 5s linear infinite;
+}
+
+@keyframes logoMove{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:300%;
+    }
+
+}
+
+nav{
+    display:flex;
+    gap:22px;
+}
+
+nav a{
+    color:#cccccc;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    transition:.25s;
+}
+
+nav a:hover{
+    color:#00ffff;
+
+    text-shadow:
+        0 0 10px #00ffff;
+}
+
+/* MOBILE MENU */
+
+.menu{
+    display:none;
+
+    font-size:28px;
+
+    color:#00ffff;
+
+    cursor:pointer;
+}
+
+/* MAIN */
+
+main{
+    flex:1;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:100%;
+}
+
+.error-section{
+    width:100%;
+
+    min-height:calc(100vh - 145px);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:50px 20px;
+
+    text-align:center;
+
+    position:relative;
+}
+
+/* GLOW ORBS */
+
+.orb{
+    position:absolute;
+
+    border-radius:50%;
+
+    pointer-events:none;
+}
+
+.orb1{
+
+    width:220px;
+    height:220px;
+
+    right:5%;
+    top:15%;
+
+    background:#00ffff;
+
+    opacity:.08;
+
+    filter:blur(40px);
+
+    animation:floatOne 5s ease-in-out infinite;
+
+}
+
+.orb2{
+
+    width:180px;
+    height:180px;
+
+    left:5%;
+    bottom:15%;
+
+    background:#ff00cc;
+
+    opacity:.08;
+
+    filter:blur(40px);
+
+    animation:floatTwo 6s ease-in-out infinite;
+
+}
+
+@keyframes floatOne{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-30px);
+    }
+
+}
+
+@keyframes floatTwo{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(30px);
+    }
+
+}
+
+/* ERROR CONTENT */
+
+.error-box{
+    position:relative;
+
+    z-index:2;
+
+    max-width:800px;
+
+    width:100%;
+}
+
+/* 404 NUMBER */
+
+.error-number{
+
+    font-size:
+        clamp(110px,25vw,230px);
+
+    line-height:.85;
+
+    font-weight:1000;
+
+    letter-spacing:-12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00ffff,
+            #7c5cff,
+            #ff00cc,
+            #00ffff
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    animation:
+        gradientMove 5s linear infinite,
+        glitch 3s infinite;
+
+    filter:
+        drop-shadow(0 0 25px rgba(0,255,255,.25));
+
+}
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:300%;
+    }
+
+}
+
+@keyframes glitch{
+
+    0%,
+    90%,
+    100%{
+        transform:translate(0);
+    }
+
+    92%{
+        transform:translate(-4px,2px);
+    }
+
+    94%{
+        transform:translate(4px,-2px);
+    }
+
+    96%{
+        transform:translate(-2px,1px);
+    }
+
+}
+
+/* TEXT */
+
+.error-box h1{
+
+    margin-top:30px;
+
+    font-size:
+        clamp(27px,5vw,46px);
+
+}
+
+.error-box p{
+
+    max-width:620px;
+
+    margin:15px auto 0;
+
+    color:#aaaaaa;
+
+    line-height:1.7;
+
+    font-size:16px;
+
+}
+
+/* BUTTONS */
+
+.buttons{
+
+    margin-top:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+}
+
+.btn{
+
+    min-width:170px;
+
+    padding:15px 20px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.25s;
+
+}
+
+.home-btn{
+
+    color:#031116;
+
+    background:#00ffff;
+
+    box-shadow:
+        0 0 20px rgba(0,255,255,.35);
+
+}
+
+.home-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 0 40px rgba(0,255,255,.70);
+
+}
+
+.tool-btn{
+
+    color:#ffffff;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.20);
+
+}
+
+.tool-btn:hover{
+
+    transform:translateY(-4px);
+
+    border-color:#8b5cf6;
+
+    box-shadow:
+        0 0 30px rgba(139,92,246,.30);
+
+}
+
+/* QUICK TOOLS */
+
+.quick-title{
+
+    margin-top:45px;
+
+    color:#777777;
+
+    font-size:14px;
+
+}
+
+.quick-tools{
+
+    margin-top:15px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:10px;
+
+}
+
+.quick-tools a{
+
+    color:#aaaaaa;
+
+    text-decoration:none;
+
+    padding:10px 13px;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    font-size:13px;
+
+    transition:.25s;
+
+}
+
+.quick-tools a:hover{
+
+    color:#00ffff;
+
+    border-color:#00ffff55;
+
+    box-shadow:
+        0 0 15px rgba(0,255,255,.18);
+
+}
+
+/* FOOTER */
+
+footer{
+
+    text-align:center;
+
+    padding:28px 20px;
+
+    color:#777777;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+
+}
+
+footer p{
+
+    margin:6px 0;
+
+}
+
+footer a{
+
+    color:#aaaaaa;
+
+    text-decoration:none;
+
+    margin:0 7px;
+
+}
+
+footer a:hover{
+
+    color:#00ffff;
+
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    nav{
+
+        display:none;
+
+        position:absolute;
+
+        top:65px;
+        left:0;
+        right:0;
+
+        background:#070a18;
+
+        padding:20px;
+
+        flex-direction:column;
+
+        gap:18px;
+
+        border-bottom:
+            1px solid #00ffff22;
+
+    }
+
+    nav.show{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .error-section{
+
+        min-height:
+            calc(100vh - 130px);
+
+        padding:
+            45px 18px;
+
+    }
+
+    .error-number{
+
+        letter-spacing:-6px;
+
+    }
+
+    .error-box h1{
+
+        margin-top:22px;
+
+    }
+
+    .buttons{
+
+        flex-direction:column;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+        max-width:300px;
+
+    }
+
+    .quick-tools{
+
+        max-width:360px;
+
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="nav">
+
+<a href="index.html" class="logo">
+⚡ Free Tools Hub
+</a>
+
+<div
+    class="menu"
+    onclick="document.getElementById('nav').classList.toggle('show')"
+>
+☰
+</div>
+
+<nav id="nav">
+
+<a href="index.html">
+Home
+</a>
+
+<a href="image-compressor.html">
+Image Tools
+</a>
+
+<a href="image-to-pdf.html">
+PDF Tools
+</a>
+
+<a href="qr-generator.html">
+QR Generator
+</a>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- MAIN -->
+
+<main>
+
+<section class="error-section">
+
+<div class="orb orb1"></div>
+
+<div class="orb orb2"></div>
+
+
+<div class="error-box">
+
+
+<div class="error-number">
+404
+</div>
+
+
+<h1>
+Oops! Page Not Found
+</h1>
+
+
+<p>
+The page you're looking for doesn't exist,
+has been moved, or the URL may be incorrect.
+Don't worry — you can return to Free Tools Hub
+and continue using our free tools.
+</p>
+
+
+<div class="buttons">
+
+
+<a
+    href="index.html"
+    class="btn home-btn"
+>
+🏠 Back to Home
+</a>
+
+
+<a
+    href="qr-generator.html"
+    class="btn tool-btn"
+>
+🔲 Try a Free Tool
+</a>
+
+
+</div>
+
+
+<div class="quick-title">
+Popular Free Tools
+</div>
+
+
+<div class="quick-tools">
+
+
+<a href="image-compressor.html">
+📸 Image Compressor
+</a>
+
+
+<a href="image-resizer.html">
+📐 Image Resizer
+</a>
+
+
+<a href="jpg-png.html">
+🖼 JPG ↔ PNG
+</a>
+
+
+<a href="image-to-pdf.html">
+📄 Image to PDF
+</a>
+
+
+<a href="pdf-to-image.html">
+📑 PDF to Image
+</a>
+
+
+<a href="qr-generator.html">
+🔲 QR Generator
+</a>
+
+
+<a href="word-counter.html">
+📝 Word Counter
+</a>
+
+
+<a href="case-converter.html">
+🔤 Case Converter
+</a>
+
+
+<a href="password-generator.html">
+🔐 Password Generator
+</a>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 Free Tools Hub
+</p>
+
+<p>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+<a href="privacy-policy.html">
+Privacy
+</a>
+
+<a href="terms.html">
+Terms
+</a>
+
+</p>
+
+</footer>
+
+
+<script>
+
+function closeMenu(){
+
+    document
+        .getElementById("nav")
+        .classList.remove("show");
+
+}
+
+</script>
+
+
+</body>
+
+</html>
