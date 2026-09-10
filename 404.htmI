@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>404 - Page Not Found | Free Tools Hub</title>
+
+<meta name="description" content="The page you are looking for could not be found. Return to Free Tools Hub and use our free online tools.">
+<meta name="robots" content="noindex,follow">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  font-family:Arial,Helvetica,sans-serif;
+  color:#fff;
+  background:#050816;
+  overflow-x:hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+/* BACKGROUND */
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.08;
+  background-image:
+    radial-gradient(circle,#fff 1px,transparent 1px);
+  background-size:45px 45px;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  width:500px;
+  height:500px;
+  left:-180px;
+  top:-180px;
+  border-radius:50%;
+  background:#00ffff;
+  filter:blur(150px);
+  opacity:.12;
+  pointer-events:none;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  padding:16px 6%;
+  background:rgba(5,8,22,.82);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(0,255,255,.15);
+}
+
+.nav{
+  max-width:1150px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-size:23px;
+  font-weight:900;
+  text-decoration:none;
+  background:linear-gradient(
+    90deg,
+    #00ffff,
+    #7c5cff,
+    #ff00d4,
+    #00ffff
+  );
+  background-size:300%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  animation:logoGlow 5s linear infinite;
+}
+
+@keyframes logoGlow{
+  to{
+    background-position:300%;
+  }
+}
+
+nav{
+  display:flex;
+  gap:22px;
+}
+
+nav a{
+  color:#ccc;
+  text-decoration:none;
+  font-size:15px;
+  transition:.25s;
+}
+
+nav a:hover{
+  color:#00ffff;
+  text-shadow:0 0 12px #00ffff;
+}
+
+.menu{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+  color:#00ffff;
+}
+
+/* MAIN */
+
+main{
+  flex:1;
+  width:100%;
+}
+
+.error-section{
+  min-height:calc(100vh - 150px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:60px 20px;
+  position:relative;
+}
+
+/* GLOW CIRCLES */
+
+.orb{
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
+  filter:blur(2px);
+}
+
+.orb.one{
+  width:180px;
+  height:180px;
+  background:#00ffff;
+  opacity:.08;
+  right:8%;
+  top:15%;
+  box-shadow:0 0 100px #00ffff;
+  animation:float1 5s ease-in-out infinite;
+}
+
+.orb.two{
+  width:140px;
+  height:140px;
+  background:#ff00cc;
+  opacity:.08;
+  left:10%;
+  bottom:15%;
+  box-shadow:0 0 100px #ff00cc;
+  animation:float2 6s ease-in-out infinite;
+}
+
+@keyframes float1{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-25px)}
+}
+
+@keyframes float2{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(25px)}
+}
+
+.error-box{
+  position:relative;
+  z-index:2;
+  max-width:750px;
+}
+
+/* 404 */
+
+.error-code{
+  font-size:clamp(100px,25vw,220px);
+  line-height:.85;
+  font-weight:1000;
+  letter-spacing:-10px;
+
+  background:linear-gradient(
+    90deg,
+    #00ffff,
+    #7c5cff,
+    #ff00cc,
+    #00ffff
+  );
+
+  background-size:300%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+
+  animation:
+    gradientMove 5s linear infinite,
+    glitch 3s infinite;
+
+  text-shadow:
+    0 0 30px rgba(0,255,255,.15);
+}
+
+@keyframes gradientMove{
+  to{
+    background-position:300%;
+  }
+}
+
+@keyframes glitch{
+  0%,90%,100%{
+    transform:translate(0);
+  }
+
+  92%{
+    transform:translate(-4px,2px);
+  }
+
+  94%{
+    transform:translate(4px,-2px);
+  }
+
+  96%{
+    transform:translate(-2px,1px);
+  }
+}
+
+.error-box h1{
+  font-size:clamp(26px,5vw,44px);
+  margin:25px 0 12px;
+}
+
+.error-box p{
+  color:#aaa;
+  line-height:1.7;
+  max-width:600px;
+  margin:auto;
+  font-size:16px;
+}
+
+/* BUTTONS */
+
+.buttons{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:160px;
+  padding:14px 20px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.25s;
+}
+
+.btn-primary{
+  color:#041015;
+  background:#00ffff;
+  box-shadow:0 0 25px rgba(0,255,255,.35);
+}
+
+.btn-primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 40px rgba(0,255,255,.65);
+}
+
+.btn-secondary{
+  color:#fff;
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.05);
+}
+
+.btn-secondary:hover{
+  border-color:#8b5cf6;
+  box-shadow:0 0 25px rgba(139,92,246,.3);
+  transform:translateY(-3px);
+}
+
+/* TOOL LINKS */
+
+.quick-tools{
+  margin-top:45px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+}
+
+.quick-tools a{
+  padding:10px 14px;
+  border-radius:10px;
+  color:#aaa;
+  text-decoration:none;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  transition:.25s;
+}
+
+.quick-tools a:hover{
+  color:#00ffff;
+  border-color:#00ffff55;
+  box-shadow:0 0 18px rgba(0,255,255,.15);
+}
+
+/* FOOTER */
+
+footer{
+  padding:28px 20px;
+  text-align:center;
+  color:#777;
+  border-top:1px solid rgba(255,255,255,.08);
+  background:rgba(0,0,0,.15);
+}
+
+footer p{
+  margin:6px 0;
+}
+
+footer a{
+  color:#aaa;
+  text-decoration:none;
+  margin:0 7px;
+}
+
+footer a:hover{
+  color:#00ffff;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+  nav{
+    display:none;
+    position:absolute;
+    left:0;
+    right:0;
+    top:65px;
+    padding:20px;
+    flex-direction:column;
+    background:#070a18;
+    border-bottom:1px solid #00ffff22;
+  }
+
+  nav.show{
+    display:flex;
+  }
+
+  .menu{
+    display:block;
+  }
+
+  .error-section{
+    min-height:calc(100vh - 130px);
+    padding:45px 18px;
+  }
+
+  .error-code{
+    letter-spacing:-5px;
+  }
+
+  .error-box h1{
+    margin-top:20px;
+  }
+
+  .buttons{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .btn{
+    width:100%;
+    max-width:300px;
+  }
+
+  .quick-tools{
+    margin-top:35px;
+  }
+
+  .quick-tools a{
+    font-size:13px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+<a href="index.html" class="logo">
+⚡ Free Tools Hub
+</a>
+
+<div class="menu" onclick="toggleMenu()">
+☰
+</div>
+
+<nav id="nav">
+
+<a href="index.html">Home</a>
+
+<a href="image-compressor.html">
+Image Tools
+</a>
+
+<a href="image-to-pdf.html">
+PDF Tools
+</a>
+
+<a href="qr-generator.html">
+QR Generator
+</a>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+<section class="error-section">
+
+<div class="orb one"></div>
+<div class="orb two"></div>
+
+<div class="error-box">
+
+<div class="error-code">
+404
+</div>
+
+<h1>Oops! Page Not Found</h1>
+
+<p>
+The page you're looking for doesn't exist, has been moved,
+or the URL may be incorrect.
+</p>
+
+<div class="buttons">
+
+<a href="index.html" class="btn btn-primary">
+🏠 Back to Home
+</a>
+
+<a href="qr-generator.html" class="btn btn-secondary">
+🔲 Try a Free Tool
+</a>
+
+</div>
+
+<div class="quick-tools">
+
+<a href="image-compressor.html">
+📸 Image Compressor
+</a>
+
+<a href="image-resizer.html">
+📐 Image Resizer
+</a>
+
+<a href="jpg-png.html">
+🖼 JPG ↔ PNG
+</a>
+
+<a href="image-to-pdf.html">
+📄 Image to PDF
+</a>
+
+<a href="pdf-to-image.html">
+📑 PDF to Image
+</a>
+
+<a href="qr-generator.html">
+🔲 QR Generator
+</a>
+
+<a href="word-counter.html">
+📝 Word Counter
+</a>
+
+<a href="case-converter.html">
+🔤 Case Converter
+</a>
+
+<a href="password-generator.html">
+🔐 Password Generator
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<p>
+© 2026 Free Tools Hub
+</p>
+
+<p>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy-policy.html">Privacy</a>
+<a href="terms.html">Terms</a>
+</p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+  document
+    .getElementById("nav")
+    .classList.toggle("show");
+
+}
+
+</script>
+
+</body>
+</html>
