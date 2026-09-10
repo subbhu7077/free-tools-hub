@@ -1,345 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Free Case Converter Online | Uppercase Lowercase Title Case</title>
+<meta name="description" content="Free online case converter. Convert text to uppercase, lowercase, title case and sentence case instantly. Mobile friendly and easy to use.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://subbhu7077.github.io/free-tools-hub/case-converter.html">
 
-  <title>Case Converter - Free Tools Hub</title>
-  <meta name="description" content="Convert text to uppercase, lowercase, title case and sentence case for free.">
-
-  <link rel="stylesheet" href="style.css">
-
-  <style>
-    .tool-page {
-      width: 92%;
-      max-width: 900px;
-      margin: 50px auto;
-    }
-
-    .back {
-      color: #76a9ff;
-      text-decoration: none;
-      display: inline-block;
-      margin-bottom: 25px;
-    }
-
-    .tool-box {
-      background: #101622;
-      border: 1px solid #222d40;
-      border-radius: 18px;
-      padding: 25px;
-    }
-
-    .tool-box h1 {
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-
-    .tool-box > p {
-      color: #8995a8;
-      margin-bottom: 25px;
-    }
-
-    textarea {
-      width: 100%;
-      min-height: 260px;
-      resize: vertical;
-      padding: 18px;
-      border-radius: 12px;
-      border: 1px solid #303b52;
-      background: #0b1019;
-      color: white;
-      outline: none;
-      font-size: 16px;
-      line-height: 1.7;
-      font-family: Arial, sans-serif;
-    }
-
-    textarea:focus {
-      border-color: #76a9ff;
-    }
-
-    .buttons {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .action-btn {
-      padding: 13px;
-      border: 1px solid #303b52;
-      border-radius: 10px;
-      background: #182237;
-      color: white;
-      cursor: pointer;
-      font-weight: 700;
-    }
-
-    .action-btn:hover {
-      border-color: #76a9ff;
-    }
-
-    .primary {
-      background: #76a9ff;
-      color: #07101e;
-      border-color: #76a9ff;
-    }
-
-    .status {
-      text-align: center;
-      color: #8995a8;
-      font-size: 13px;
-      margin-top: 15px;
-      min-height: 20px;
-    }
-
-    @media (max-width: 550px) {
-      .buttons {
-        grid-template-columns: 1fr;
-      }
-
-      .tool-box h1 {
-        font-size: 26px;
-      }
-    }
-  </style>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial;color:#fff;background:#050816;min-height:100vh;background-image:radial-gradient(circle at 20% 20%,#00ffff18,transparent 30%),radial-gradient(circle at 80% 70%,#a000ff18,transparent 30%)}
+header{padding:16px 6%;position:sticky;top:0;background:#050816dd;backdrop-filter:blur(15px);border-bottom:1px solid #00ffff22;z-index:5}
+.nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:23px;font-weight:bold;background:linear-gradient(90deg,#00ffff,#8b5cf6,#ff00cc);-webkit-background-clip:text;color:transparent}
+nav{display:flex;gap:20px}nav a{color:#ccc;text-decoration:none}.menu{display:none;font-size:28px}
+.container{max-width:1000px;margin:auto;padding:55px 20px}.hero{text-align:center}.badge{color:#00ffff;margin-bottom:15px}h1{font-size:clamp(35px,7vw,60px)}.g{background:linear-gradient(90deg,#00ffff,#8b5cf6,#ff00cc);-webkit-background-clip:text;color:transparent}
+.hero p{color:#aaa;max-width:650px;margin:15px auto 30px;line-height:1.7}
+.card{background:#ffffff08;border:1px solid #00ffff22;border-radius:22px;padding:22px}
+textarea{width:100%;min-height:280px;background:#080c20;color:#fff;border:1px solid #ffffff22;border-radius:14px;padding:18px;font-size:17px;outline:none;resize:vertical}
+.buttons{display:flex;flex-wrap:wrap;gap:10px}
+button{border:0;border-radius:10px;padding:13px 16px;margin-top:14px;font-weight:bold;cursor:pointer;background:#00ffff}
+.content,.faq{max-width:850px;margin:45px auto;color:#aaa;line-height:1.8}.content h2,.faq h2{color:#fff;margin:25px 0 10px}
+details{padding:15px;background:#ffffff08;border:1px solid #ffffff12;border-radius:12px;margin:10px 0}summary{color:white;cursor:pointer;font-weight:bold}
+.related{display:flex;flex-wrap:wrap;gap:10px}.related a{color:#00ffff;text-decoration:none;border:1px solid #00ffff33;padding:9px 13px;border-radius:9px}
+footer{text-align:center;padding:30px;color:#777;border-top:1px solid #ffffff10}footer a{color:#aaa;margin:0 7px}
+@media(max-width:700px){nav{display:none;position:absolute;top:62px;left:0;right:0;background:#070a18;padding:20px;flex-direction:column}nav.show{display:flex}.menu{display:block}}
+</style>
 </head>
 
 <body>
 
-<header class="header">
+<header><div class="nav">
+<div class="logo">⚡ Free Tools Hub</div>
+<div class="menu" onclick="document.getElementById('nav').classList.toggle('show')">☰</div>
+<nav id="nav">
+<a href="index.html">Home</a>
+<a href="image-compressor.html">Image Tools</a>
+<a href="image-to-pdf.html">PDF Tools</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+</div></header>
 
-  <div class="logo">⚡ Free Tools Hub</div>
+<main class="container">
 
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+<section class="hero">
+<div class="badge">🔤 Free • Fast • No Registration</div>
+<h1>Free <span class="g">Case Converter</span></h1>
+<p>Convert text to uppercase, lowercase, title case or sentence case instantly.</p>
+</section>
 
-  <nav id="navMenu">
-    <a href="index.html">Home</a>
-    <a href="index.html#image">Image</a>
-    <a href="index.html#pdf">PDF</a>
-    <a href="index.html#qr">QR</a>
-    <a href="index.html#text">Text</a>
-  </nav>
+<section class="card">
 
-</header>
+<textarea id="text" placeholder="Type or paste your text here..."></textarea>
 
+<div class="buttons">
+<button onclick="upper()">UPPERCASE</button>
+<button onclick="lower()">lowercase</button>
+<button onclick="titleCase()">Title Case</button>
+<button onclick="sentenceCase()">Sentence case</button>
+<button onclick="copyText()">📋 Copy</button>
+<button onclick="clearText()" style="background:#ff3cac;color:#fff">🗑 Clear</button>
+</div>
 
-<main class="tool-page">
+</section>
 
-  <a class="back" href="index.html">← Back to All Tools</a>
+<section class="content">
+<h2>Free Online Case Converter</h2>
+<p>
+Quickly change the capitalization of your text without manually editing
+every word. This tool supports uppercase, lowercase, title case and
+sentence case conversions.
+</p>
 
-  <div class="tool-box">
+<h2>How to Use</h2>
+<p>
+Paste your text into the box, then choose the conversion you need.
+The result appears immediately.
+</p>
 
-    <h1>🔤 Case Converter</h1>
+<h2>Useful For</h2>
+<p>
+Blog posts, documents, captions, essays, product descriptions, emails
+and everyday writing.
+</p>
+</section>
 
-    <p>
-      Convert your text to uppercase, lowercase,
-      title case or sentence case instantly.
-    </p>
+<section class="faq">
+<h2>Frequently Asked Questions</h2>
+<details><summary>Is the case converter free?</summary><p>Yes, it is completely free.</p></details>
+<details><summary>Can I convert an entire paragraph?</summary><p>Yes. Paste as much text as your browser can comfortably handle.</p></details>
+<details><summary>Does it work on Android?</summary><p>Yes. It works in modern mobile browsers.</p></details>
+<details><summary>Is my text uploaded?</summary><p>The conversion happens directly in your browser.</p></details>
+</section>
 
-
-    <textarea
-      id="textInput"
-      placeholder="Type or paste your text here..."
-    ></textarea>
-
-
-    <div class="buttons">
-
-      <button
-        class="action-btn primary"
-        onclick="upperCase()"
-      >
-        ABC UPPERCASE
-      </button>
-
-      <button
-        class="action-btn"
-        onclick="lowerCase()"
-      >
-        abc lowercase
-      </button>
-
-      <button
-        class="action-btn"
-        onclick="titleCase()"
-      >
-        Aa Title Case
-      </button>
-
-      <button
-        class="action-btn"
-        onclick="sentenceCase()"
-      >
-        Aa Sentence Case
-      </button>
-
-      <button
-        class="action-btn"
-        onclick="copyText()"
-      >
-        📋 Copy Text
-      </button>
-
-      <button
-        class="action-btn"
-        onclick="clearText()"
-      >
-        🗑️ Clear
-      </button>
-
-    </div>
-
-
-    <div
-      class="status"
-      id="status"
-    ></div>
-
-  </div>
+<section class="content">
+<h2>More Free Tools</h2>
+<div class="related">
+<a href="word-counter.html">Word Counter</a>
+<a href="qr-generator.html">QR Generator</a>
+<a href="password-generator.html">Password Generator</a>
+<a href="image-resizer.html">Image Resizer</a>
+</div>
+</section>
 
 </main>
 
-
 <footer>
-
-  <div class="footer-logo">
-    ⚡ Free Tools Hub
-  </div>
-
-  <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Contact</a>
-  </div>
-
-  <p>
-    © 2026 Free Tools Hub. All rights reserved.
-  </p>
-
+<p>© 2026 Free Tools Hub</p>
+<p><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a></p>
 </footer>
 
-
-<script src="script.js"></script>
-
 <script>
+const area=document.getElementById("text");
 
-const textInput =
-  document.getElementById("textInput");
+function upper(){area.value=area.value.toUpperCase()}
+function lower(){area.value=area.value.toLowerCase()}
 
-const statusText =
-  document.getElementById("status");
-
-
-function upperCase() {
-
-  textInput.value =
-    textInput.value.toUpperCase();
-
-  showStatus("Converted to uppercase.");
-
+function titleCase(){
+area.value=area.value.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());
 }
 
-
-function lowerCase() {
-
-  textInput.value =
-    textInput.value.toLowerCase();
-
-  showStatus("Converted to lowercase.");
-
+function sentenceCase(){
+area.value=area.value.toLowerCase().replace(/(^\s*\w|[.!?]\s+\w)/g,c=>c.toUpperCase());
 }
 
-
-function titleCase() {
-
-  textInput.value =
-    textInput.value
-      .toLowerCase()
-      .replace(
-        /\b\w/g,
-        letter => letter.toUpperCase()
-      );
-
-  showStatus("Converted to title case.");
-
+async function copyText(){
+if(!area.value){alert("Nothing to copy.");return}
+try{await navigator.clipboard.writeText(area.value);alert("Copied!")}
+catch(e){alert("Copy failed.")}
 }
 
-
-function sentenceCase() {
-
-  const text =
-    textInput.value
-      .toLowerCase();
-
-  textInput.value =
-    text.replace(
-      /(^\s*\w|[.!?]\s+\w)/g,
-      match => match.toUpperCase()
-    );
-
-  showStatus("Converted to sentence case.");
-
-}
-
-
-async function copyText() {
-
-  if (!textInput.value) {
-
-    showStatus("Nothing to copy.");
-
-    return;
-
-  }
-
-
-  try {
-
-    await navigator.clipboard.writeText(
-      textInput.value
-    );
-
-    showStatus("Text copied!");
-
-  } catch (error) {
-
-    textInput.select();
-
-    document.execCommand("copy");
-
-    showStatus("Text copied!");
-
-  }
-
-}
-
-
-function clearText() {
-
-  textInput.value = "";
-
-  showStatus("Text cleared.");
-
-  textInput.focus();
-
-}
-
-
-function showStatus(message) {
-
-  statusText.textContent =
-    message;
-
-  setTimeout(() => {
-
-    statusText.textContent = "";
-
-  }, 2000);
-
-}
-
+function clearText(){area.value=""}
 </script>
 
 </body>
