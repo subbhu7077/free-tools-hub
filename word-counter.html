@@ -1,323 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Free Word Counter Online | Character & Sentence Counter</title>
+<meta name="description" content="Free online word counter. Count words, characters, sentences and paragraphs instantly. Fast, accurate and mobile friendly.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://subbhu7077.github.io/free-tools-hub/word-counter.html">
 
-  <title>Word Counter - Free Tools Hub</title>
-  <meta name="description" content="Count words, characters, sentences and paragraphs online for free.">
-
-  <link rel="stylesheet" href="style.css">
-
-  <style>
-    .tool-page {
-      width: 92%;
-      max-width: 900px;
-      margin: 50px auto;
-    }
-
-    .back {
-      color: #76a9ff;
-      text-decoration: none;
-      display: inline-block;
-      margin-bottom: 25px;
-    }
-
-    .tool-box {
-      background: #101622;
-      border: 1px solid #222d40;
-      border-radius: 18px;
-      padding: 25px;
-    }
-
-    .tool-box h1 {
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-
-    .tool-box > p {
-      color: #8995a8;
-      margin-bottom: 25px;
-    }
-
-    textarea {
-      width: 100%;
-      min-height: 300px;
-      resize: vertical;
-      padding: 18px;
-      border-radius: 12px;
-      border: 1px solid #303b52;
-      background: #0b1019;
-      color: white;
-      outline: none;
-      font-size: 16px;
-      line-height: 1.7;
-      font-family: Arial, sans-serif;
-    }
-
-    textarea:focus {
-      border-color: #76a9ff;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .stat {
-      background: #182237;
-      border: 1px solid #26344d;
-      border-radius: 12px;
-      padding: 18px 10px;
-      text-align: center;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 25px;
-      color: #76a9ff;
-    }
-
-    .stat span {
-      color: #8995a8;
-      font-size: 12px;
-    }
-
-    .clear-btn {
-      width: 100%;
-      margin-top: 18px;
-      padding: 13px;
-      border: 1px solid #303b52;
-      border-radius: 10px;
-      background: transparent;
-      color: #cbd5e1;
-      cursor: pointer;
-      font-weight: 700;
-    }
-
-    .clear-btn:hover {
-      background: #182237;
-    }
-
-    @media (max-width: 600px) {
-      .stats {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .tool-box h1 {
-        font-size: 26px;
-      }
-    }
-  </style>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial;color:#fff;background:#050816;min-height:100vh;
+background-image:radial-gradient(circle at 20% 20%,#00ffff18,transparent 30%),radial-gradient(circle at 80% 70%,#a000ff18,transparent 30%)}
+header{padding:16px 6%;position:sticky;top:0;z-index:5;background:#050816dd;backdrop-filter:blur(15px);border-bottom:1px solid #00ffff22}
+.nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:23px;font-weight:bold;background:linear-gradient(90deg,#00ffff,#9b5cff,#ff00cc);-webkit-background-clip:text;color:transparent}
+nav{display:flex;gap:20px}nav a{color:#ccc;text-decoration:none}.menu{display:none;font-size:28px}
+.container{max-width:1000px;margin:auto;padding:55px 20px}.hero{text-align:center}.badge{color:#00ffff;margin-bottom:15px}h1{font-size:clamp(35px,7vw,60px)}
+.g{background:linear-gradient(90deg,#00ffff,#a855f7,#ff00cc);-webkit-background-clip:text;color:transparent}
+.hero p{color:#aaa;max-width:650px;margin:15px auto 30px;line-height:1.7}
+.card{background:#ffffff08;border:1px solid #00ffff22;border-radius:22px;padding:22px;box-shadow:0 0 35px #00ffff0c}
+textarea{width:100%;min-height:280px;padding:18px;border-radius:14px;background:#080c20;color:#fff;border:1px solid #ffffff22;font-size:17px;resize:vertical;outline:none}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.stat{padding:18px;text-align:center;background:#ffffff08;border:1px solid #ffffff12;border-radius:14px}
+.stat b{display:block;font-size:27px;color:#00ffff;margin-bottom:5px}.stat span{color:#999}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+button{border:0;border-radius:10px;padding:13px 18px;margin-top:15px;font-weight:bold;cursor:pointer;background:#00ffff}
+.content,.faq{max-width:850px;margin:45px auto;color:#aaa;line-height:1.8}.content h2,.faq h2{color:#fff;margin:25px 0 10px}
+details{padding:15px;background:#ffffff08;border:1px solid #ffffff12;border-radius:12px;margin:10px 0}summary{color:white;cursor:pointer;font-weight:bold}
+.related{display:flex;flex-wrap:wrap;gap:10px}.related a{color:#00ffff;text-decoration:none;border:1px solid #00ffff33;padding:9px 13px;border-radius:9px}
+footer{text-align:center;padding:30px;color:#777;border-top:1px solid #ffffff10}footer a{color:#aaa;margin:0 7px}
+@media(max-width:700px){nav{display:none;position:absolute;top:62px;left:0;right:0;background:#070a18;padding:20px;flex-direction:column}nav.show{display:flex}.menu{display:block}.stats{grid-template-columns:repeat(2,1fr)}}
+</style>
 </head>
 
 <body>
 
-<header class="header">
+<header><div class="nav">
+<div class="logo">⚡ Free Tools Hub</div>
+<div class="menu" onclick="document.getElementById('nav').classList.toggle('show')">☰</div>
+<nav id="nav">
+<a href="index.html">Home</a>
+<a href="image-compressor.html">Image Tools</a>
+<a href="image-to-pdf.html">PDF Tools</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+</div></header>
 
-  <div class="logo">⚡ Free Tools Hub</div>
+<main class="container">
 
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+<section class="hero">
+<div class="badge">📝 Free • Instant • Mobile Friendly</div>
+<h1>Free <span class="g">Word Counter</span></h1>
+<p>Count words, characters, sentences and paragraphs instantly with our free online word counter.</p>
+</section>
 
-  <nav id="navMenu">
-    <a href="index.html">Home</a>
-    <a href="index.html#image">Image</a>
-    <a href="index.html#pdf">PDF</a>
-    <a href="index.html#qr">QR</a>
-    <a href="index.html#text">Text</a>
-  </nav>
+<section class="card">
 
-</header>
+<textarea id="text" placeholder="Start typing or paste your text here..." oninput="countText()"></textarea>
 
+<div class="stats">
+<div class="stat"><b id="words">0</b><span>Words</span></div>
+<div class="stat"><b id="chars">0</b><span>Characters</span></div>
+<div class="stat"><b id="sentences">0</b><span>Sentences</span></div>
+<div class="stat"><b id="paragraphs">0</b><span>Paragraphs</span></div>
+</div>
 
-<main class="tool-page">
+<div class="actions">
+<button onclick="copyText()">📋 Copy</button>
+<button onclick="clearText()" style="background:#ff3cac;color:#fff">🗑 Clear</button>
+</div>
 
-  <a class="back" href="index.html">← Back to All Tools</a>
+</section>
 
-  <div class="tool-box">
+<section class="content">
+<h2>Free Online Word Counter</h2>
+<p>
+Use this word counter to quickly check the length of articles, essays,
+assignments, social media posts and other written content.
+</p>
 
-    <h1>🔢 Word Counter</h1>
+<h2>How to Use</h2>
+<p>
+Paste or type your content into the text box. Statistics update instantly
+as you type. You can copy your text or clear it whenever needed.
+</p>
 
-    <p>
-      Count words, characters, sentences and paragraphs instantly.
-    </p>
+<h2>What Does It Count?</h2>
+<p>
+The tool calculates words, characters, sentences and paragraphs to give
+you a quick overview of your content length.
+</p>
+</section>
 
+<section class="faq">
+<h2>Frequently Asked Questions</h2>
 
-    <textarea
-      id="textInput"
-      placeholder="Start typing or paste your text here..."
-    ></textarea>
+<details><summary>Is this word counter free?</summary><p>Yes. It is free to use.</p></details>
+<details><summary>Does it work on mobile?</summary><p>Yes. It is designed for mobile and desktop browsers.</p></details>
+<details><summary>Can I count characters too?</summary><p>Yes. Characters are counted instantly along with words.</p></details>
+<details><summary>Is my text uploaded?</summary><p>The counting is performed in your browser.</p></details>
+</section>
 
-
-    <div class="stats">
-
-      <div class="stat">
-        <strong id="words">0</strong>
-        <span>Words</span>
-      </div>
-
-      <div class="stat">
-        <strong id="characters">0</strong>
-        <span>Characters</span>
-      </div>
-
-      <div class="stat">
-        <strong id="sentences">0</strong>
-        <span>Sentences</span>
-      </div>
-
-      <div class="stat">
-        <strong id="paragraphs">0</strong>
-        <span>Paragraphs</span>
-      </div>
-
-    </div>
-
-
-    <button
-      class="clear-btn"
-      onclick="clearText()"
-    >
-      🗑️ Clear Text
-    </button>
-
-  </div>
+<section class="content">
+<h2>More Free Tools</h2>
+<div class="related">
+<a href="case-converter.html">Case Converter</a>
+<a href="password-generator.html">Password Generator</a>
+<a href="qr-generator.html">QR Generator</a>
+<a href="image-compressor.html">Image Compressor</a>
+</div>
+</section>
 
 </main>
 
-
 <footer>
-
-  <div class="footer-logo">
-    ⚡ Free Tools Hub
-  </div>
-
-  <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Contact</a>
-  </div>
-
-  <p>
-    © 2026 Free Tools Hub. All rights reserved.
-  </p>
-
+<p>© 2026 Free Tools Hub</p>
+<p><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a></p>
 </footer>
 
-
-<script src="script.js"></script>
-
 <script>
+function countText(){
+const t=document.getElementById("text").value;
+const trimmed=t.trim();
 
-const textInput =
-  document.getElementById("textInput");
-
-const words =
-  document.getElementById("words");
-
-const characters =
-  document.getElementById("characters");
-
-const sentences =
-  document.getElementById("sentences");
-
-const paragraphs =
-  document.getElementById("paragraphs");
-
-
-textInput.addEventListener(
-  "input",
-  updateStats
-);
-
-
-function updateStats() {
-
-  const text =
-    textInput.value;
-
-
-  /* Characters */
-
-  characters.textContent =
-    text.length;
-
-
-  /* Words */
-
-  const trimmed =
-    text.trim();
-
-  if (!trimmed) {
-
-    words.textContent = "0";
-
-  } else {
-
-    words.textContent =
-      trimmed
-        .split(/\s+/)
-        .filter(Boolean)
-        .length;
-
-  }
-
-
-  /* Sentences */
-
-  if (!trimmed) {
-
-    sentences.textContent = "0";
-
-  } else {
-
-    const matches =
-      trimmed.match(
-        /[^.!?]+[.!?]+/g
-      );
-
-    sentences.textContent =
-      matches
-        ? matches.length
-        : 0;
-
-  }
-
-
-  /* Paragraphs */
-
-  if (!trimmed) {
-
-    paragraphs.textContent = "0";
-
-  } else {
-
-    paragraphs.textContent =
-      trimmed
-        .split(/\n\s*\n/)
-        .filter(
-          paragraph =>
-            paragraph.trim().length > 0
-        )
-        .length;
-
-  }
-
+document.getElementById("chars").textContent=t.length;
+document.getElementById("words").textContent=trimmed?trimmed.split(/\s+/).length:0;
+document.getElementById("sentences").textContent=
+trimmed?trimmed.split(/[.!?]+/).filter(x=>x.trim()).length:0;
+document.getElementById("paragraphs").textContent=
+trimmed?trimmed.split(/\n\s*\n/).filter(x=>x.trim()).length:0;
 }
 
-
-function clearText() {
-
-  textInput.value = "";
-
-  updateStats();
-
-  textInput.focus();
-
+async function copyText(){
+const t=document.getElementById("text").value;
+if(!t){alert("Nothing to copy.");return}
+try{await navigator.clipboard.writeText(t);alert("Text copied!")}
+catch(e){alert("Copy failed.")}
 }
 
+function clearText(){
+document.getElementById("text").value="";
+countText();
+}
 </script>
 
 </body>
