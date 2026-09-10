@@ -2,400 +2,1589 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Free Tools Hub - Free Online Tools</title>
+  <meta charset="UTF-8">
 
-<meta name="description" content="Free online tools for image compression, image resizing, JPG PNG conversion, PDF conversion, QR codes, word counting, case conversion and password generation.">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-<meta name="keywords" content="free online tools, image compressor, image resizer, JPG PNG converter, image to PDF, PDF to image, QR generator, word counter, case converter, password generator">
+  <title>
+    Free Tools Hub - Free Online Image, PDF, QR & Text Tools
+  </title>
 
-<meta name="robots" content="index, follow">
+  <meta
+    name="description"
+    content="Free online tools for image compression, image resizing, JPG PNG conversion, PDF conversion, QR codes, word counting, case conversion and password generation."
+  >
 
-<link rel="canonical" href="https://subbhu7077.github.io/free-tools-hub/">
+  <meta
+    name="keywords"
+    content="free online tools, image compressor, image resizer, jpg png converter, image to pdf, pdf to image, qr generator, word counter, case converter, password generator"
+  >
 
-<meta name="google-site-verification" content="EJWRlxUQaINlHcEwIKoQT2uw1uPdCqK98JJCROmM9QI" />
+  <meta
+    name="robots"
+    content="index, follow"
+  >
 
-<link rel="stylesheet" href="style.css">
+  <link
+    rel="canonical"
+    href="https://subbhu7077.github.io/free-tools-hub/"
+  >
+
+  <meta
+    name="google-site-verification"
+    content="EJWRlxUQaINlHcEwIKoQT2uw1uPdCqK98JJCROmM9QI"
+  >
+
+  <meta
+    name="theme-color"
+    content="#050712"
+  >
+
+  <style>
+
+    /* =========================
+       RESET
+    ========================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      background:
+        #050712;
+
+      color: #ffffff;
+
+      overflow-x: hidden;
+
+    }
+
+
+    /* =========================
+       LOADING SCREEN
+    ========================= */
+
+    #loader {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 99999;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      flex-direction: column;
+
+      background:
+        radial-gradient(
+          circle at center,
+          #111b3a 0%,
+          #070a15 45%,
+          #03040a 100%
+        );
+
+      transition:
+        opacity .7s ease,
+        visibility .7s ease;
+
+    }
+
+    #loader.hide {
+
+      opacity: 0;
+
+      visibility: hidden;
+
+    }
+
+    .loader-ring {
+
+      width: 75px;
+
+      height: 75px;
+
+      border-radius: 50%;
+
+      border: 3px solid rgba(118,169,255,.15);
+
+      border-top-color: #6ea8ff;
+
+      border-right-color: #b56cff;
+
+      animation:
+        spin 1s linear infinite;
+
+      box-shadow:
+        0 0 20px #5b8cff,
+        0 0 50px rgba(151,85,255,.5);
+
+    }
+
+    .loader-text {
+
+      margin-top: 22px;
+
+      font-size: 13px;
+
+      letter-spacing: 4px;
+
+      text-transform: uppercase;
+
+      color: #aebeff;
+
+      animation:
+        blink 1.2s infinite;
+
+    }
+
+
+    @keyframes spin {
+
+      to {
+        transform: rotate(360deg);
+      }
+
+    }
+
+    @keyframes blink {
+
+      0%, 100% {
+        opacity: .35;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+    }
+
+
+    /* =========================
+       BACKGROUND EFFECT
+    ========================= */
+
+    .background-glow {
+
+      position: fixed;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      z-index: -2;
+
+      overflow: hidden;
+
+    }
+
+    .orb {
+
+      position: absolute;
+
+      width: 300px;
+
+      height: 300px;
+
+      border-radius: 50%;
+
+      filter: blur(90px);
+
+      opacity: .22;
+
+      animation:
+        floatOrb 10s ease-in-out infinite;
+
+    }
+
+    .orb.one {
+
+      background: #087cff;
+
+      top: 5%;
+
+      left: -120px;
+
+    }
+
+    .orb.two {
+
+      background: #a000ff;
+
+      top: 35%;
+
+      right: -130px;
+
+      animation-delay: 2s;
+
+    }
+
+    .orb.three {
+
+      background: #00d9ff;
+
+      bottom: 5%;
+
+      left: 25%;
+
+      animation-delay: 4s;
+
+    }
+
+    @keyframes floatOrb {
+
+      0%,100% {
+        transform: translate(0,0) scale(1);
+      }
+
+      50% {
+        transform: translate(50px,-40px) scale(1.2);
+      }
+
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .header {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 5000;
+
+      height: 65px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      padding:
+        0 5%;
+
+      background:
+        rgba(5,7,18,.78);
+
+      backdrop-filter:
+        blur(18px);
+
+      border-bottom:
+        1px solid rgba(118,169,255,.12);
+
+      box-shadow:
+        0 5px 35px rgba(0,0,0,.35);
+
+    }
+
+    .logo {
+
+      font-size: 18px;
+
+      font-weight: 800;
+
+      letter-spacing: .5px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #ffffff,
+          #65a7ff,
+          #d26cff,
+          #ffffff
+        );
+
+      background-size:
+        300% auto;
+
+      -webkit-background-clip:
+        text;
+
+      background-clip:
+        text;
+
+      color: transparent;
+
+      animation:
+        gradientText 4s linear infinite;
+
+    }
+
+    @keyframes gradientText {
+
+      0% {
+        background-position: 0% center;
+      }
+
+      100% {
+        background-position: 300% center;
+      }
+
+    }
+
+    nav {
+
+      display: flex;
+
+      gap: 25px;
+
+    }
+
+    nav a {
+
+      color: #b7c0d5;
+
+      text-decoration: none;
+
+      font-size: 13px;
+
+      transition: .25s;
+
+    }
+
+    nav a:hover {
+
+      color: #ffffff;
+
+      text-shadow:
+        0 0 12px #72aaff;
+
+    }
+
+    .menu-btn {
+
+      display: none;
+
+      background:
+        rgba(255,255,255,.04);
+
+      border:
+        1px solid #28334b;
+
+      color: white;
+
+      border-radius: 9px;
+
+      width: 40px;
+
+      height: 40px;
+
+      font-size: 20px;
+
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+
+      min-height:
+        590px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      padding:
+        80px 20px 50px;
+
+      position: relative;
+
+    }
+
+    .hero-content {
+
+      width: 100%;
+
+      max-width: 900px;
+
+    }
+
+    .badge {
+
+      display: inline-block;
+
+      padding:
+        8px 15px;
+
+      border-radius: 50px;
+
+      border:
+        1px solid rgba(118,169,255,.35);
+
+      background:
+        rgba(118,169,255,.07);
+
+      color: #a8c8ff;
+
+      font-size: 11px;
+
+      letter-spacing: 1px;
+
+      box-shadow:
+        0 0 20px rgba(75,130,255,.12);
+
+      animation:
+        badgePulse 2s infinite;
+
+    }
+
+    @keyframes badgePulse {
+
+      0%,100% {
+        box-shadow:
+          0 0 10px rgba(75,130,255,.1);
+      }
+
+      50% {
+        box-shadow:
+          0 0 25px rgba(75,130,255,.35);
+      }
+
+    }
+
+    .hero h1 {
+
+      margin-top: 25px;
+
+      font-size:
+        clamp(42px, 8vw, 78px);
+
+      line-height: 1.03;
+
+      font-weight: 900;
+
+      letter-spacing: -3px;
+
+    }
+
+    .hero h1 .white {
+
+      display: block;
+
+      color: #ffffff;
+
+      text-shadow:
+        0 0 30px rgba(255,255,255,.15);
+
+    }
+
+    .hero h1 .gradient {
+
+      display: block;
+
+      background:
+        linear-gradient(
+          90deg,
+          #5aa7ff,
+          #a76cff,
+          #ff58d0,
+          #5aa7ff
+        );
+
+      background-size:
+        300% auto;
+
+      -webkit-background-clip:
+        text;
+
+      background-clip:
+        text;
+
+      color: transparent;
+
+      animation:
+        gradientText 3s linear infinite,
+        glowText 2s ease-in-out infinite;
+
+    }
+
+    @keyframes glowText {
+
+      0%,100% {
+        filter:
+          drop-shadow(
+            0 0 8px rgba(104,145,255,.2)
+          );
+      }
+
+      50% {
+        filter:
+          drop-shadow(
+            0 0 25px rgba(168,91,255,.55)
+          );
+      }
+
+    }
+
+    .hero-description {
+
+      max-width: 650px;
+
+      margin:
+        25px auto;
+
+      color: #8e99ae;
+
+      font-size: 14px;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* =========================
+       SEARCH
+    ========================= */
+
+    .search-box {
+
+      max-width: 600px;
+
+      margin:
+        30px auto 0;
+
+      position: relative;
+
+    }
+
+    .search-box input {
+
+      width: 100%;
+
+      height: 58px;
+
+      border-radius: 16px;
+
+      padding:
+        0 22px 0 52px;
+
+      border:
+        1px solid #293653;
+
+      outline: none;
+
+      background:
+        rgba(15,21,36,.88);
+
+      color: #ffffff;
+
+      font-size: 14px;
+
+      box-shadow:
+        0 0 0 1px rgba(118,169,255,.03),
+        0 10px 40px rgba(0,0,0,.25);
+
+      transition: .3s;
+
+    }
+
+    .search-box input:focus {
+
+      border-color:
+        #6da8ff;
+
+      box-shadow:
+        0 0 20px rgba(80,140,255,.22),
+        0 0 50px rgba(144,80,255,.08);
+
+    }
+
+    .search-icon {
+
+      position: absolute;
+
+      left: 20px;
+
+      top: 50%;
+
+      transform:
+        translateY(-50%);
+
+      font-size: 18px;
+
+      opacity: .7;
+
+    }
+
+
+    /* =========================
+       FLOATING 3D ICONS
+    ========================= */
+
+    .floating-icons {
+
+      position: absolute;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      overflow: hidden;
+
+    }
+
+    .float-icon {
+
+      position: absolute;
+
+      width: 60px;
+
+      height: 60px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 17px;
+
+      font-size: 27px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.13),
+          rgba(255,255,255,.025)
+        );
+
+      border:
+        1px solid rgba(255,255,255,.12);
+
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        0 15px 35px rgba(0,0,0,.4);
+
+      transform:
+        perspective(500px)
+        rotateX(15deg)
+        rotateY(-18deg);
+
+      animation:
+        floating 5s ease-in-out infinite;
+
+      opacity: .65;
+
+    }
+
+    .float-icon::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: -5px;
+
+      border-radius: 20px;
+
+      background: inherit;
+
+      filter: blur(14px);
+
+      opacity: .25;
+
+      z-index: -1;
+
+    }
+
+    .float-icon.i1 {
+
+      left: 8%;
+
+      top: 25%;
+
+      animation-delay: 0s;
+
+    }
+
+    .float-icon.i2 {
+
+      right: 8%;
+
+      top: 28%;
+
+      animation-delay: 1s;
+
+    }
+
+    .float-icon.i3 {
+
+      left: 13%;
+
+      bottom: 15%;
+
+      animation-delay: 2s;
+
+    }
+
+    .float-icon.i4 {
+
+      right: 13%;
+
+      bottom: 13%;
+
+      animation-delay: 3s;
+
+    }
+
+    @keyframes floating {
+
+      0%,100% {
+
+        transform:
+          perspective(500px)
+          translateY(0)
+          rotateX(15deg)
+          rotateY(-18deg);
+
+      }
+
+      50% {
+
+        transform:
+          perspective(500px)
+          translateY(-22px)
+          rotateX(-10deg)
+          rotateY(20deg)
+          scale(1.08);
+
+      }
+
+    }
+
+
+    /* =========================
+       AD BOX
+    ========================= */
+
+    .ad-box {
+
+      width: 92%;
+
+      max-width: 1000px;
+
+      height: 90px;
+
+      margin:
+        10px auto 55px;
+
+      border:
+        1px dashed #202b40;
+
+      background:
+        rgba(12,16,28,.55);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      color: #555f73;
+
+      font-size: 8px;
+
+      letter-spacing: 2px;
+
+    }
+
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    .tools-section {
+
+      width: 92%;
+
+      max-width: 1150px;
+
+      margin:
+        0 auto 60px;
+
+    }
+
+    .section-heading {
+
+      margin-bottom: 25px;
+
+    }
+
+    .section-heading h2 {
+
+      font-size: 25px;
+
+      margin-bottom: 7px;
+
+    }
+
+    .section-heading p {
+
+      color: #778298;
+
+      font-size: 13px;
+
+    }
+
+
+    /* =========================
+       CATEGORY
+    ========================= */
+
+    .category {
+
+      margin-bottom: 45px;
+
+      scroll-margin-top: 90px;
+
+    }
+
+    .category-title {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      font-size: 17px;
+
+      margin-bottom: 16px;
+
+    }
+
+    .category-title span {
+
+      font-size: 22px;
+
+    }
+
+
+    /* =========================
+       TOOL GRID
+    ========================= */
+
+    .tool-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 15px;
+
+    }
+
+    .tool-card {
+
+      position: relative;
+
+      min-height: 205px;
+
+      padding: 23px;
+
+      border-radius: 17px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(18,25,42,.95),
+          rgba(9,13,24,.95)
+        );
+
+      border:
+        1px solid #202b40;
+
+      overflow: hidden;
+
+      transition:
+        transform .3s,
+        border-color .3s,
+        box-shadow .3s;
+
+    }
+
+    .tool-card::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 120px;
+
+      height: 120px;
+
+      top: -60px;
+
+      right: -50px;
+
+      border-radius: 50%;
+
+      background:
+        #478cff;
+
+      filter: blur(50px);
+
+      opacity: .12;
+
+      transition: .3s;
+
+    }
+
+    .tool-card:hover {
+
+      transform:
+        translateY(-8px);
+
+      border-color:
+        rgba(108,163,255,.65);
+
+      box-shadow:
+        0 15px 45px rgba(0,0,0,.35),
+        0 0 25px rgba(75,135,255,.12);
+
+    }
+
+    .tool-card:hover::before {
+
+      opacity: .3;
+
+    }
+
+
+    /* =========================
+       3D TOOL ICON
+    ========================= */
+
+    .tool-icon {
+
+      width: 48px;
+
+      height: 48px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 13px;
+
+      font-size: 23px;
+
+      margin-bottom: 18px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #182747,
+          #0d1527
+        );
+
+      border:
+        1px solid #293b62;
+
+      box-shadow:
+        inset 0 1px 2px rgba(255,255,255,.12),
+        0 9px 20px rgba(0,0,0,.4),
+        0 0 15px rgba(70,130,255,.15);
+
+      transform:
+        perspective(400px)
+        rotateX(8deg)
+        rotateY(-8deg);
+
+      transition:
+        transform .35s;
+
+    }
+
+    .tool-card:hover .tool-icon {
+
+      transform:
+        perspective(400px)
+        rotateX(-8deg)
+        rotateY(12deg)
+        translateY(-4px)
+        scale(1.08);
+
+      animation:
+        iconPulse 1s ease-in-out;
+
+    }
+
+    @keyframes iconPulse {
+
+      0%,100% {
+        filter: brightness(1);
+      }
+
+      50% {
+        filter: brightness(1.7);
+      }
+
+    }
+
+    .tool-card h3 {
+
+      font-size: 15px;
+
+      margin-bottom: 9px;
+
+    }
+
+    .tool-card p {
+
+      color: #778298;
+
+      font-size: 12px;
+
+      line-height: 1.65;
+
+      min-height: 40px;
+
+    }
+
+    .tool-link {
+
+      display: inline-block;
+
+      margin-top: 15px;
+
+      color: #82b3ff;
+
+      font-size: 11px;
+
+      text-decoration: none;
+
+      font-weight: 700;
+
+    }
+
+    .tool-link:hover {
+
+      color: #ffffff;
+
+      text-shadow:
+        0 0 12px #6da8ff;
+
+    }
+
+
+    /* =========================
+       FEATURE STRIP
+    ========================= */
+
+    .features {
+
+      width: 92%;
+
+      max-width: 1150px;
+
+      margin:
+        10px auto 70px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 12px;
+
+    }
+
+    .feature {
+
+      padding: 20px;
+
+      text-align: center;
+
+      border:
+        1px solid #202b40;
+
+      border-radius: 15px;
+
+      background:
+        rgba(15,21,35,.7);
+
+      transition: .3s;
+
+    }
+
+    .feature:hover {
+
+      transform:
+        translateY(-5px);
+
+      border-color:
+        #405d91;
+
+      box-shadow:
+        0 0 25px rgba(75,130,255,.1);
+
+    }
+
+    .feature-icon {
+
+      font-size: 25px;
+
+      margin-bottom: 9px;
+
+    }
+
+    .feature h3 {
+
+      font-size: 13px;
+
+      margin-bottom: 5px;
+
+    }
+
+    .feature p {
+
+      color: #69758b;
+
+      font-size: 11px;
+
+      line-height: 1.5;
+
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+
+      width: 92%;
+
+      max-width: 1000px;
+
+      margin:
+        0 auto 70px;
+
+      padding:
+        45px 25px;
+
+      text-align: center;
+
+      border-radius: 22px;
+
+      border:
+        1px solid rgba(103,155,255,.25);
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(87,131,255,.16),
+          transparent 55%
+        ),
+        rgba(12,17,30,.85);
+
+      box-shadow:
+        0 0 60px rgba(71,109,255,.07);
+
+    }
+
+    .cta h2 {
+
+      font-size:
+        clamp(25px, 5vw, 38px);
+
+      margin-bottom: 12px;
+
+    }
+
+    .cta p {
+
+      color: #7e899d;
+
+      font-size: 13px;
+
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+
+      border-top:
+        1px solid #182238;
+
+      background:
+        #03050b;
+
+      padding:
+        35px 5%;
+
+      text-align: center;
+
+    }
+
+    .footer-logo {
+
+      font-size: 17px;
+
+      font-weight: 800;
+
+      margin-bottom: 20px;
+
+    }
+
+    .footer-links {
+
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 20px;
+
+      margin-bottom: 18px;
+
+    }
+
+    .footer-links a {
+
+      color: #69758b;
+
+      font-size: 12px;
+
+      text-decoration: none;
+
+    }
+
+    .footer-links a:hover {
+
+      color: #86b5ff;
+
+    }
+
+    footer p {
+
+      color: #414b5d;
+
+      font-size: 11px;
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      nav {
+
+        display: none;
+
+        position: absolute;
+
+        top: 65px;
+
+        left: 0;
+
+        right: 0;
+
+        padding: 15px;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        background:
+          rgba(5,7,18,.97);
+
+        border-bottom:
+          1px solid #1d2940;
+
+      }
+
+      nav.active {
+
+        display: flex;
+
+      }
+
+      nav a {
+
+        padding: 14px;
+
+        border-bottom:
+          1px solid #151e31;
+
+      }
+
+      .menu-btn {
+
+        display: block;
+
+      }
+
+      .tool-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+      }
+
+      .features {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+      }
+
+      .float-icon {
+
+        display: none;
+
+      }
+
+    }
+
+
+    @media (max-width: 520px) {
+
+      .header {
+
+        padding:
+          0 18px;
+
+      }
+
+      .hero {
+
+        min-height:
+          520px;
+
+        padding-top:
+          65px;
+
+      }
+
+      .hero h1 {
+
+        font-size:
+          42px;
+
+        letter-spacing:
+          -2px;
+
+      }
+
+      .hero-description {
+
+        font-size:
+          12px;
+
+      }
+
+      .tool-grid {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+      .features {
+
+        grid-template-columns:
+          1fr 1fr;
+
+      }
+
+      .feature {
+
+        padding:
+          16px 10px;
+
+      }
+
+      .ad-box {
+
+        height:
+          70px;
+
+      }
+
+    }
+
+  </style>
+
 </head>
+
 
 <body>
 
-<!-- HEADER -->
-<header class="header">
 
-<div class="logo">
-⚡ Free Tools Hub
+<!-- =========================
+     LOADER
+========================= -->
+
+<div id="loader">
+
+  <div class="loader-ring"></div>
+
+  <div class="loader-text">
+    Loading Free Tools...
+  </div>
+
 </div>
 
-<button class="menu-btn" onclick="toggleMenu()">
-☰
-</button>
 
-<nav id="navMenu">
+<!-- =========================
+     BACKGROUND
+========================= -->
 
-<a href="#home">Home</a>
-<a href="#image">Image</a>
-<a href="#pdf">PDF</a>
-<a href="#qr">QR</a>
-<a href="#text">Text</a>
+<div class="background-glow">
 
-</nav>
+  <div class="orb one"></div>
+
+  <div class="orb two"></div>
+
+  <div class="orb three"></div>
+
+</div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+  <div class="logo">
+    ⚡ Free Tools Hub
+  </div>
+
+
+  <button
+    class="menu-btn"
+    onclick="toggleMenu()"
+    aria-label="Open menu"
+  >
+    ☰
+  </button>
+
+
+  <nav id="navMenu">
+
+    <a href="#home">
+      Home
+    </a>
+
+    <a href="#image">
+      Image
+    </a>
+
+    <a href="#pdf">
+      PDF
+    </a>
+
+    <a href="#qr">
+      QR
+    </a>
+
+    <a href="#text">
+      Text
+    </a>
+
+  </nav>
 
 </header>
 
 
-<!-- HERO -->
-<main id="home">
+<!-- =========================
+     HERO
+========================= -->
 
-<section class="hero">
-
-<div class="hero-content">
-
-<span class="badge">
-🚀 100% Free Online Tools
-</span>
-
-<h1>
-Simple Tools.<br>
-<span>Powerful Results.</span>
-</h1>
-
-<p>
-Compress images, resize photos, create QR codes,
-count words and use many more free tools.
-</p>
-
-<div class="search-box">
-
-<input
-type="text"
-id="toolSearch"
-placeholder="🔍 Search a tool..."
-onkeyup="searchTools()"
+<section
+  class="hero"
+  id="home"
 >
 
-</div>
 
-</div>
+  <div class="floating-icons">
 
-</section>
+    <div class="float-icon i1">
+      🖼️
+    </div>
 
+    <div class="float-icon i2">
+      📄
+    </div>
 
-<!-- ADVERTISEMENT -->
-<div class="ad-box">
-ADVERTISEMENT
-</div>
+    <div class="float-icon i3">
+      🔐
+    </div>
 
+    <div class="float-icon i4">
+      ⚡
+    </div>
 
-<!-- ALL TOOLS -->
-<section class="tools-section">
+  </div>
 
-<h2>🛠️ Free Online Tools</h2>
 
-<p class="section-subtitle">
-Choose a tool and get started
-</p>
+  <div class="hero-content">
 
 
-<!-- IMAGE TOOLS -->
-<div id="image">
+    <span class="badge">
+      ✨ 100% FREE ONLINE TOOLS
+    </span>
 
-<h3>🖼️ Image Tools</h3>
 
-<div class="tools-grid">
+    <h1>
 
+      <span class="white">
+        Simple Tools.
+      </span>
 
-<a class="tool-card"
-href="image-compressor.html">
+      <span class="gradient">
+        Powerful Results.
+      </span>
 
-<div class="tool-icon">🗜️</div>
+    </h1>
 
-<h4>Image Compressor</h4>
 
-<p>
-Reduce image size without losing quality.
-</p>
+    <p class="hero-description">
 
-<span>Use Tool →</span>
-
-</a>
-
-
-<a class="tool-card"
-href="image-resizer.html">
-
-<div class="tool-icon">📐</div>
-
-<h4>Image Resizer</h4>
-
-<p>
-Resize images to any required dimension.
-</p>
-
-<span>Use Tool →</span>
-
-</a>
-
-
-<a class="tool-card"
-href="jpg-png.html">
-
-<div class="tool-icon">🔄</div>
-
-<h4>JPG ↔ PNG</h4>
-
-<p>
-Convert JPG and PNG images easily.
-</p>
-
-<span>Use Tool →</span>
-
-</a>
-
-</div>
-
-</div>
-
-
-<!-- PDF TOOLS -->
-<div id="pdf">
-
-<h3>📄 PDF Tools</h3>
-
-<div class="tools-grid">
-
-
-<a class="tool-card"
-href="image-to-pdf.html">
-
-<div class="tool-icon">🖼️</div>
-
-<h4>Image → PDF</h4>
-
-<p>
-Convert images into a PDF document.
-</p>
-
-<span>Use Tool →</span>
-
-</a>
-
-
-<a class="tool-card"
-href="pdf-to-image.html">
-
-<div class="tool-icon">📄</div>
-
-<h4>PDF → Image</h4>
-
-<p>
-Convert PDF pages into images.
-</p>
-
-<span>Use Tool →</span>
-
-</a>
-
-</div>
-
-</div>
-
-
-<!-- QR TOOLS -->
-<div id="qr">
-
-<h3>🔲 QR Tools</h3>
-
-<div class="tools-grid">
-
-
-<a class="tool-card"
-href="qr-generator.html">
-
-<div class="tool-icon">🔳</div>
-
-<h4>QR Code Generator</h4>
-
-<p>
-Create QR codes for links, text and more.
-</p>
-
-<span>Use Tool →</span>
-
-</a>
-
-</div>
-
-</div>
-
-
-<!-- TEXT TOOLS -->
-<div id="text">
-
-<h3>📝 Text Tools</h3>
-
-<div class="tools-grid">
-
-
-<a class="tool-card"
-href="word-counter.html">
-
-<div class="tool-icon">🔢</div>
-
-<h4>Word Counter</h4>
-
-<p>
-Count words, characters and sentences.
-</p>
-
-<span>Use Tool →</span>
-
-</a>
-
-
-<a class="tool-card"
-href="case-converter.html">
-
-<div class="tool-icon">🔤</div>
-
-<h4>Case Converter</h4>
-
-<p>
-Convert text to uppercase or lowercase.
-</p>
-
-<span>Use Tool →</span>
-
-</a>
-
-
-<a class="tool-card"
-href="password-generator.html">
-
-<div class="tool-icon">🔐</div>
-
-<h4>Password Generator</h4>
-
-<p>
-Generate strong random passwords.
-</p>
-
-<span>Use Tool →</span>
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ADVERTISEMENT -->
-<div class="ad-box">
-ADVERTISEMENT
-</div>
-
-
-<!-- WHY USE -->
-<section class="features">
-
-<h2>
-Why Use Free Tools Hub?
-</h2>
-
-
-<div class="feature-grid">
-
-
-<div class="feature-card">
-
-<div class="feature-icon">
-⚡
-</div>
-
-<h3>Fast</h3>
-
-<p>
-Quick and simple tools.
-</p>
-
-</div>
-
-
-<div class="feature-card">
-
-<div class="feature-icon">
-🔒
-</div>
-
-<h3>Private</h3>
-
-<p>
-Your files stay in your browser where supported.
-</p>
-
-</div>
-
-
-<div class="feature-card">
-
-<div class="feature-icon">
-📱
-</div>
-
-<h3>Mobile Friendly</h3>
-
-<p>
-Works on phones, tablets and computers.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-</main>
-
-
-<!-- FOOTER -->
-<footer>
-
-<div class="footer-logo">
-⚡ Free Tools Hub
-</div>
-
-<div class="footer-links">
-
-<a href="about.html">
-About Us
-</a>
-
-<a href="contact.html">
-Contact
-</a>
-
-<a href="privacy-policy.html">
-Privacy Policy
-</a>
-
-<a href="terms.html">
-Terms & Conditions
-</a>
-
-</div>
-
-<p>
-© 2026 Free Tools Hub. All rights reserved.
-</p>
-
-</footer>
-
-
-<script src="script.js"></script>
-
-</body>
-</html>
+      Compress images, resize photos, convert files,
+      
