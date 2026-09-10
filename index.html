@@ -1,24 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Free Tools Hub - Free Online Tools</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Free Tools Hub - Free online tools for image compression, image resizing, JPG PNG conversion, PDF tools, QR codes, text tools and password generation.">
-<meta name="keywords" content="free tools, online tools, image compressor, image resizer, jpg png converter, image to pdf, pdf to image, qr generator, word counter, case converter, password generator">
+<title>Free Tools Hub - Free Online Image, PDF, QR & Text Tools</title>
+
+<meta name="description"
+content="Free Tools Hub provides free online tools for image compression, image resizing, JPG PNG conversion, image to PDF, PDF to image, QR codes, word counting, case conversion and password generation.">
+
+<meta name="keywords"
+content="free online tools, image compressor, image resizer, JPG to PNG, PNG to JPG, image to PDF, PDF to image, QR code generator, word counter, case converter, password generator">
+
 <meta name="robots" content="index, follow">
 
-<link rel="canonical" href="https://subbhu7077.github.io/free-tools-hub/">
+<link rel="canonical"
+href="https://subbhu7077.github.io/free-tools-hub/">
 
-<meta name="google-site-verification" content="EJWRlxUQaINlHcEwIKoQT2uw1uPdCqK98JJCROmM9QI">
+<meta name="google-site-verification"
+content="EJWRlxUQaINlHcEwIKoQT2uw1uPdCqK98JJCROmM9QI">
+
+<meta name="theme-color" content="#050816">
+
+<!-- Open Graph -->
+<meta property="og:title"
+content="Free Tools Hub - Free Online Tools">
+
+<meta property="og:description"
+content="Use free online tools for images, PDFs, QR codes and text. Fast, simple and mobile friendly.">
+
+<meta property="og:type" content="website">
+
+<meta property="og:url"
+content="https://subbhu7077.github.io/free-tools-hub/">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:title"
+content="Free Tools Hub - Free Online Tools">
+
+<meta name="twitter:description"
+content="Free online tools for images, PDFs, QR codes and text.">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Free Tools Hub",
+  "url":"https://subbhu7077.github.io/free-tools-hub/",
+  "description":"Free online tools for image, PDF, QR code and text tasks.",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"https://subbhu7077.github.io/free-tools-hub/?q={search_term_string}",
+    "query-input":"required name=search_term_string"
+  }
+}
+</script>
 
 <style>
 
-/* =========================
-   BASIC
-========================= */
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
     margin:0;
@@ -31,15 +79,22 @@ html{
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
     background:#050816;
     color:#fff;
+
     overflow-x:hidden;
+
+    line-height:1.6;
 }
 
 a{
-    text-decoration:none;
     color:inherit;
+    text-decoration:none;
 }
 
 button,
@@ -48,28 +103,34 @@ input{
 }
 
 
-/* =========================
+/* =====================================================
    BACKGROUND
-========================= */
+===================================================== */
 
 body::before{
     content:"";
+
     position:fixed;
     inset:0;
+
+    z-index:-5;
+
     pointer-events:none;
-    z-index:-3;
 
     background:
+
     radial-gradient(
-        circle at 15% 20%,
+        circle at 10% 10%,
         rgba(0,255,255,.13),
         transparent 25%
     ),
+
     radial-gradient(
-        circle at 85% 30%,
-        rgba(150,0,255,.14),
+        circle at 90% 20%,
+        rgba(160,0,255,.15),
         transparent 28%
     ),
+
     radial-gradient(
         circle at 50% 90%,
         rgba(0,100,255,.12),
@@ -79,17 +140,23 @@ body::before{
 
 body::after{
     content:"";
+
     position:fixed;
     inset:0;
+
+    z-index:-4;
+
     pointer-events:none;
-    z-index:-2;
-    opacity:.18;
+
+    opacity:.16;
 
     background-image:
+
     linear-gradient(
         rgba(255,255,255,.025) 1px,
         transparent 1px
     ),
+
     linear-gradient(
         90deg,
         rgba(255,255,255,.025) 1px,
@@ -100,35 +167,147 @@ body::after{
 }
 
 
-/* =========================
+/* =====================================================
+   PARTICLES
+===================================================== */
+
+.particles{
+    position:fixed;
+    inset:0;
+
+    z-index:-3;
+
+    pointer-events:none;
+
+    overflow:hidden;
+}
+
+.particle{
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    border-radius:50%;
+
+    background:#00ffff;
+
+    opacity:.5;
+
+    box-shadow:
+    0 0 10px #00ffff;
+
+    animation:
+    particleMove
+    linear
+    infinite;
+}
+
+.p1{
+    left:8%;
+    top:20%;
+    animation-duration:8s;
+}
+
+.p2{
+    left:20%;
+    top:70%;
+    animation-duration:12s;
+}
+
+.p3{
+    left:40%;
+    top:30%;
+    animation-duration:10s;
+}
+
+.p4{
+    left:60%;
+    top:80%;
+    animation-duration:14s;
+}
+
+.p5{
+    left:75%;
+    top:25%;
+    animation-duration:9s;
+}
+
+.p6{
+    left:90%;
+    top:65%;
+    animation-duration:11s;
+}
+
+@keyframes particleMove{
+
+    0%{
+        transform:
+        translateY(0)
+        translateX(0);
+    }
+
+    50%{
+        transform:
+        translateY(-70px)
+        translateX(30px);
+    }
+
+    100%{
+        transform:
+        translateY(0)
+        translateX(0);
+    }
+}
+
+
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 header{
     position:sticky;
+
     top:0;
+
     z-index:1000;
 
-    background:rgba(3,6,18,.88);
-    backdrop-filter:blur(15px);
+    background:
+    rgba(3,6,18,.88);
 
-    border-bottom:1px solid rgba(0,255,255,.15);
+    backdrop-filter:
+    blur(16px);
+
+    border-bottom:
+    1px solid rgba(0,255,255,.15);
 }
 
 .header-inner{
     max-width:1200px;
+
     margin:auto;
 
     min-height:70px;
-    padding:0 20px;
+
+    padding:
+    0 20px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 }
 
 .logo{
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
     font-size:23px;
+
     font-weight:900;
 
     background:
@@ -147,13 +326,52 @@ header{
 
     color:transparent;
 
-    animation:gradient 5s linear infinite;
+    animation:
+    gradientMove
+    5s
+    linear
+    infinite;
 }
 
-@keyframes gradient{
+.logo-icon{
+    color:#00ffff;
+
+    font-size:31px;
+
+    filter:
+    drop-shadow(
+        0 0 10px
+        rgba(0,255,255,.5)
+    );
+
+    animation:
+    logoFloat
+    2.5s
+    ease-in-out
+    infinite;
+}
+
+@keyframes logoFloat{
+
+    0%,100%{
+        transform:
+        translateY(0)
+        rotate(-3deg);
+    }
+
+    50%{
+        transform:
+        translateY(-5px)
+        rotate(3deg);
+    }
+}
+
+@keyframes gradientMove{
+
     0%{
         background-position:0%;
     }
+
     100%{
         background-position:300%;
     }
@@ -161,21 +379,34 @@ header{
 
 nav{
     display:flex;
-    gap:8px;
+
+    align-items:center;
+
+    gap:5px;
 }
 
 nav a{
-    color:#aeb8cf;
-    padding:10px 14px;
+    padding:
+    10px 13px;
+
     border-radius:10px;
+
+    color:#aeb8cf;
+
     font-size:14px;
+
     transition:.3s;
 }
 
 nav a:hover{
     color:#fff;
-    background:rgba(0,255,255,.08);
-    box-shadow:0 0 20px rgba(0,255,255,.12);
+
+    background:
+    rgba(0,255,255,.08);
+
+    box-shadow:
+    0 0 20px
+    rgba(0,255,255,.12);
 }
 
 .menu{
@@ -186,77 +417,106 @@ nav a:hover{
 
     border-radius:10px;
 
-    border:1px solid rgba(0,255,255,.25);
+    border:
+    1px solid
+    rgba(0,255,255,.25);
 
-    background:rgba(0,255,255,.06);
+    background:
+    rgba(0,255,255,.06);
 
-    color:#fff;
+    color:#00ffff;
 
     cursor:pointer;
 
-    font-size:20px;
+    font-size:22px;
 }
 
 
-/* =========================
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero{
+    position:relative;
+
     max-width:1200px;
+
     min-height:650px;
 
     margin:auto;
-    padding:90px 20px 70px;
+
+    padding:
+    90px 20px 80px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     text-align:center;
-
-    position:relative;
 }
 
 .hero-content{
-    max-width:850px;
+    max-width:900px;
 }
 
 .badge{
     display:inline-block;
 
-    padding:9px 16px;
+    padding:
+    9px 17px;
 
     border-radius:100px;
+
+    border:
+    1px solid
+    rgba(0,255,255,.3);
+
+    background:
+    rgba(0,255,255,.06);
 
     color:#8fffff;
 
     font-size:13px;
+
     font-weight:bold;
 
-    background:rgba(0,255,255,.06);
-
-    border:1px solid rgba(0,255,255,.28);
-
     box-shadow:
-    0 0 25px rgba(0,255,255,.08);
+    0 0 25px
+    rgba(0,255,255,.08);
 
-    animation:pulse 2s infinite;
+    animation:
+    badgePulse
+    2s
+    ease-in-out
+    infinite;
 }
 
-@keyframes pulse{
+@keyframes badgePulse{
+
     0%,100%{
-        box-shadow:0 0 20px rgba(0,255,255,.08);
+        box-shadow:
+        0 0 18px
+        rgba(0,255,255,.08);
     }
+
     50%{
-        box-shadow:0 0 35px rgba(0,255,255,.22);
+        box-shadow:
+        0 0 35px
+        rgba(0,255,255,.23);
     }
 }
 
 .hero h1{
     margin-top:25px;
 
-    font-size:clamp(45px,8vw,82px);
+    font-size:
+    clamp(
+        45px,
+        8vw,
+        84px
+    );
 
     line-height:1;
 
@@ -272,13 +532,13 @@ nav a:hover{
 .hero-gradient{
     display:block;
 
-    margin-top:8px;
+    margin-top:9px;
 
     background:
     linear-gradient(
         90deg,
         #00ffff,
-        #5f7cff,
+        #6c6cff,
         #ff00d4,
         #00ffff
     );
@@ -291,41 +551,52 @@ nav a:hover{
     color:transparent;
 
     animation:
-    gradient 4s linear infinite,
-    glow 2s ease-in-out infinite;
+    gradientMove 4s linear infinite,
+    textGlow 2s ease-in-out infinite;
 }
 
-@keyframes glow{
+@keyframes textGlow{
+
     0%,100%{
-        filter:drop-shadow(0 0 5px rgba(0,255,255,.25));
+        filter:
+        drop-shadow(
+            0 0 5px
+            rgba(0,255,255,.2)
+        );
     }
 
     50%{
-        filter:drop-shadow(0 0 22px rgba(255,0,220,.5));
+        filter:
+        drop-shadow(
+            0 0 25px
+            rgba(255,0,220,.55)
+        );
     }
 }
 
 .hero p{
-    max-width:680px;
+    max-width:700px;
 
-    margin:25px auto 0;
+    margin:
+    27px auto 0;
 
-    color:#98a4bd;
-
-    line-height:1.7;
+    color:#9ba7bf;
 
     font-size:17px;
+
+    line-height:1.8;
 }
 
 
-/* =========================
+/* =====================================================
    SEARCH
-========================= */
+===================================================== */
 
 .search{
-    max-width:650px;
+    max-width:680px;
 
-    margin:32px auto 0;
+    margin:
+    32px auto 0;
 
     padding:7px;
 
@@ -335,12 +606,16 @@ nav a:hover{
 
     border-radius:17px;
 
-    background:rgba(255,255,255,.05);
+    background:
+    rgba(255,255,255,.05);
 
-    border:1px solid rgba(0,255,255,.2);
+    border:
+    1px solid
+    rgba(0,255,255,.22);
 
     box-shadow:
-    0 0 35px rgba(0,255,255,.07);
+    0 0 35px
+    rgba(0,255,255,.07);
 }
 
 .search input{
@@ -348,9 +623,10 @@ nav a:hover{
 
     min-width:0;
 
-    padding:14px;
+    padding:14px 15px;
 
     border:0;
+
     outline:0;
 
     background:transparent;
@@ -367,7 +643,8 @@ nav a:hover{
 .search button{
     border:0;
 
-    padding:0 22px;
+    padding:
+    0 23px;
 
     border-radius:12px;
 
@@ -388,25 +665,31 @@ nav a:hover{
 }
 
 .search button:hover{
-    transform:translateY(-2px);
-    box-shadow:0 0 25px rgba(0,255,255,.35);
+    transform:
+    translateY(-2px);
+
+    box-shadow:
+    0 0 28px
+    rgba(0,255,255,.4);
 }
 
 
-/* =========================
-   FLOATING 3D ICONS
-========================= */
+/* =====================================================
+   FLOATING ICONS
+===================================================== */
 
 .float{
     position:absolute;
 
-    width:70px;
-    height:70px;
+    width:72px;
+    height:72px;
 
-    border-radius:20px;
+    border-radius:21px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     font-size:32px;
@@ -418,25 +701,46 @@ nav a:hover{
         rgba(255,255,255,.025)
     );
 
-    border:1px solid rgba(255,255,255,.14);
+    border:
+    1px solid
+    rgba(255,255,255,.14);
 
     box-shadow:
-    inset 0 0 20px rgba(255,255,255,.04),
-    0 15px 35px rgba(0,0,0,.4),
-    0 0 25px rgba(0,255,255,.1);
 
-    animation:float 4s ease-in-out infinite;
+    inset
+    0 0 20px
+    rgba(255,255,255,.04),
 
-    transform-style:preserve-3d;
+    0 15px 35px
+    rgba(0,0,0,.4),
+
+    0 0 25px
+    rgba(0,255,255,.1);
+
+    animation:
+    floatingIcon
+    4s
+    ease-in-out
+    infinite;
+
+    transform-style:
+    preserve-3d;
 }
 
-@keyframes float{
+@keyframes floatingIcon{
+
     0%,100%{
-        transform:translateY(0) rotateX(0) rotateY(0);
+        transform:
+        translateY(0)
+        rotateX(0)
+        rotateY(0);
     }
 
     50%{
-        transform:translateY(-18px) rotateX(8deg) rotateY(-10deg);
+        transform:
+        translateY(-18px)
+        rotateX(8deg)
+        rotateY(-10deg);
     }
 }
 
@@ -448,32 +752,37 @@ nav a:hover{
 .f2{
     right:7%;
     top:22%;
+
     animation-delay:1s;
 }
 
 .f3{
     left:12%;
     bottom:15%;
+
     animation-delay:2s;
 }
 
 .f4{
     right:12%;
     bottom:13%;
+
     animation-delay:3s;
 }
 
 
-/* =========================
+/* =====================================================
    FEATURES
-========================= */
+===================================================== */
 
 .features{
     max-width:1100px;
 
-    margin:0 auto 80px;
+    margin:
+    0 auto 80px;
 
-    padding:0 20px;
+    padding:
+    0 20px;
 
     display:grid;
 
@@ -486,88 +795,103 @@ nav a:hover{
 .feature{
     text-align:center;
 
-    padding:22px 15px;
+    padding:
+    23px 15px;
 
     border-radius:18px;
 
-    background:rgba(255,255,255,.035);
+    background:
+    rgba(255,255,255,.035);
 
-    border:1px solid rgba(255,255,255,.08);
+    border:
+    1px solid
+    rgba(255,255,255,.08);
 
     transition:.3s;
 }
 
 .feature:hover{
-    transform:translateY(-6px);
+    transform:
+    translateY(-6px);
 
-    border-color:rgba(0,255,255,.25);
+    border-color:
+    rgba(0,255,255,.28);
 
     box-shadow:
-    0 0 30px rgba(0,255,255,.08);
+    0 0 30px
+    rgba(0,255,255,.08);
 }
 
 .feature-icon{
     font-size:28px;
-    margin-bottom:10px;
+
+    margin-bottom:9px;
 }
 
 .feature h3{
     font-size:15px;
-    margin-bottom:5px;
+
+    margin-bottom:4px;
 }
 
 .feature p{
     color:#69758d;
+
     font-size:12px;
 }
 
 
-/* =========================
-   AD
-========================= */
+/* =====================================================
+   AD PLACEHOLDER
+===================================================== */
 
 .ad{
     max-width:970px;
 
     min-height:90px;
 
-    margin:0 auto 70px;
+    margin:
+    0 auto 70px;
 
     padding:20px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
-    border:1px dashed rgba(255,255,255,.12);
+    border:
+    1px dashed
+    rgba(255,255,255,.13);
 
     border-radius:15px;
 
     color:#4f5a71;
 
-    font-size:11px;
+    font-size:10px;
 
     letter-spacing:2px;
 }
 
 
-/* =========================
+/* =====================================================
    TOOLS
-========================= */
+===================================================== */
 
 .tools{
     max-width:1200px;
 
     margin:auto;
 
-    padding:0 20px 80px;
+    padding:
+    0 20px 90px;
 }
 
 .heading{
     text-align:center;
 
-    margin-bottom:45px;
+    margin-bottom:48px;
 }
 
 .heading-small{
@@ -581,7 +905,12 @@ nav a:hover{
 }
 
 .heading h2{
-    font-size:clamp(30px,5vw,48px);
+    font-size:
+    clamp(
+        30px,
+        5vw,
+        48px
+    );
 
     margin-top:10px;
 
@@ -589,18 +918,21 @@ nav a:hover{
 }
 
 .heading p{
-    color:#78849d;
+    max-width:700px;
 
-    margin-top:10px;
+    margin:
+    10px auto 0;
+
+    color:#78849d;
 }
 
 
-/* =========================
+/* =====================================================
    CATEGORY
-========================= */
+===================================================== */
 
 .category{
-    margin-bottom:55px;
+    margin-bottom:60px;
 }
 
 .category-head{
@@ -608,27 +940,35 @@ nav a:hover{
 
     align-items:center;
 
-    gap:12px;
+    gap:13px;
 
     margin-bottom:20px;
 }
 
 .category-icon{
-    width:45px;
-    height:45px;
+    width:47px;
+    height:47px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
-    border-radius:13px;
+    border-radius:14px;
 
-    background:rgba(0,255,255,.07);
+    background:
+    rgba(0,255,255,.07);
 
-    border:1px solid rgba(0,255,255,.2);
+    border:
+    1px solid
+    rgba(0,255,255,.2);
 
     font-size:22px;
+
+    box-shadow:
+    0 0 20px
+    rgba(0,255,255,.05);
 }
 
 .category-head h3{
@@ -636,7 +976,7 @@ nav a:hover{
 }
 
 .category-head p{
-    margin-top:4px;
+    margin-top:3px;
 
     color:#68758d;
 
@@ -644,9 +984,9 @@ nav a:hover{
 }
 
 
-/* =========================
-   CARDS
-========================= */
+/* =====================================================
+   TOOL GRID
+===================================================== */
 
 .grid{
     display:grid;
@@ -657,10 +997,15 @@ nav a:hover{
     gap:18px;
 }
 
+
+/* =====================================================
+   TOOL CARD
+===================================================== */
+
 .card{
     position:relative;
 
-    min-height:215px;
+    min-height:225px;
 
     padding:25px;
 
@@ -673,13 +1018,16 @@ nav a:hover{
         rgba(255,255,255,.025)
     );
 
-    border:1px solid rgba(255,255,255,.09);
+    border:
+    1px solid
+    rgba(255,255,255,.09);
 
     overflow:hidden;
 
     transition:.35s;
 
-    transform-style:preserve-3d;
+    transform-style:
+    preserve-3d;
 }
 
 .card::before{
@@ -687,11 +1035,11 @@ nav a:hover{
 
     position:absolute;
 
-    width:130px;
-    height:130px;
+    width:140px;
+    height:140px;
 
-    right:-50px;
-    top:-50px;
+    right:-55px;
+    top:-55px;
 
     border-radius:50%;
 
@@ -699,7 +1047,7 @@ nav a:hover{
 
     filter:blur(60px);
 
-    opacity:.1;
+    opacity:.09;
 
     transition:.35s;
 }
@@ -709,11 +1057,16 @@ nav a:hover{
     translateY(-9px)
     rotateX(2deg);
 
-    border-color:rgba(0,255,255,.35);
+    border-color:
+    rgba(0,255,255,.35);
 
     box-shadow:
-    0 20px 50px rgba(0,0,0,.4),
-    0 0 35px rgba(0,255,255,.1);
+
+    0 20px 50px
+    rgba(0,0,0,.4),
+
+    0 0 35px
+    rgba(0,255,255,.1);
 }
 
 .card:hover::before{
@@ -727,6 +1080,7 @@ nav a:hover{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     border-radius:18px;
@@ -740,7 +1094,9 @@ nav a:hover{
         rgba(120,0,255,.1)
     );
 
-    border:1px solid rgba(0,255,255,.2);
+    border:
+    1px solid
+    rgba(0,255,255,.2);
 
     margin-bottom:18px;
 
@@ -754,11 +1110,13 @@ nav a:hover{
     scale(1.08);
 
     box-shadow:
-    0 0 30px rgba(0,255,255,.2);
+    0 0 30px
+    rgba(0,255,255,.2);
 }
 
 .card h4{
     font-size:19px;
+
     margin-bottom:8px;
 }
 
@@ -769,70 +1127,273 @@ nav a:hover{
 
     line-height:1.6;
 
-    margin-bottom:18px;
+    margin-bottom:17px;
 }
 
-.open{
+.card-btn{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:
+    8px 13px;
+
+    border-radius:10px;
+
+    background:
+    rgba(0,255,255,.06);
+
+    border:
+    1px solid
+    rgba(0,255,255,.15);
+
+    color:#7fffff;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.card:hover .card-btn{
+    background:
+    rgba(0,255,255,.12);
+
+    border-color:
+    rgba(0,255,255,.3);
+}
+
+
+/* =====================================================
+   SEO CONTENT
+===================================================== */
+
+.seo-section{
+    max-width:1050px;
+
+    margin:
+    0 auto 80px;
+
+    padding:
+    0 20px;
+}
+
+.seo-box{
+    padding:32px;
+
+    border-radius:24px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.055),
+        rgba(255,255,255,.02)
+    );
+
+    border:
+    1px solid
+    rgba(255,255,255,.08);
+}
+
+.seo-box h2{
+    font-size:28px;
+
+    margin-bottom:15px;
+}
+
+.seo-box h3{
     color:#00ffff;
 
-    font-size:13px;
+    font-size:18px;
+
+    margin:
+    24px 0 8px;
+}
+
+.seo-box p{
+    color:#8a96ae;
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+.seo-box ul{
+    padding-left:20px;
+
+    color:#8a96ae;
+
+    font-size:14px;
+}
+
+.seo-box li{
+    margin:7px 0;
+}
+
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+.faq{
+    max-width:900px;
+
+    margin:
+    0 auto 90px;
+
+    padding:
+    0 20px;
+}
+
+.faq-title{
+    text-align:center;
+
+    margin-bottom:35px;
+}
+
+.faq-title span{
+    color:#00ffff;
+
+    font-size:12px;
+
+    letter-spacing:3px;
 
     font-weight:bold;
 }
 
+.faq-title h2{
+    font-size:
+    clamp(
+        28px,
+        5vw,
+        42px
+    );
 
-/* =========================
+    margin-top:8px;
+}
+
+.faq-item{
+    margin-bottom:12px;
+
+    border:
+    1px solid
+    rgba(255,255,255,.08);
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    background:
+    rgba(255,255,255,.025);
+}
+
+.faq-item summary{
+    cursor:pointer;
+
+    padding:
+    18px 20px;
+
+    font-weight:bold;
+
+    color:#fff;
+
+    list-style:none;
+}
+
+.faq-item summary::-webkit-details-marker{
+    display:none;
+}
+
+.faq-item summary::after{
+    content:"+";
+
+    float:right;
+
+    color:#00ffff;
+
+    font-size:20px;
+}
+
+.faq-item[open] summary::after{
+    content:"−";
+}
+
+.faq-answer{
+    padding:
+    0 20px 19px;
+
+    color:#8490a9;
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+
+/* =====================================================
    CTA
-========================= */
+===================================================== */
 
 .cta{
-    max-width:1100px;
+    max-width:1000px;
 
-    margin:0 auto 80px;
+    margin:
+    0 auto 90px;
 
-    padding:55px 20px;
+    padding:
+    55px 25px;
 
     text-align:center;
 
-    border-radius:30px;
-
-    border:1px solid rgba(0,255,255,.16);
+    border-radius:28px;
 
     background:
     radial-gradient(
         circle at center,
-        rgba(0,255,255,.1),
+        rgba(0,255,255,.11),
         rgba(120,0,255,.06),
-        rgba(255,255,255,.02)
+        transparent 70%
     );
+
+    border:
+    1px solid
+    rgba(0,255,255,.17);
 }
 
 .cta h2{
-    font-size:clamp(28px,5vw,44px);
+    font-size:
+    clamp(
+        30px,
+        6vw,
+        48px
+    );
 }
 
 .cta p{
-    max-width:600px;
-
-    margin:12px auto 25px;
-
     color:#8490a9;
 
-    line-height:1.6;
+    max-width:600px;
+
+    margin:
+    12px auto 25px;
 }
 
-.cta a{
+.cta-btn{
     display:inline-block;
 
-    padding:13px 22px;
+    padding:
+    13px 23px;
 
-    border-radius:12px;
+    border-radius:13px;
 
     background:
     linear-gradient(
         135deg,
         #00ffff,
-        #8060ff
+        #6c6cff
     );
 
     color:#031019;
@@ -840,20 +1401,33 @@ nav a:hover{
     font-weight:900;
 
     box-shadow:
-    0 0 25px rgba(0,255,255,.2);
+    0 0 30px
+    rgba(0,255,255,.18);
+
+    transition:.3s;
+}
+
+.cta-btn:hover{
+    transform:
+    translateY(-3px);
+
+    box-shadow:
+    0 0 40px
+    rgba(0,255,255,.4);
 }
 
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer{
-    border-top:1px solid rgba(255,255,255,.08);
+    border-top:
+    1px solid
+    rgba(255,255,255,.07);
 
-    background:rgba(0,0,0,.2);
-
-    padding:40px 20px;
+    background:
+    rgba(0,0,0,.2);
 }
 
 .footer-inner{
@@ -861,784 +1435,93 @@ footer{
 
     margin:auto;
 
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:25px;
-
-    flex-wrap:wrap;
+    padding:
+    45px 20px 30px;
 }
 
-.footer-brand{
-    max-width:350px;
+.footer-top{
+    display:grid;
+
+    grid-template-columns:
+    2fr 1fr 1fr;
+
+    gap:35px;
+
+    padding-bottom:30px;
 }
 
 .footer-brand h3{
-    margin-bottom:8px;
+    font-size:22px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #00ffff,
+        #ff00d4
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
 }
 
 .footer-brand p{
+    max-width:430px;
+
     color:#68758d;
 
     font-size:13px;
 
-    line-height:1.6;
+    margin-top:10px;
+
+    line-height:1.7;
 }
 
-.footer-links{
-    display:flex;
+.footer-col h4{
+    margin-bottom:12px;
 
-    gap:15px;
-
-    flex-wrap:wrap;
+    font-size:14px;
 }
 
-.footer-links a{
-    color:#7d899f;
+.footer-col a{
+    display:block;
+
+    color:#69758e;
 
     font-size:13px;
+
+    margin:
+    8px 0;
+
+    transition:.25s;
 }
 
-.footer-links a:hover{
+.footer-col a:hover{
     color:#00ffff;
+
+    transform:
+    translateX(3px);
 }
 
-.copy{
-    width:100%;
+.footer-bottom{
+    padding-top:25px;
 
-    padding-top:20px;
-
-    border-top:1px solid rgba(255,255,255,.06);
+    border-top:
+    1px solid
+    rgba(255,255,255,.06);
 
     text-align:center;
 
-    color:#536078;
+    color:#505b71;
 
     font-size:12px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:900px){
-
-    .grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .features{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .float{
-        transform:scale(.7);
-    }
-}
-
-@media(max-width:700px){
-
-    .header-inner{
-        min-height:64px;
-        padding:0 15px;
-    }
-
-    .logo{
-        font-size:19px;
-    }
-
-    .menu{
-        display:block;
-    }
-
-    nav{
-        display:none;
-
-        position:absolute;
-
-        top:70px;
-
-        left:12px;
-        right:12px;
-
-        padding:10px;
-
-        flex-direction:column;
-
-        background:rgba(5,8,22,.97);
-
-        border:1px solid rgba(0,255,255,.15);
-
-        border-radius:16px;
-    }
-
-    nav.show{
-        display:flex;
-    }
-
-    nav a{
-        padding:13px;
-    }
-
-    .hero{
-        min-height:600px;
-        padding:70px 15px 50px;
-    }
-
-    .hero h1{
-        font-size:43px;
-        letter-spacing:-2px;
-    }
-
-    .hero p{
-        font-size:15px;
-    }
-
-    .search{
-        flex-direction:column;
-    }
-
-    .search button{
-        min-height:45px;
-    }
-
-    .float{
-        display:none;
-    }
-
-    .grid{
-        grid-template-columns:1fr;
-    }
-
-    .features{
-        grid-template-columns:1fr 1fr;
-        padding:0 15px;
-    }
-
-    .tools{
-        padding-left:15px;
-        padding-right:15px;
-    }
-
-    .cta{
-        margin-left:15px;
-        margin-right:15px;
-    }
-
-    .footer-inner{
-        flex-direction:column;
-    }
-}
-
-@media(max-width:430px){
-
-    .features{
-        grid-template-columns:1fr;
-    }
-
-    .hero h1{
-        font-size:40px;
-    }
-}
-
-</style>
-</head>
-
-
-<body>
-
-
-<!-- =========================
-     HEADER
-========================= -->
-
-<header>
-
-<div class="header-inner">
-
-<a href="index.html" class="logo">
-⚡ Free Tools Hub
-</a>
-
-<button
-class="menu"
-id="menuButton"
-type="button">
-☰
-</button>
-
-<nav id="navigation">
-
-<a href="index.html">Home</a>
-
-<a href="#tools">Tools</a>
-
-<a href="about.html">About</a>
-
-<a href="contact.html">Contact</a>
-
-</nav>
-
-</div>
-
-</header>
-
-
-<!-- =========================
-     HERO
-========================= -->
-
-<section class="hero">
-
-
-<div class="float f1">
-🖼️
-</div>
-
-<div class="float f2">
-📄
-</div>
-
-<div class="float f3">
-🔳
-</div>
-
-<div class="float f4">
-🔐
-</div>
-
-
-<div class="hero-content">
-
-<div class="badge">
-● 100% Free Online Tools
-</div>
-
-
-<h1>
-
-<span class="hero-title">
-Simple Tools.
-</span>
-
-<span class="hero-gradient">
-Powerful Results.
-</span>
-
-</h1>
-
-
-<p>
-Compress images, resize photos, convert files,
-generate QR codes and use useful text tools
-directly in your browser.
-</p>
-
-
-<div class="search">
-
-<input
-type="search"
-id="searchInput"
-placeholder="Search tools... e.g. image compressor"
-autocomplete="off"
->
-
-<button
-type="button"
-id="searchButton">
-Search
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     FEATURES
-========================= -->
-
-<section class="features">
-
-
-<div class="feature">
-
-<div class="feature-icon">
-⚡
-</div>
-
-<h3>Fast</h3>
-
-<p>
-Quick browser-based tools
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-🔒
-</div>
-
-<h3>Private</h3>
-
-<p>
-Local processing where supported
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-📱
-</div>
-
-<h3>Mobile Friendly</h3>
-
-<p>
-Works on phone and desktop
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-💎
-</div>
-
-<h3>Free</h3>
-
-<p>
-Easy to use
-</p>
-
-</div>
-
-
-</section>
-
-
-<!-- =========================
-     AD PLACEHOLDER
-========================= -->
-
-<div class="ad">
-ADVERTISEMENT
-</div>
-
-
-<!-- =========================
-     TOOLS
-========================= -->
-
-<section class="tools" id="tools">
-
-
-<div class="heading">
-
-<div class="heading-small">
-FREE ONLINE UTILITIES
-</div>
-
-<h2>
-Explore Free Tools
-</h2>
-
-<p>
-Choose a tool and get your work done in seconds.
-</p>
-
-</div>
-
-
-<!-- IMAGE -->
-
-<div class="category">
-
-
-<div class="category-head">
-
-<div class="category-icon">
-🖼️
-</div>
-
-<div>
-
-<h3>
-Image Tools
-</h3>
-
-<p>
-Compress, resize and convert images
-</p>
-
-</div>
-
-</div>
-
-
-<div class="grid">
-
-
-<a
-href="image-compressor.html"
-class="card tool-card">
-
-<div class="card-icon">
-📉
-</div>
-
-<h4>
-Image Compressor
-</h4>
-
-<p>
-Reduce image file size while keeping useful image quality.
-</p>
-
-<span class="open">
-Open Tool →
-</span>
-
-</a>
-
-
-<a
-href="image-resizer.html"
-class="card tool-card">
-
-<div class="card-icon">
-📐
-</div>
-
-<h4>
-Image Resizer
-</h4>
-
-<p>
-Resize JPG, PNG and WebP images to your required dimensions.
-</p>
-
-<span class="open">
-Open Tool →
-</span>
-
-</a>
-
-
-<a
-href="jpg-png.html"
-class="card tool-card">
-
-<div class="card-icon">
-🔄
-</div>
-
-<h4>
-JPG ↔ PNG Converter
-</h4>
-
-<p>
-Convert images between JPG and PNG formats directly in your browser.
-</p>
-
-<span class="open">
-Open Tool →
-</span>
-
-</a>
-
-
-</div>
-
-</div>
-
-
-<!-- PDF -->
-
-<div class="category">
-
-
-<div class="category-head">
-
-<div class="category-icon">
-📄
-</div>
-
-<div>
-
-<h3>
-PDF Tools
-</h3>
-
-<p>
-Simple browser-based PDF utilities
-</p>
-
-</div>
-
-</div>
-
-
-<div class="grid">
-
-
-<a
-href="image-to-pdf.html"
-class="card tool-card">
-
-<div class="card-icon">
-🧾
-</div>
-
-<h4>
-Image to PDF
-</h4>
-
-<p>
-Turn your images into a downloadable PDF document.
-</p>
-
-<span class="open">
-Open Tool →
-</span>
-
-</a>
-
-
-<a
-href="pdf-to-image.html"
-class="card tool-card">
-
-<div class="card-icon">
-📑
-</div>
-
-<h4>
-PDF to Image
-</h4>
-
-<p>
-Convert PDF pages into image files directly in your browser.
-</p>
-
-<span class="open">
-Open Tool →
-</span>
-
-</a>
-
-
-</div>
-
-</div>
-
-
-<!-- QR -->
-
-<div class="category">
-
-
-<div class="category-head">
-
-<div class="category-icon">
-🔳
-</div>
-
-<div>
-
-<h3>
-QR Tools
-</h3>
-
-<p>
-Create useful QR codes
-</p>
-
-</div>
-
-</div>
-
-
-<div class="grid">
-
-
-<a
-href="qr-generator.html"
-class="card tool-card">
-
-<div class="card-icon">
-🔳
-</div>
-
-<h4>
-QR Code Generator
-</h4>
-
-<p>
-Create QR codes from links, text and other information.
-</p>
-
-<span class="open">
-Open Tool →
-</span>
-
-</a>
-
-
-</div>
-
-</div>
-
-
-<!-- TEXT -->
-
-<div class="category">
-
-
-<div class="category-head">
-
-<div class="category-icon">
-✍️
-</div>
-
-<div>
-
-<h3>
-Text Tools
-</h3>
-
-<p>
-Useful everyday writing utilities
-</p>
-
-</div>
-
-</div>
-
-
-<div class="grid">
-
-
-<a
-href="word-counter.html"
-class="card tool-card">
-
-<div class="card-icon">
-🔢
-</div>
-
-<h4>
-Word Counter
-</h4>
-
-<p>
-Count words, characters, sentences and paragraphs instantly.
-</p>
-
-<span class="open">
-Open Tool →
-</span>
-
-</a>
-
-
-<a
-href="case-converter.html"
-class="card tool-card">
-
-<div class="card-icon">
-🔤
-</div>
-
-<h4>
-Case Converter
-</h4>
-
-<p>
-Convert text to uppercase, lowercase, title case and sentence case.
-</p>
-
-<span class="open">
-Open Tool →
-</span>
-
-</a>
-
-
-<a
-href="password-generator.html"
-class="card tool-card">
-
-<div class="card-icon">
-🔐
-</div>
-
-<h4>
-Password Generator
-</h4>
-
-<p>
-Generate strong random passwords for your online accounts.
-</p>
-
-<span class="open">
-Open Tool →
-</span>
-
-</a>
-
-
-</div>
-
-</div>
-
-
-</section>
-
-
-<!-- =========================
-     AD
-========================= -->
-
-<div class="ad">
-ADVERTISEMENT
-</div>
-
-
-<!-- =========================
-     CTA
-========================= -->
-
-<section class="cta">
-
-<h2>
-More Useful Tools Are Coming 🚀
-</h2>
-
-<p>
-Free Tools Hub is continuously being improved
-with new utilities for everyday digital tasks.
-</p>
-
-<a href="#tools">
-Explore Tools →
-</a>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-=================
+/* =====================================================
+   SEARCH EMPTY
+===================================================== */
+
+.no-results{
+    displ
