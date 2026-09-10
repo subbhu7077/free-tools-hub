@@ -1,368 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Free QR Code Generator Online | Free Tools Hub</title>
+<meta name="description" content="Create QR codes online for free. Generate QR codes for URLs, text, phone numbers, email and more. Fast, mobile friendly and easy to download.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://subbhu7077.github.io/free-tools-hub/qr-generator.html">
 
-  <title>QR Code Generator - Free Tools Hub</title>
-  <meta name="description" content="Create QR codes for URLs and text for free.">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-  <link rel="stylesheet" href="style.css">
-
-  <style>
-    .tool-page {
-      width: 92%;
-      max-width: 800px;
-      margin: 50px auto;
-    }
-
-    .back {
-      color: #76a9ff;
-      text-decoration: none;
-      display: inline-block;
-      margin-bottom: 25px;
-    }
-
-    .tool-box {
-      background: #101622;
-      border: 1px solid #222d40;
-      border-radius: 18px;
-      padding: 25px;
-    }
-
-    .tool-box h1 {
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-
-    .tool-box > p {
-      color: #8995a8;
-      margin-bottom: 25px;
-    }
-
-    .input-label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-
-    textarea {
-      width: 100%;
-      min-height: 130px;
-      resize: vertical;
-      padding: 14px;
-      border-radius: 10px;
-      border: 1px solid #303b52;
-      background: #0b1019;
-      color: white;
-      outline: none;
-      font-size: 15px;
-      font-family: Arial, sans-serif;
-    }
-
-    textarea:focus {
-      border-color: #76a9ff;
-    }
-
-    .size-control {
-      margin-top: 20px;
-    }
-
-    .size-control label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    select {
-      width: 100%;
-      padding: 13px;
-      border-radius: 9px;
-      border: 1px solid #303b52;
-      background: #0b1019;
-      color: white;
-      outline: none;
-      font-size: 15px;
-    }
-
-    .btn {
-      width: 100%;
-      margin-top: 20px;
-      padding: 14px;
-      border: 0;
-      border-radius: 10px;
-      background: #76a9ff;
-      color: #07101e;
-      font-size: 15px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      opacity: .9;
-    }
-
-    .qr-result {
-      display: none;
-      text-align: center;
-      margin-top: 30px;
-      padding-top: 25px;
-      border-top: 1px solid #222d40;
-    }
-
-    #qrcode {
-      display: inline-flex;
-      padding: 15px;
-      background: white;
-      border-radius: 12px;
-    }
-
-    #qrcode img,
-    #qrcode canvas {
-      display: block;
-    }
-
-    .download-btn {
-      display: block;
-      text-decoration: none;
-      margin-top: 20px;
-      padding: 14px;
-      border-radius: 10px;
-      background: #182237;
-      color: #ffffff;
-      font-weight: 700;
-    }
-  </style>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:Arial,sans-serif;color:#fff;min-height:100vh;
+background:#050816;
+background-image:
+radial-gradient(circle at 20% 20%,rgba(0,255,255,.12),transparent 28%),
+radial-gradient(circle at 80% 70%,rgba(180,0,255,.13),transparent 30%);
+}
+body:before{
+content:"";position:fixed;inset:0;pointer-events:none;
+background-image:radial-gradient(#fff 1px,transparent 1px);
+background-size:45px 45px;opacity:.08;
+}
+header{
+position:sticky;top:0;z-index:20;padding:16px 6%;
+background:rgba(5,8,22,.82);backdrop-filter:blur(16px);
+border-bottom:1px solid rgba(0,255,255,.15);
+}
+.nav{max-width:1150px;margin:auto;display:flex;justify-content:space-between;align-items:center}
+.logo{
+font-size:23px;font-weight:900;
+background:linear-gradient(90deg,#00ffff,#8b5cf6,#ff00d4);
+-webkit-background-clip:text;color:transparent;
+}
+nav{display:flex;gap:20px}
+nav a{color:#ddd;text-decoration:none}
+nav a:hover{color:#00ffff}
+.menu{display:none;font-size:28px}
+.container{max-width:1050px;margin:auto;padding:55px 20px}
+.hero{text-align:center;margin-bottom:35px}
+.badge{
+display:inline-block;padding:8px 16px;border:1px solid #00ffff55;
+border-radius:30px;color:#00ffff;background:#00ffff0d;margin-bottom:18px
+}
+h1{font-size:clamp(35px,7vw,65px);line-height:1.05}
+.gradient{
+background:linear-gradient(90deg,#00ffff,#7c5cff,#ff00c8,#00ffff);
+background-size:300%;-webkit-background-clip:text;color:transparent;
+animation:gradient 5s linear infinite
+}
+@keyframes gradient{to{background-position:300%}}
+.hero p{color:#aaa;margin:18px auto;max-width:650px;line-height:1.7}
+.card{
+max-width:700px;margin:auto;padding:28px;border-radius:24px;
+background:rgba(255,255,255,.055);
+border:1px solid rgba(0,255,255,.2);
+box-shadow:0 0 35px rgba(0,255,255,.08);
+}
+label{display:block;margin:15px 0 8px;color:#ccc}
+textarea,input,select{
+width:100%;padding:15px;border-radius:12px;border:1px solid #ffffff22;
+background:#090d20;color:white;outline:none;font-size:16px
+}
+textarea{min-height:130px;resize:vertical}
+button{
+border:0;border-radius:12px;padding:14px 20px;margin-top:18px;
+font-weight:bold;cursor:pointer;color:#06101a;background:#00ffff;
+box-shadow:0 0 20px #00ffff55
+}
+button:hover{transform:translateY(-2px);box-shadow:0 0 28px #00ffff99}
+#qrcode{
+background:white;padding:15px;width:max-content;margin:25px auto;
+border-radius:12px;display:none
+}
+.download{display:none;text-align:center}
+.download a{
+display:inline-block;background:#8b5cf6;color:white;padding:13px 20px;
+border-radius:10px;text-decoration:none
+}
+.content{
+max-width:850px;margin:45px auto;line-height:1.8;color:#bbb
+}
+.content h2{color:#fff;margin:25px 0 10px}
+.faq{
+max-width:850px;margin:30px auto
+}
+details{
+background:#ffffff08;border:1px solid #ffffff15;
+padding:16px;border-radius:12px;margin:10px 0;color:#bbb
+}
+summary{color:white;font-weight:bold;cursor:pointer}
+.related{
+display:flex;flex-wrap:wrap;gap:12px;margin-top:18px
+}
+.related a{
+color:#00ffff;text-decoration:none;border:1px solid #00ffff33;
+padding:10px 14px;border-radius:10px
+}
+footer{text-align:center;padding:35px;color:#777;border-top:1px solid #ffffff10}
+footer a{color:#aaa;margin:0 8px}
+@media(max-width:700px){
+nav{display:none;position:absolute;top:65px;left:0;right:0;
+background:#070a18;padding:20px;flex-direction:column}
+nav.show{display:flex}.menu{display:block}.container{padding-top:35px}
+.card{padding:20px}
+}
+</style>
 </head>
 
 <body>
 
-<header class="header">
-
-  <div class="logo">⚡ Free Tools Hub</div>
-
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-  <nav id="navMenu">
-    <a href="index.html">Home</a>
-    <a href="index.html#image">Image</a>
-    <a href="index.html#pdf">PDF</a>
-    <a href="index.html#qr">QR</a>
-    <a href="index.html#text">Text</a>
-  </nav>
-
+<header>
+<div class="nav">
+<div class="logo">⚡ Free Tools Hub</div>
+<div class="menu" onclick="toggleMenu()">☰</div>
+<nav id="nav">
+<a href="index.html">Home</a>
+<a href="image-compressor.html">Image Tools</a>
+<a href="image-to-pdf.html">PDF Tools</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+</div>
 </header>
 
+<main class="container">
 
-<main class="tool-page">
+<section class="hero">
+<div class="badge">🔲 100% Free • Fast • Mobile Friendly</div>
+<h1>Free <span class="gradient">QR Code Generator</span></h1>
+<p>Create a QR code from any text or URL instantly. Generate and download your QR code directly in your browser.</p>
+</section>
 
-  <a class="back" href="index.html">← Back to All Tools</a>
+<section class="card">
 
-  <div class="tool-box">
+<label for="qrText">Enter Text or URL</label>
+<textarea id="qrText" placeholder="https://example.com"></textarea>
 
-    <h1>🔳 QR Code Generator</h1>
+<label for="size">QR Code Size</label>
+<select id="size">
+<option value="128">128 × 128</option>
+<option value="200" selected>200 × 200</option>
+<option value="256">256 × 256</option>
+<option value="300">300 × 300</option>
+</select>
 
-    <p>
-      Create a QR code for any website link or text.
-      No account required.
-    </p>
+<button onclick="generateQR()">⚡ Generate QR Code</button>
+<button onclick="clearQR()" style="background:#ff3cac;color:white">Reset</button>
 
+<div id="qrcode"></div>
 
-    <label class="input-label" for="qrText">
-      Enter text or URL
-    </label>
+<div class="download" id="downloadBox">
+<a id="downloadBtn" download="free-tools-hub-qr-code.png">⬇ Download QR Code</a>
+</div>
 
-    <textarea
-      id="qrText"
-      placeholder="https://example.com"
-    ></textarea>
+</section>
 
+<section class="content">
+<h2>Free QR Code Generator</h2>
+<p>
+Our free QR code generator lets you quickly convert text, website URLs,
+contact information and other content into a scannable QR code.
+No registration or software installation is required.
+</p>
 
-    <div class="size-control">
+<h2>How to Create a QR Code</h2>
+<p>
+1. Enter your text or website URL.<br>
+2. Select your preferred QR code size.<br>
+3. Tap Generate QR Code.<br>
+4. Download the generated QR image.
+</p>
 
-      <label for="qrSize">
-        QR Code Size
-      </label>
+<h2>Why Use Our QR Generator?</h2>
+<p>
+It is fast, simple and mobile friendly. QR generation happens directly
+inside your browser, making it convenient for everyday use.
+</p>
 
-      <select id="qrSize">
+<h2>Privacy</h2>
+<p>
+The text you enter is used only to generate the QR code in your browser.
+We do not require an account to use this tool.
+</p>
+</section>
 
-        <option value="200">
-          200 × 200
-        </option>
+<section class="faq">
+<h2>Frequently Asked Questions</h2>
 
-        <option value="300" selected>
-          300 × 300
-        </option>
+<details>
+<summary>Is this QR code generator free?</summary>
+<p>Yes. You can generate QR codes without paying or creating an account.</p>
+</details>
 
-        <option value="500">
-          500 × 500
-        </option>
+<details>
+<summary>Can I create a QR code for a website?</summary>
+<p>Yes. Enter the complete website URL and generate the QR code.</p>
+</details>
 
-        <option value="800">
-          800 × 800
-        </option>
+<details>
+<summary>Can I download the QR code?</summary>
+<p>Yes. After generation, use the Download QR Code button.</p>
+</details>
 
-      </select>
+<details>
+<summary>Does it work on mobile?</summary>
+<p>Yes. The page is responsive and works on modern mobile browsers.</p>
+</details>
 
-    </div>
+</section>
 
-
-    <button
-      class="btn"
-      onclick="generateQR()"
-    >
-      🔳 Generate QR Code
-    </button>
-
-
-    <div
-      class="qr-result"
-      id="qrResult"
-    >
-
-      <h3>Your QR Code</h3>
-
-      <br>
-
-      <div id="qrcode"></div>
-
-      <a
-        id="downloadQR"
-        class="download-btn"
-        href="#"
-      >
-        ⬇️ Download QR Code
-      </a>
-
-    </div>
-
-  </div>
+<section class="content">
+<h2>More Free Tools</h2>
+<div class="related">
+<a href="word-counter.html">Word Counter</a>
+<a href="case-converter.html">Case Converter</a>
+<a href="password-generator.html">Password Generator</a>
+<a href="image-compressor.html">Image Compressor</a>
+<a href="image-to-pdf.html">Image to PDF</a>
+</div>
+</section>
 
 </main>
 
-
 <footer>
-
-  <div class="footer-logo">
-    ⚡ Free Tools Hub
-  </div>
-
-  <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Contact</a>
-  </div>
-
-  <p>
-    © 2026 Free Tools Hub. All rights reserved.
-  </p>
-
+<p>© 2026 Free Tools Hub</p>
+<p>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy-policy.html">Privacy</a>
+<a href="terms.html">Terms</a>
+</p>
 </footer>
 
-
-<!-- QR LIBRARY -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-<script src="script.js"></script>
-
 <script>
-
-function generateQR() {
-
-  const text =
-    document.getElementById("qrText").value.trim();
-
-  const size =
-    Number(
-      document.getElementById("qrSize").value
-    );
-
-  const qrContainer =
-    document.getElementById("qrcode");
-
-  const result =
-    document.getElementById("qrResult");
-
-  const download =
-    document.getElementById("downloadQR");
-
-
-  if (!text) {
-
-    alert(
-      "Please enter text or a URL."
-    );
-
-    return;
-
-  }
-
-
-  qrContainer.innerHTML = "";
-
-
-  new QRCode(
-    qrContainer,
-    {
-      text: text,
-      width: size,
-      height: size,
-      correctLevel:
-        QRCode.CorrectLevel.H
-    }
-  );
-
-
-  result.style.display =
-    "block";
-
-
-  setTimeout(function() {
-
-    const canvas =
-      qrContainer.querySelector(
-        "canvas"
-      );
-
-    const img =
-      qrContainer.querySelector(
-        "img"
-      );
-
-
-    let dataURL = null;
-
-
-    if (canvas) {
-
-      dataURL =
-        canvas.toDataURL(
-          "image/png"
-        );
-
-    } else if (img) {
-
-      dataURL =
-        img.src;
-
-    }
-
-
-    if (dataURL) {
-
-      download.href =
-        dataURL;
-
-      download.download =
-        "free-tools-hub-qr.png";
-
-    }
-
-  }, 300);
-
+function toggleMenu(){
+document.getElementById("nav").classList.toggle("show");
 }
 
+function generateQR(){
+const text=document.getElementById("qrText").value.trim();
+const size=parseInt(document.getElementById("size").value);
+const box=document.getElementById("qrcode");
+const downloadBox=document.getElementById("downloadBox");
+
+if(!text){
+alert("Please enter text or a URL.");
+return;
+}
+
+box.innerHTML="";
+box.style.display="block";
+downloadBox.style.display="none";
+
+new QRCode(box,{
+text:text,
+width:size,
+height:size,
+colorDark:"#000000",
+colorLight:"#ffffff",
+correctLevel:QRCode.CorrectLevel.H
+});
+
+setTimeout(()=>{
+const img=box.querySelector("img");
+const canvas=box.querySelector("canvas");
+let source=canvas||img;
+
+if(!source)return;
+
+let url=source.tagName==="CANVAS"
+?source.toDataURL("image/png")
+:source.src;
+
+const btn=document.getElementById("downloadBtn");
+btn.href=url;
+downloadBox.style.display="block";
+},500);
+}
+
+function clearQR(){
+document.getElementById("qrText").value="";
+document.getElementById("qrcode").innerHTML="";
+document.getElementById("qrcode").style.display="none";
+document.getElementById("downloadBox").style.display="none";
+}
 </script>
 
 </body>
