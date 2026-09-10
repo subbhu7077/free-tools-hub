@@ -4,13 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PDF to Image Converter - Free Online Tool | Free Tools Hub</title>
+<title>PDF to Image - Free Tools Hub</title>
 
-<meta name="description" content="Convert PDF pages to PNG or JPG images online for free. Preview PDF pages and download individual pages directly in your browser.">
-
-<meta name="keywords" content="pdf to image, pdf to jpg, pdf to png, convert pdf to image, free pdf converter">
-
-<meta name="robots" content="index, follow">
+<meta name="description" content="Convert PDF pages to JPG or PNG images online for free.">
 
 <link rel="canonical" href="https://subbhu7077.github.io/free-tools-hub/pdf-to-image.html">
 
@@ -22,27 +18,13 @@
     padding:0;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
-    font-family:Arial,Helvetica,sans-serif;
-
+    font-family:Arial,sans-serif;
     background:
-    radial-gradient(
-        circle at 15% 10%,
-        rgba(0,255,255,.12),
-        transparent 28%
-    ),
-    radial-gradient(
-        circle at 85% 25%,
-        rgba(130,0,255,.13),
-        transparent 30%
-    ),
+    radial-gradient(circle at 15% 10%,rgba(0,255,255,.12),transparent 30%),
+    radial-gradient(circle at 85% 20%,rgba(140,0,255,.14),transparent 30%),
     #050816;
-
-    color:#fff;
+    color:white;
     min-height:100vh;
 }
 
@@ -51,686 +33,400 @@ a{
     color:inherit;
 }
 
-
-/* =========================
-   HEADER
-========================= */
-
 header{
     position:sticky;
     top:0;
-    z-index:1000;
-
-    background:rgba(3,6,18,.92);
-
+    z-index:100;
+    background:rgba(3,6,18,.94);
+    border-bottom:1px solid rgba(0,255,255,.15);
     backdrop-filter:blur(15px);
-
-    border-bottom:
-    1px solid rgba(0,255,255,.15);
 }
 
 .header{
     max-width:1100px;
-
     margin:auto;
-
     padding:15px 20px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 }
 
 .logo{
     font-size:21px;
-
     font-weight:900;
-
-    background:
-    linear-gradient(
-        90deg,
-        #00ffff,
-        #7b5cff,
-        #ff00d4,
-        #00ffff
-    );
-
+    background:linear-gradient(90deg,#00ffff,#795cff,#ff00d4,#00ffff);
     background-size:300%;
-
     -webkit-background-clip:text;
-
     background-clip:text;
-
     color:transparent;
-
-    animation:
-    gradient 5s linear infinite;
+    animation:gradient 5s linear infinite;
 }
 
 @keyframes gradient{
-
     to{
         background-position:300%;
     }
-
 }
 
 nav{
     display:flex;
-
-    gap:8px;
+    gap:10px;
 }
 
 nav a{
     color:#aab4ca;
-
     padding:9px 13px;
-
-    border-radius:10px;
-
     font-size:14px;
+    border-radius:9px;
 }
 
 nav a:hover{
     color:#00ffff;
-
-    background:
-    rgba(0,255,255,.07);
+    background:rgba(0,255,255,.07);
 }
 
 .menu{
     display:none;
-
-    color:#fff;
-
-    background:
-    rgba(0,255,255,.06);
-
-    border:
-    1px solid rgba(0,255,255,.25);
-
-    border-radius:10px;
-
+    background:rgba(0,255,255,.06);
+    border:1px solid rgba(0,255,255,.2);
+    color:white;
+    border-radius:9px;
     padding:8px 12px;
-
-    cursor:pointer;
-
-    font-size:18px;
 }
-
-
-/* =========================
-   MAIN
-========================= */
 
 .container{
     max-width:900px;
-
     margin:auto;
-
-    padding:
-    55px 20px 80px;
+    padding:55px 20px 80px;
 }
 
 .hero{
     text-align:center;
-
     margin-bottom:35px;
 }
 
 .hero-icon{
     font-size:55px;
-
     margin-bottom:12px;
-
-    animation:
-    floatIcon 3s ease-in-out infinite;
-}
-
-@keyframes floatIcon{
-
-    0%,100%{
-        transform:
-        translateY(0)
-        rotate(0);
-    }
-
-    50%{
-        transform:
-        translateY(-10px)
-        rotate(5deg);
-    }
-
 }
 
 .hero h1{
-    font-size:
-    clamp(32px,7vw,55px);
-
+    font-size:clamp(34px,7vw,55px);
     margin-bottom:12px;
 }
 
-.gradient{
-    background:
-    linear-gradient(
-        90deg,
-        #00ffff,
-        #7660ff,
-        #ff00d4
-    );
-
+.gradient-text{
+    background:linear-gradient(90deg,#00ffff,#765cff,#ff00d4);
     -webkit-background-clip:text;
-
     background-clip:text;
-
     color:transparent;
 }
 
 .hero p{
-    max-width:700px;
-
-    margin:auto;
-
     color:#8995ad;
-
     line-height:1.7;
 }
 
-
-/* =========================
-   TOOL BOX
-========================= */
-
 .tool-box{
-
     padding:28px;
-
     border-radius:25px;
-
-    background:
-    linear-gradient(
-        145deg,
-        rgba(255,255,255,.08),
-        rgba(255,255,255,.025)
-    );
-
-    border:
-    1px solid rgba(0,255,255,.16);
-
-    box-shadow:
-    0 20px 60px rgba(0,0,0,.35);
+    background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
+    border:1px solid rgba(0,255,255,.16);
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
 }
 
 
-/* =========================
-   UPLOAD
-========================= */
+/* DIRECT FILE INPUT */
 
-.upload{
-
-    display:block;
-
-    border:
-    2px dashed rgba(0,255,255,.3);
-
-    border-radius:18px;
-
-    padding:35px 20px;
-
+.file-area{
     text-align:center;
-
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-.upload:hover{
-
-    border-color:#00ffff;
-
-    background:
-    rgba(0,255,255,.04);
-}
-
-.upload-icon{
-    font-size:42px;
-
-    margin-bottom:10px;
-}
-
-.upload strong{
-    display:block;
-
-    font-size:17px;
-}
-
-.upload small{
-    display:block;
-
-    margin-top:8px;
-
-    color:#738099;
 }
 
 #pdfInput{
-    display:none;
+    display:block;
+    width:100%;
+    padding:18px;
+    margin-bottom:15px;
+
+    color:#fff;
+
+    background:#0b1124;
+
+    border:2px dashed rgba(0,255,255,.35);
+
+    border-radius:15px;
+
+    cursor:pointer;
 }
 
+#pdfInput::file-selector-button{
+    padding:12px 18px;
+    margin-right:12px;
 
-/* =========================
-   FILE INFO
-========================= */
+    border:0;
+    border-radius:9px;
+
+    background:linear-gradient(135deg,#00ffff,#765cff);
+
+    color:#031018;
+
+    font-weight:900;
+
+    cursor:pointer;
+}
+
+.file-help{
+    color:#68758e;
+    font-size:12px;
+}
 
 .file-info{
-
     display:none;
 
     margin-top:18px;
-
     padding:15px;
 
     border-radius:13px;
 
-    background:
-    rgba(0,255,255,.04);
+    background:rgba(0,255,255,.04);
 
-    border:
-    1px solid rgba(0,255,255,.12);
+    border:1px solid rgba(0,255,255,.13);
 
     text-align:center;
 }
 
 .file-info strong{
     display:block;
-
-    font-size:14px;
-
     word-break:break-word;
 }
 
 .file-info span{
     display:block;
-
-    margin-top:6px;
-
     color:#718099;
-
+    margin-top:6px;
     font-size:12px;
 }
 
 
-/* =========================
-   OPTIONS
-========================= */
+/* OPTIONS */
 
 .options{
-
     display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
+    grid-template-columns:1fr 1fr;
     gap:14px;
-
     margin-top:20px;
 }
 
 .option{
-
     padding:16px;
-
-    border-radius:15px;
-
-    background:
-    rgba(255,255,255,.04);
-
-    border:
-    1px solid rgba(255,255,255,.08);
+    border-radius:14px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
 }
 
 .option label{
-
     display:block;
-
     color:#aab4ca;
-
     font-size:12px;
-
     font-weight:bold;
-
-    margin-bottom:9px;
+    margin-bottom:8px;
 }
 
 select{
-
     width:100%;
-
     padding:11px;
 
-    border-radius:9px;
-
-    border:
-    1px solid rgba(0,255,255,.2);
-
     background:#0b1124;
-
     color:#fff;
+
+    border:1px solid rgba(0,255,255,.2);
+
+    border-radius:9px;
 
     outline:none;
 }
 
 
-/* =========================
-   PREVIEW
-========================= */
+/* BUTTONS */
 
-.preview-title{
+.buttons{
+    display:flex;
+    gap:12px;
+    margin-top:22px;
+}
 
+button.action{
+    flex:1;
+    padding:14px;
+
+    border:0;
+    border-radius:12px;
+
+    background:linear-gradient(135deg,#00ffff,#765cff);
+
+    color:#031018;
+
+    font-weight:900;
+
+    cursor:pointer;
+}
+
+button.reset{
+    flex:1;
+    padding:14px;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+button:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+
+/* STATUS */
+
+.status{
+    min-height:22px;
+    margin-top:15px;
+    text-align:center;
+    color:#00ffff;
+    font-size:13px;
+}
+
+
+/* PAGES */
+
+.pages-title{
     display:none;
-
-    margin-top:25px;
-
-    margin-bottom:12px;
-
-    font-size:14px;
-
+    margin-top:28px;
+    margin-bottom:14px;
     color:#aab4ca;
-
+    font-size:15px;
     font-weight:bold;
 }
 
 .pages{
-
     display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
+    grid-template-columns:1fr 1fr;
     gap:15px;
 }
 
-.page-card{
-
+.page{
     display:none;
 
     padding:12px;
 
     border-radius:15px;
 
-    background:
-    rgba(255,255,255,.035);
+    background:rgba(255,255,255,.04);
 
-    border:
-    1px solid rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.08);
 }
 
-.page-card img{
-
+.page img{
     width:100%;
-
-    height:auto;
-
     display:block;
-
     border-radius:9px;
-
-    background:#fff;
+    background:white;
 }
 
 .page-number{
-
     text-align:center;
-
     color:#8793aa;
-
     font-size:12px;
-
-    margin:
-    10px 0;
+    margin:10px 0;
 }
 
-.download-page{
-
+.download{
     width:100%;
-
     padding:10px;
 
     border:0;
-
     border-radius:9px;
 
-    cursor:pointer;
-
-    background:
-    linear-gradient(
-        135deg,
-        #00ffff,
-        #7560ff
-    );
+    background:linear-gradient(135deg,#00ffff,#765cff);
 
     color:#031018;
 
     font-weight:900;
 
-    font-size:12px;
-}
-
-
-/* =========================
-   BUTTONS
-========================= */
-
-.buttons{
-
-    display:flex;
-
-    gap:12px;
-
-    margin-top:25px;
-}
-
-.btn{
-
-    flex:1;
-
-    padding:14px;
-
-    border-radius:12px;
-
     cursor:pointer;
-
-    font-weight:900;
-}
-
-.convert{
-
-    border:0;
-
-    background:
-    linear-gradient(
-        135deg,
-        #00ffff,
-        #7560ff
-    );
-
-    color:#031018;
-
-    box-shadow:
-    0 0 25px rgba(0,255,255,.2);
-}
-
-.reset{
-
-    color:#fff;
-
-    background:
-    rgba(255,255,255,.05);
-
-    border:
-    1px solid rgba(255,255,255,.12);
-}
-
-.btn:disabled{
-
-    opacity:.4;
-
-    cursor:not-allowed;
 }
 
 
-/* =========================
-   STATUS
-========================= */
-
-.status{
-
-    min-height:20px;
-
-    text-align:center;
-
-    margin-top:15px;
-
-    color:#00ffff;
-
-    font-size:13px;
-
-    line-height:1.5;
-}
-
-
-/* =========================
-   CONTENT
-========================= */
+/* CONTENT */
 
 .content{
-
     margin-top:55px;
 }
 
 .content h2{
-
     font-size:25px;
-
     margin-bottom:14px;
 }
 
 .content p{
-
     color:#8995ad;
-
-    font-size:14px;
-
     line-height:1.8;
-
+    font-size:14px;
     margin-bottom:15px;
 }
 
 .content ul{
-
-    padding-left:20px;
-
     color:#8995ad;
-
+    padding-left:20px;
     line-height:2;
-
     font-size:14px;
 }
 
-
-/* =========================
-   FAQ
-========================= */
-
 .faq{
-
     margin-top:40px;
 }
 
 .faq h3{
-
+    margin:20px 0 7px;
     font-size:16px;
-
-    margin:
-    20px 0 7px;
 }
-
-.faq p{
-    margin:0;
-}
-
-
-/* =========================
-   RELATED
-========================= */
 
 .related{
-
     margin-top:40px;
-
     display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
+    grid-template-columns:1fr 1fr;
     gap:12px;
 }
 
 .related a{
-
-    padding:16px;
-
-    border-radius:13px;
-
-    background:
-    rgba(255,255,255,.04);
-
-    border:
-    1px solid rgba(255,255,255,.08);
-
+    padding:15px;
+    border-radius:12px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
     color:#00ffff;
-
-    transition:.3s;
 }
-
-.related a:hover{
-
-    transform:translateY(-3px);
-
-    border-color:
-    rgba(0,255,255,.3);
-}
-
-
-/* =========================
-   FOOTER
-========================= */
 
 footer{
-
-    border-top:
-    1px solid rgba(255,255,255,.08);
-
     padding:30px 20px;
-
+    border-top:1px solid rgba(255,255,255,.08);
     text-align:center;
-
     color:#65718a;
-
     font-size:12px;
 }
 
 .footer-links{
-
     display:flex;
-
     justify-content:center;
-
     flex-wrap:wrap;
-
     gap:15px;
-
     margin-bottom:15px;
 }
 
@@ -739,15 +435,10 @@ footer{
 }
 
 
-/* =========================
-   MOBILE
-========================= */
-
 @media(max-width:700px){
 
     .header{
-        padding:
-        14px 15px;
+        padding:14px 15px;
     }
 
     .logo{
@@ -756,28 +447,25 @@ footer{
 
     .menu{
         display:block;
+        cursor:pointer;
     }
 
     nav{
-
         display:none;
 
         position:absolute;
 
         top:64px;
-
         left:12px;
-
         right:12px;
-
-        flex-direction:column;
 
         padding:10px;
 
+        flex-direction:column;
+
         background:#080d1e;
 
-        border:
-        1px solid rgba(0,255,255,.15);
+        border:1px solid rgba(0,255,255,.15);
 
         border-radius:15px;
     }
@@ -791,8 +479,7 @@ footer{
     }
 
     .container{
-        padding:
-        45px 15px 60px;
+        padding:45px 15px 60px;
     }
 
     .tool-box{
@@ -803,16 +490,20 @@ footer{
         grid-template-columns:1fr;
     }
 
-    .pages{
-        grid-template-columns:1fr;
-    }
-
     .buttons{
         flex-direction:column;
     }
 
+    .pages{
+        grid-template-columns:1fr;
+    }
+
     .related{
         grid-template-columns:1fr;
+    }
+
+    #pdfInput{
+        padding:12px;
     }
 
 }
@@ -823,10 +514,6 @@ footer{
 
 <body>
 
-
-<!-- =========================
-     HEADER
-========================= -->
 
 <header>
 
@@ -845,21 +532,13 @@ type="button">
 
 <nav id="nav">
 
-<a href="index.html">
-Home
-</a>
+<a href="index.html">Home</a>
 
-<a href="index.html#tools">
-Tools
-</a>
+<a href="index.html#tools">Tools</a>
 
-<a href="about.html">
-About
-</a>
+<a href="about.html">About</a>
 
-<a href="contact.html">
-Contact
-</a>
+<a href="contact.html">Contact</a>
 
 </nav>
 
@@ -867,10 +546,6 @@ Contact
 
 </header>
 
-
-<!-- =========================
-     MAIN
-========================= -->
 
 <main class="container">
 
@@ -882,60 +557,46 @@ Contact
 </div>
 
 <h1>
-PDF <span class="gradient">to Image</span>
+PDF <span class="gradient-text">to Image</span>
 </h1>
 
 <p>
-Convert PDF pages into JPG or PNG images directly
-in your browser. Preview every page and download
-the pages you need.
+Convert PDF pages into JPG or PNG images
+directly in your browser.
 </p>
 
 </section>
 
 
-<!-- =========================
-     TOOL
-========================= -->
-
 <div class="tool-box">
 
 
-<label
-class="upload"
-for="pdfInput">
+<!-- FILE INPUT -->
 
-<div class="upload-icon">
-📄
-</div>
-
-<strong>
-Choose PDF File
-</strong>
-
-<small>
-Tap here to select a PDF document
-</small>
-
-</label>
-
+<div class="file-area">
 
 <input
 type="file"
 id="pdfInput"
-accept="application/pdf,.pdf"
+accept=".pdf,application/pdf"
 >
 
+<div class="file-help">
+Select one PDF file from your phone or computer.
+</div>
+
+</div>
+
+
+<!-- FILE INFO -->
 
 <div
 class="file-info"
 id="fileInfo">
 
-<strong id="fileName">
-</strong>
+<strong id="fileName"></strong>
 
-<span id="fileSize">
-</span>
+<span id="fileSize"></span>
 
 </div>
 
@@ -951,7 +612,7 @@ id="fileInfo">
 Output Format
 </label>
 
-<select id="outputFormat">
+<select id="format">
 
 <option value="png">
 PNG
@@ -969,7 +630,7 @@ JPG
 <div class="option">
 
 <label>
-Image Quality / Scale
+Image Quality
 </label>
 
 <select id="scale">
@@ -998,31 +659,12 @@ Maximum
 </div>
 
 
-<!-- PREVIEW TITLE -->
-
-<div
-class="preview-title"
-id="previewTitle">
-
-PDF Pages
-
-</div>
-
-
-<!-- PAGE CONTAINER -->
-
-<div
-class="pages"
-id="pages">
-</div>
-
-
 <!-- BUTTONS -->
 
 <div class="buttons">
 
 <button
-class="btn convert"
+class="action"
 id="convertBtn"
 disabled>
 
@@ -1030,9 +672,8 @@ Convert PDF
 
 </button>
 
-
 <button
-class="btn reset"
+class="reset"
 id="resetBtn">
 
 Reset
@@ -1048,31 +689,44 @@ id="status">
 </div>
 
 
+<!-- PAGES -->
+
+<div
+class="pages-title"
+id="pagesTitle">
+
+Converted Pages
+
 </div>
 
 
-<!-- =========================
-     SEO CONTENT
-========================= -->
+<div
+class="pages"
+id="pages">
+</div>
+
+
+</div>
+
+
+<!-- CONTENT -->
 
 <section class="content">
-
 
 <h2>
 Free PDF to Image Converter
 </h2>
 
 <p>
-Convert PDF documents into PNG or JPG images
-without installing desktop software. The converter
-renders each PDF page as an image that you can
-download individually.
+Convert PDF pages into PNG or JPG images without
+installing software. Each page can be downloaded
+individually after conversion.
 </p>
 
 <p>
-PDF processing happens inside your browser using
+The conversion takes place in your browser using
 PDF.js. Your selected PDF is not intentionally
-uploaded to our server by this tool.
+uploaded to our server.
 </p>
 
 
@@ -1082,103 +736,58 @@ How to Convert PDF to Image
 
 <ul>
 
-<li>
-Tap Choose PDF File and select your PDF.
-</li>
+<li>Select your PDF file.</li>
 
-<li>
-Select PNG or JPG as the output format.
-</li>
+<li>Choose JPG or PNG.</li>
 
-<li>
-Choose the image scale.
-</li>
+<li>Select the image quality.</li>
 
-<li>
-Tap Convert PDF.
-</li>
+<li>Tap Convert PDF.</li>
 
-<li>
-Wait while the PDF pages are rendered.
-</li>
-
-<li>
-Download individual pages using their download buttons.
-</li>
+<li>Download the converted pages.</li>
 
 </ul>
 
 
 <div class="faq">
 
-
 <h2>
 Frequently Asked Questions
 </h2>
 
-
 <h3>
-Can I convert a PDF to JPG?
+Can I convert PDF to JPG?
 </h3>
 
 <p>
-Yes. Choose JPG as the output format and convert
-the PDF pages into JPG images.
+Yes. Select JPG from the output format menu.
 </p>
 
-
 <h3>
-Can I convert a PDF to PNG?
+Can I convert PDF to PNG?
 </h3>
 
 <p>
-Yes. PNG is available as the default output format
-and is useful when you want lossless image output.
+Yes. PNG is available as an output format.
 </p>
 
-
 <h3>
-Can I convert only one PDF page?
+Can I download individual pages?
 </h3>
 
 <p>
-Yes. After conversion, each PDF page has its own
-download button, so you can download only the pages
-you need.
+Yes. Every converted PDF page gets its own
+download button.
 </p>
 
-
 <h3>
-Are my PDF files uploaded?
+Are my files uploaded?
 </h3>
 
 <p>
-The conversion is performed in your browser.
-The tool does not intentionally upload your selected
-PDF to our server.
+No intentional server upload is used by this
+browser-based converter.
 </p>
-
-
-<h3>
-What does the scale option do?
-</h3>
-
-<p>
-A higher scale creates a larger, higher-resolution
-image but may require more memory and processing time.
-</p>
-
-
-<h3>
-Will every PDF work?
-</h3>
-
-<p>
-Most standard PDFs should work. Very large, encrypted,
-damaged or unusual PDFs may not render correctly
-depending on browser memory and PDF features.
-</p>
-
 
 </div>
 
@@ -1198,37 +807,25 @@ depending on browser memory and PDF features.
 </a>
 
 <a href="jpg-png.html">
-🔄 JPG ↔ PNG Converter →
+🔄 JPG ↔ PNG →
 </a>
 
 </div>
 
-
 </section>
-
 
 </main>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
 
 <footer>
 
 <div class="footer-links">
 
-<a href="index.html">
-Home
-</a>
+<a href="index.html">Home</a>
 
-<a href="about.html">
-About
-</a>
+<a href="about.html">About</a>
 
-<a href="contact.html">
-Contact
-</a>
+<a href="contact.html">Contact</a>
 
 <a href="privacy-policy.html">
 Privacy Policy
@@ -1245,24 +842,11 @@ Terms
 </footer>
 
 
-<!-- =========================
-     PDF.JS
-========================= -->
+<script>
 
-<script
-src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs"
-type="module">
-</script>
-
-
-<script type="module">
-
-/*
-========================================
-PDF TO IMAGE
-========================================
-*/
-
+/* =========================
+   ELEMENTS
+========================= */
 
 var pdfInput =
 document.getElementById("pdfInput");
@@ -1276,8 +860,8 @@ document.getElementById("fileName");
 var fileSize =
 document.getElementById("fileSize");
 
-var outputFormat =
-document.getElementById("outputFormat");
+var format =
+document.getElementById("format");
 
 var scaleSelect =
 document.getElementById("scale");
@@ -1288,47 +872,25 @@ document.getElementById("convertBtn");
 var resetBtn =
 document.getElementById("resetBtn");
 
-var pages =
-document.getElementById("pages");
-
-var previewTitle =
-document.getElementById("previewTitle");
-
 var status =
 document.getElementById("status");
 
-var selectedFile =
-null;
+var pages =
+document.getElementById("pages");
+
+var pagesTitle =
+document.getElementById("pagesTitle");
+
+var selectedFile = null;
 
 
-/*
-========================================
-LOAD PDF.JS MODULE
-========================================
-*/
+/* =========================
+   FILE SELECT
+========================= */
 
-var pdfjsLib =
-await import(
-"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs"
-);
-
-
-/*
-PDF.js worker
-*/
-
-pdfjsLib.GlobalWorkerOptions.workerSrc =
-"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs";
-
-
-/*
-========================================
-PDF SELECT
-========================================
-*/
-
-pdfInput.onchange =
-async function(){
+pdfInput.addEventListener(
+"change",
+function(){
 
     var file =
     pdfInput.files[0];
@@ -1340,15 +902,15 @@ async function(){
 
 
     if(
-        file.type !==
-        "application/pdf" &&
         !file.name
         .toLowerCase()
         .endsWith(".pdf")
     ){
 
         status.textContent =
-        "Please select a valid PDF file.";
+        "❌ Please select a PDF file.";
+
+        pdfInput.value = "";
 
         return;
     }
@@ -1374,25 +936,25 @@ async function(){
     false;
 
 
-    pages.innerHTML = "";
+    pages.innerHTML =
+    "";
 
-    previewTitle.style.display =
+    pagesTitle.style.display =
     "none";
 
 
     status.textContent =
-    "PDF selected. Tap Convert PDF.";
+    "✓ PDF selected. Tap Convert PDF.";
 
-};
+});
 
 
-/*
-========================================
-CONVERT
-========================================
-*/
+/* =========================
+   CONVERT
+========================= */
 
-convertBtn.onclick =
+convertBtn.addEventListener(
+"click",
 async function(){
 
     if(!selectedFile){
@@ -1404,63 +966,68 @@ async function(){
     true;
 
 
-    pages.innerHTML = "";
+    pages.innerHTML =
+    "";
 
 
-    previewTitle.style.display =
+    pagesTitle.style.display =
     "block";
 
 
     status.textContent =
-    "Reading PDF...";
+    "Loading PDF converter...";
 
 
     try{
+
+        /*
+        PDF.js is loaded only now.
+        */
+
+        var pdfjs =
+        await import(
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs"
+        );
+
+
+        pdfjs.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs";
+
+
+        status.textContent =
+        "Reading PDF...";
+
 
         var buffer =
         await selectedFile.arrayBuffer();
 
 
         var pdf =
-        await pdfjsLib.getDocument({
+        await pdfjs.getDocument({
             data:buffer
         }).promise;
 
 
-        var totalPages =
+        var total =
         pdf.numPages;
 
 
-        status.textContent =
-        "Found " +
-        totalPages +
-        " page" +
-        (totalPages > 1 ? "s" : "") +
-        ".";
-
-
-        /*
-        Render every page
-        */
-
         for(
-            var pageNumber = 1;
-            pageNumber <= totalPages;
-            pageNumber++
+            var i=1;
+            i<=total;
+            i++
         ){
 
             status.textContent =
             "Converting page " +
-            pageNumber +
+            i +
             " of " +
-            totalPages +
+            total +
             "...";
 
 
             var page =
-            await pdf.getPage(
-                pageNumber
-            );
+            await pdf.getPage(i);
 
 
             var scale =
@@ -1504,11 +1071,8 @@ async function(){
             */
 
             if(
-                outputFormat.value ===
-                "jpg"
+                format.value === "jpg"
             ){
-
-                context.save();
 
                 context.fillStyle =
                 "#ffffff";
@@ -1519,8 +1083,6 @@ async function(){
                     canvas.width,
                     canvas.height
                 );
-
-                context.restore();
 
             }
 
@@ -1536,38 +1098,36 @@ async function(){
             }).promise;
 
 
-            var mimeType =
-            outputFormat.value ===
-            "png"
+            var mime =
+            format.value === "png"
             ? "image/png"
             : "image/jpeg";
 
 
             var quality =
-            outputFormat.value ===
-            "jpg"
+            format.value === "jpg"
             ? 0.92
             : undefined;
 
 
-            var dataUrl =
+            var imageData =
             canvas.toDataURL(
-                mimeType,
+                mime,
                 quality
             );
 
 
-            createPageCard(
-                dataUrl,
-                pageNumber,
-                outputFormat.value
+            createPage(
+                imageData,
+                i,
+                format.value
             );
 
         }
 
 
         status.textContent =
-        "✓ Conversion complete! Download the pages below.";
+        "✓ PDF converted successfully!";
 
 
     }catch(error){
@@ -1576,7 +1136,7 @@ async function(){
 
 
         status.textContent =
-        "Could not convert this PDF. It may be encrypted, damaged or too large for the browser.";
+        "❌ Conversion failed. Check your PDF or internet connection and try again.";
 
     }
 
@@ -1584,19 +1144,17 @@ async function(){
     convertBtn.disabled =
     false;
 
-};
+});
 
 
-/*
-========================================
-CREATE PAGE CARD
-========================================
-*/
+/* =========================
+   CREATE PAGE
+========================= */
 
-function createPageCard(
-    dataUrl,
-    pageNumber,
-    extension
+function createPage(
+data,
+pageNumber,
+extension
 ){
 
     var card =
@@ -1606,7 +1164,7 @@ function createPageCard(
 
 
     card.className =
-    "page-card";
+    "page";
 
 
     var img =
@@ -1616,7 +1174,7 @@ function createPageCard(
 
 
     img.src =
-    dataUrl;
+    data;
 
 
     img.alt =
@@ -1630,4 +1188,210 @@ function createPageCard(
     );
 
 
-    number.
+    number.className =
+    "page-number";
+
+
+    number.textContent =
+    "Page " +
+    pageNumber;
+
+
+    var button =
+    document.createElement(
+        "button"
+    );
+
+
+    button.className =
+    "download";
+
+
+    button.type =
+    "button";
+
+
+    button.textContent =
+    "⬇ Download Page " +
+    pageNumber;
+
+
+    button.onclick =
+    function(){
+
+        var link =
+        document.createElement(
+            "a"
+        );
+
+
+        link.href =
+        data;
+
+
+        link.download =
+        "pdf-page-" +
+        pageNumber +
+        "." +
+        extension;
+
+
+        document.body.appendChild(
+        link
+        );
+
+
+        link.click();
+
+
+        link.remove();
+
+    };
+
+
+    card.appendChild(img);
+
+    card.appendChild(number);
+
+    card.appendChild(button);
+
+    pages.appendChild(card);
+
+
+    card.style.display =
+    "block";
+
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+resetBtn.onclick =
+function(){
+
+    selectedFile =
+    null;
+
+    pdfInput.value =
+    "";
+
+    fileInfo.style.display =
+    "none";
+
+    fileName.textContent =
+    "";
+
+    fileSize.textContent =
+    "";
+
+    pages.innerHTML =
+    "";
+
+    pagesTitle.style.display =
+    "none";
+
+    status.textContent =
+    "";
+
+    convertBtn.disabled =
+    true;
+
+};
+
+
+/* =========================
+   FILE SIZE
+========================= */
+
+function formatBytes(bytes){
+
+    if(bytes === 0){
+        return "0 Bytes";
+    }
+
+
+    var units = [
+        "Bytes",
+        "KB",
+        "MB",
+        "GB"
+    ];
+
+
+    var i =
+    Math.floor(
+        Math.log(bytes) /
+        Math.log(1024)
+    );
+
+
+    return (
+        parseFloat(
+            (
+                bytes /
+                Math.pow(1024,i)
+            ).toFixed(2)
+        )
+        +
+        " " +
+        units[i]
+    );
+
+}
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+var menuBtn =
+document.getElementById(
+"menuBtn"
+);
+
+var nav =
+document.getElementById(
+"nav"
+);
+
+
+menuBtn.onclick =
+function(){
+
+    nav.classList.toggle(
+        "show"
+    );
+
+
+    menuBtn.textContent =
+    nav.classList.contains("show")
+    ? "✕"
+    : "☰";
+
+};
+
+
+nav.querySelectorAll("a")
+.forEach(
+function(link){
+
+    link.onclick =
+    function(){
+
+        nav.classList.remove(
+        "show"
+        );
+
+        menuBtn.textContent =
+        "☰";
+
+    };
+
+});
+
+</script>
+
+</body>
+</html>
