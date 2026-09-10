@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JPG PNG Converter - Free Tools Hub</title>
+  <meta name="description" content="Convert JPG, PNG and WebP images online for free.">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .tool-page {
+      width: 92%;
+      max-width: 800px;
+      margin: 50px auto;
+    }
+
+    .back {
+      color: #76a9ff;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 25px;
+    }
+
+    .tool-box {
+      background: #101622;
+      border: 1px solid #222d40;
+      border-radius: 18px;
+      padding: 25px;
+    }
+
+    .tool-box h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .tool-box > p {
+      color: #8995a8;
+      margin-bottom: 25px;
+    }
+
+    .upload-area {
+      border: 2px dashed #34415b;
+      border-radius: 15px;
+      padding: 40px 20px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .upload-area:hover {
+      border-color: #76a9ff;
+    }
+
+    .upload-area input {
+      display: none;
+    }
+
+    .upload-icon {
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
+
+    .upload-area strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .upload-area span {
+      color: #8995a8;
+      font-size: 13px;
+    }
+
+    .options {
+      display: none;
+      margin-top: 25px;
+    }
+
+    .options label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .options select {
+      width: 100%;
+      padding: 13px;
+      background: #0b1019;
+      color: white;
+      border: 1px solid #303b52;
+      border-radius: 9px;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .preview {
+      display: none;
+      margin-top: 25px;
+    }
+
+    .preview img {
+      display: block;
+      max-width: 100%;
+      max-height: 350px;
+      margin: 15px auto;
+      border-radius: 12px;
+    }
+
+    .info {
+      text-align: center;
+      color: #8995a8;
+      font-size: 13px;
+      margin: 15px 0;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px;
+      border: 0;
+      border-radius: 10px;
+      background: #76a9ff;
+      color: #07101e;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .btn:disabled {
+      opacity: .4;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+
+  <div class="logo">⚡ Free Tools Hub</div>
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#image">Image</a>
+    <a href="index.html#pdf">PDF</a>
+    <a href="index.html#qr">QR</a>
+    <a href="index.html#text">Text</a>
+  </nav>
+
+</header>
+
+
+<main class="tool-page">
+
+  <a class="back" href="index.html">← Back to All Tools</a>
+
+  <div class="tool-box">
+
+    <h1>🔄 JPG ↔ PNG Converter</h1>
+
+    <p>
+      Convert your image between JPG, PNG and WebP formats.
+      Processing happens directly in your browser.
+    </p>
+
+
+    <label class="upload-area">
+
+      <input
+        type="file"
+        id="imageInput"
+        accept="image/*"
+      >
+
+      <div class="upload-icon">📤</div>
+
+      <strong>Choose an image</strong>
+
+      <span>JPG, PNG, WebP and other supported images</span>
+
+    </label>
+
+
+    <div class="options" id="options">
+
+      <label for="format">
+        Convert to
+      </label>
+
+      <select id="format">
+
+        <option value="image/png">
+          PNG
+        </option>
+
+        <option value="image/jpeg">
+          JPG
+        </option>
+
+        <option value="image/webp">
+          WebP
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <div class="preview" id="preview">
+
+      <h3>Preview</h3>
+
+      <img
+        id="previewImage"
+        alt="Selected image"
+      >
+
+      <div
+        class="info"
+        id="info"
+      ></div>
+
+      <button
+        class="btn"
+        id="convertBtn"
+      >
+        🔄 Convert & Download
+      </button>
+
+    </div>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-logo">
+    ⚡ Free Tools Hub
+  </div>
+
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <p>
+    © 2026 Free Tools Hub. All rights reserved.
+  </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+<script>
+
+const imageInput =
+  document.getElementById("imageInput");
+
+const options =
+  document.getElementById("options");
+
+const format =
+  document.getElementById("format");
+
+const preview =
+  document.getElementById("preview");
+
+const previewImage =
+  document.getElementById("previewImage");
+
+const info =
+  document.getElementById("info");
+
+const convertBtn =
+  document.getElementById("convertBtn");
+
+let selectedImage = null;
+let selectedFile = null;
+
+
+/* SELECT IMAGE */
+
+imageInput.addEventListener(
+  "change",
+  function() {
+
+    selectedFile = this.files[0];
+
+    if (!selectedFile) return;
+
+
+    const reader =
+      new FileReader();
+
+
+    reader.onload =
+      function(e) {
+
+        const img =
+          new Image();
+
+
+        img.onload =
+          function() {
+
+            selectedImage = img;
+
+            previewImage.src =
+              e.target.result;
+
+            preview.style.display =
+              "block";
+
+            options.style.display =
+              "block";
+
+
+            info.textContent =
+              "Original: " +
+              selectedFile.name +
+              " • " +
+              formatBytes(selectedFile.size);
+
+          };
+
+
+        img.src =
+          e.target.result;
+
+      };
+
+
+    reader.readAsDataURL(
+      selectedFile
+    );
+
+  }
+);
+
+
+/* CONVERT */
+
+convertBtn.addEventListener(
+  "click",
+  function() {
+
+    if (!selectedImage) {
+
+      alert(
+        "Please choose an image first."
+      );
+
+      return;
+
+    }
+
+
+    const canvas =
+      document.createElement(
+        "canvas"
+      );
+
+
+    canvas.width =
+      selectedImage.naturalWidth;
+
+    canvas.height =
+      selectedImage.naturalHeight;
+
+
+    const ctx =
+      canvas.getContext("2d");
+
+
+    /*
+      JPG does not support transparency.
+      Fill

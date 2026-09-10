@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Case Converter - Free Tools Hub</title>
+  <meta name="description" content="Convert text to uppercase, lowercase, title case and sentence case for free.">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .tool-page {
+      width: 92%;
+      max-width: 900px;
+      margin: 50px auto;
+    }
+
+    .back {
+      color: #76a9ff;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 25px;
+    }
+
+    .tool-box {
+      background: #101622;
+      border: 1px solid #222d40;
+      border-radius: 18px;
+      padding: 25px;
+    }
+
+    .tool-box h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .tool-box > p {
+      color: #8995a8;
+      margin-bottom: 25px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 260px;
+      resize: vertical;
+      padding: 18px;
+      border-radius: 12px;
+      border: 1px solid #303b52;
+      background: #0b1019;
+      color: white;
+      outline: none;
+      font-size: 16px;
+      line-height: 1.7;
+      font-family: Arial, sans-serif;
+    }
+
+    textarea:focus {
+      border-color: #76a9ff;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .action-btn {
+      padding: 13px;
+      border: 1px solid #303b52;
+      border-radius: 10px;
+      background: #182237;
+      color: white;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .action-btn:hover {
+      border-color: #76a9ff;
+    }
+
+    .primary {
+      background: #76a9ff;
+      color: #07101e;
+      border-color: #76a9ff;
+    }
+
+    .status {
+      text-align: center;
+      color: #8995a8;
+      font-size: 13px;
+      margin-top: 15px;
+      min-height: 20px;
+    }
+
+    @media (max-width: 550px) {
+      .buttons {
+        grid-template-columns: 1fr;
+      }
+
+      .tool-box h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+
+  <div class="logo">⚡ Free Tools Hub</div>
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#image">Image</a>
+    <a href="index.html#pdf">PDF</a>
+    <a href="index.html#qr">QR</a>
+    <a href="index.html#text">Text</a>
+  </nav>
+
+</header>
+
+
+<main class="tool-page">
+
+  <a class="back" href="index.html">← Back to All Tools</a>
+
+  <div class="tool-box">
+
+    <h1>🔤 Case Converter</h1>
+
+    <p>
+      Convert your text to uppercase, lowercase,
+      title case or sentence case instantly.
+    </p>
+
+
+    <textarea
+      id="textInput"
+      placeholder="Type or paste your text here..."
+    ></textarea>
+
+
+    <div class="buttons">
+
+      <button
+        class="action-btn primary"
+        onclick="upperCase()"
+      >
+        ABC UPPERCASE
+      </button>
+
+      <button
+        class="action-btn"
+        onclick="lowerCase()"
+      >
+        abc lowercase
+      </button>
+
+      <button
+        class="action-btn"
+        onclick="titleCase()"
+      >
+        Aa Title Case
+      </button>
+
+      <button
+        class="action-btn"
+        onclick="sentenceCase()"
+      >
+        Aa Sentence Case
+      </button>
+
+      <button
+        class="action-btn"
+        onclick="copyText()"
+      >
+        📋 Copy Text
+      </button>
+
+      <button
+        class="action-btn"
+        onclick="clearText()"
+      >
+        🗑️ Clear
+      </button>
+
+    </div>
+
+
+    <div
+      class="status"
+      id="status"
+    ></div>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-logo">
+    ⚡ Free Tools Hub
+  </div>
+
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <p>
+    © 2026 Free Tools Hub. All rights reserved.
+  </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+<script>
+
+const textInput =
+  document.getElementById("textInput");
+
+const statusText =
+  document.getElementById("status");
+
+
+function upperCase() {
+
+  textInput.value =
+    textInput.value.toUpperCase();
+
+  showStatus("Converted to uppercase.");
+
+}
+
+
+function lowerCase() {
+
+  textInput.value =
+    textInput.value.toLowerCase();
+
+  showStatus("Converted to lowercase.");
+
+}
+
+
+function titleCase() {
+
+  textInput.value =
+    textInput.value
+      .toLowerCase()
+      .replace(
+        /\b\w/g,
+        letter => letter.toUpperCase()
+      );
+
+  showStatus("Converted to title case.");
+
+}
+
+
+function sentenceCase() {
+
+  const text =
+    textInput.value
+      .toLowerCase();
+
+  textInput.value =
+    text.replace(
+      /(^\s*\w|[.!?]\s+\w)/g,
+      match => match.toUpperCase()
+    );
+
+  showStatus("Converted to sentence case.");
+
+}
+
+
+async function copyText() {
+
+  if (!textInput.value) {
+
+    showStatus("Nothing to copy.");
+
+    return;
+
+  }
+
+
+  try {
+
+    await navigator.clipboard.writeText(
+      textInput.value
+    );
+
+    showStatus("Text copied!");
+
+  } catch (error) {
+
+    textInput.select();
+
+    document.execCommand("copy");
+
+    showStatus("Text copied!");
+
+  }
+
+}
+
+
+function clearText() {
+
+  textInput.value = "";
+
+  showStatus("Text cleared.");
+
+  textInput.focus();
+
+}
+
+
+function showStatus(message) {
+
+  statusText.textContent =
+    message;
+
+  setTimeout(() => {
+
+    statusText.textContent = "";
+
+  }, 2000);
+
+}
+
+</script>
+
+</body>
+</html>

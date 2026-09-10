@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Image Resizer - Free Tools Hub</title>
+  <meta name="description" content="Resize images online for free. Set custom width and height and download your resized image.">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .tool-page {
+      width: 92%;
+      max-width: 800px;
+      margin: 50px auto;
+    }
+
+    .back {
+      color: #76a9ff;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 25px;
+    }
+
+    .tool-box {
+      background: #101622;
+      border: 1px solid #222d40;
+      border-radius: 18px;
+      padding: 25px;
+    }
+
+    .tool-box h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .tool-box > p {
+      color: #8995a8;
+      margin-bottom: 25px;
+    }
+
+    .upload-area {
+      border: 2px dashed #34415b;
+      border-radius: 15px;
+      padding: 40px 20px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .upload-area:hover {
+      border-color: #76a9ff;
+    }
+
+    .upload-area input {
+      display: none;
+    }
+
+    .upload-icon {
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
+
+    .upload-area strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .upload-area span {
+      color: #8995a8;
+      font-size: 13px;
+    }
+
+    .dimensions {
+      display: none;
+      margin-top: 25px;
+    }
+
+    .dimension-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .dimension-grid label {
+      display: block;
+      color: #cbd5e1;
+      font-size: 13px;
+      margin-bottom: 7px;
+    }
+
+    .dimension-grid input {
+      width: 100%;
+      padding: 13px;
+      border-radius: 9px;
+      border: 1px solid #303b52;
+      background: #0b1019;
+      color: white;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .dimension-grid input:focus {
+      border-color: #76a9ff;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 18px 0;
+      color: #aab5c5;
+      font-size: 13px;
+    }
+
+    .checkbox input {
+      width: 17px;
+      height: 17px;
+    }
+
+    .preview {
+      display: none;
+      margin-top: 25px;
+    }
+
+    .preview img {
+      max-width: 100%;
+      max-height: 350px;
+      display: block;
+      margin: 15px auto;
+      border-radius: 12px;
+    }
+
+    .info {
+      text-align: center;
+      color: #8995a8;
+      font-size: 13px;
+      margin: 15px 0;
+    }
+
+    .btn {
+      width: 100%;
+      border: 0;
+      padding: 14px;
+      border-radius: 10px;
+      background: #76a9ff;
+      color: #07101e;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .btn:disabled {
+      opacity: .4;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 550px) {
+      .dimension-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+
+  <div class="logo">⚡ Free Tools Hub</div>
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#image">Image</a>
+    <a href="index.html#pdf">PDF</a>
+    <a href="index.html#qr">QR</a>
+    <a href="index.html#text">Text</a>
+  </nav>
+
+</header>
+
+
+<main class="tool-page">
+
+  <a class="back" href="index.html">← Back to All Tools</a>
+
+  <div class="tool-box">
+
+    <h1>📐 Image Resizer</h1>
+
+    <p>
+      Resize your image to any custom width and height.
+      Everything happens directly in your browser.
+    </p>
+
+
+    <label class="upload-area">
+
+      <input
+        type="file"
+        id="imageInput"
+        accept="image/*"
+      >
+
+      <div class="upload-icon">📤</div>
+
+      <strong>Choose an image</strong>
+
+      <span>JPG, PNG, WebP and more</span>
+
+    </label>
+
+
+    <div class="dimensions" id="dimensions">
+
+      <div class="dimension-grid">
+
+        <div>
+          <label for="width">Width (px)</label>
+
+          <input
+            type="number"
+            id="width"
+            min="1"
+            placeholder="Width"
+          >
+        </div>
+
+
+        <div>
+          <label for="height">Height (px)</label>
+
+          <input
+            type="number"
+            id="height"
+            min="1"
+            placeholder="Height"
+          >
+        </div>
+
+      </div>
+
+
+      <label class="checkbox">
+
+        <input
+          type="checkbox"
+          id="keepRatio"
+          checked
+        >
+
+        Keep aspect ratio
+
+      </label>
+
+
+      <button
+        class="btn"
+        id="resizeBtn"
+      >
+        📐 Resize & Download
+      </button>
+
+    </div>
+
+
+    <div class="preview" id="preview">
+
+      <h3>Preview</h3>
+
+      <img id="previewImage" alt="Image preview">
+
+      <div class="info" id="info"></div>
+
+    </div>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-logo">
+    ⚡ Free Tools Hub
+  </div>
+
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <p>© 2026 Free Tools Hub. All rights reserved.</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+<script>
+
+const imageInput = document.getElementById("imageInput");
+const dimensions = document.getElementById("dimensions");
+
+const widthInput = document.getElementById("width");
+const heightInput = document.getElementById("height");
+
+const keepRatio = document.getElementById("keepRatio");
+
+const resizeBtn = document.getElementById("resizeBtn");
+
+const preview = document.getElementById("preview");
+const previewImage = document.getElementById("previewImage");
+const info = document.getElementById("info");
+
+let selectedImage = null;
+let originalWidth = 0;
+let originalHeight = 0;
+
+
+/* IMAGE SELECT */
+
+imageInput.addEventListener("change", function() {
+
+  const file = this.files[0];
+
+  if (!file) return;
+
+  const reader = new FileReader();
+
+  reader.onload = function(e) {
+
+    const img = new Image();
+
+    img.onload = function() {
+
+      selectedImage = img;
+
+      originalWidth = img.width;
+      originalHeight = img.height;
+
+      widthInput.value = img.width;
+      heightInput.value = img.height;
+
+      dimensions.style.display = "block";
+
+      previewImage.src = e.target.result;
+
+      preview.style.display = "block";
+
+      info.textContent =
+        "Original: " +
+        img.width +
+        " × " +
+        img.height +
+        " px";
+
+    };
+
+    img.src = e.target.result;
+
+  };
+
+  reader.readAsDataURL(file);
+
+});
+
+
+/* KEEP ASPECT RATIO */
+
+widthInput.addEventListener("input", function() {
+
+  if (!keepRatio.checked || !selectedImage) return;
+
+  const newWidth = Number(this.value);
+
+  if (newWidth > 0) {
+
+    const ratio =
+      originalHeight / originalWidth;
+
+    heightInput.value =
+      Math.round(newWidth * ratio);
+
+  }
+
+});
+
+
+heightInput.addEventListener("input", function() {
+
+  if (!keepRatio.checked || !selectedImage) return;
+
+  const newHeight = Number(this.value);
+
+  if (newHeight > 0) {
+
+    const ratio =
+      originalWidth / originalHeight;
+
+    widthInput.value =
+      Math.round(newHeight * ratio);
+
+  }
+
+});
+
+
+/* RESIZE */
+
+resizeBtn.addEventListener("click", function() {
+
+  if (!selectedImage) {
+    alert("Please choose an image first.");
+    return;
+  }
+
+  const newWidth = Number(widthInput.value);
+  const newHeight = Number(heightInput.value);
+
+  if (
+    !newWidth ||
+    !newHeight ||
+    newWidth < 1 ||
+    newHeight < 1
+  ) {
+
+    alert("Please enter valid dimensions.");
+    return;
+
+  }
+
+
+  const canvas = document.createElement("canvas");
+
+  canvas.width = newWidth;
+  canvas.height = newHeight;
+
+  const ctx = canvas.getContext("2d");
+
+  ctx.drawImage(
+    selectedImage,
+    0,
+    0,
+    newWidth,
+    newHeight
+  );
+
+
+  canvas.toBlob(function(blob) {
+
+    if (!blob) {
+
+      alert("Resize failed.");
+      return;
+
+    }
+
+
+    const url =
+      URL.createObjectURL(blob);
+
+    const a =
+      document.createElement("a");
+
+    const originalName =
+      imageInput.files[0].name
+        .replace(/\.[^/.]+$/, "");
+
+
+    a.href = url;
+
+    a.download =
+      originalName +
+      "-" +
+      newWidth +
+      "x" +
+      newHeight +
+      ".jpg";
+
+
+    document.body.appendChild(a);
+
+    a.click();
+
+    a.remove();
+
+    URL.revokeObjectURL(url);
+
+
+    info.textContent =
+      "New size: " +
+      newWidth +
+      " × " +
+      newHeight +
+      " px";
+
+  }, "image/jpeg", 0.92);
+
+});
+
+</script>
+
+</body>
+</html>

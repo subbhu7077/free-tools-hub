@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Free Tools Hub - Free Online Tools</title>
+  <meta name="description" content="Free online tools for images, PDF, QR codes, text and more. Fast, simple and mobile friendly.">
+  <meta name="keywords" content="free online tools, image compressor, image resizer, QR generator, PDF tools, word counter">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      ⚡ Free Tools Hub
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav id="navMenu">
+      <a href="#home">Home</a>
+      <a href="#image">Image</a>
+      <a href="#pdf">PDF</a>
+      <a href="#qr">QR</a>
+      <a href="#text">Text</a>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <main id="home">
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <span class="badge">🚀 100% Free Online Tools</span>
+
+        <h1>
+          Simple Tools.<br>
+          <span>Powerful Results.</span>
+        </h1>
+
+        <p>
+          Compress images, resize photos, create QR codes,
+          count words and use many more free tools.
+        </p>
+
+        <div class="search-box">
+          <input
+            type="text"
+            id="toolSearch"
+            placeholder="🔍 Search a tool..."
+            onkeyup="searchTools()"
+          >
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- AD PLACEHOLDER -->
+    <div class="ad-box">
+      <span>ADVERTISEMENT</span>
+    </div>
+
+
+    <!-- TOOLS -->
+    <section class="tools-section">
+
+      <div class="section-title">
+        <span>🛠️</span>
+        <div>
+          <h2>Free Online Tools</h2>
+          <p>Choose a tool and get started</p>
+        </div>
+      </div>
+
+
+      <!-- IMAGE TOOLS -->
+      <div class="category" id="image">
+
+        <h3>🖼️ Image Tools</h3>
+
+        <div class="tools-grid">
+
+          <a class="tool-card" href="image-compressor.html">
+            <div class="tool-icon">🗜️</div>
+            <h4>Image Compressor</h4>
+            <p>Reduce image size without losing quality.</p>
+            <span>Use Tool →</span>
+          </a>
+
+
+          <a class="tool-card" href="image-resizer.html">
+            <div class="tool-icon">📐</div>
+            <h4>Image Resizer</h4>
+            <p>Resize images to any required dimension.</p>
+            <span>Use Tool →</span>
+          </a>
+
+
+          <a class="tool-card" href="jpg-png.html">
+            <div class="tool-icon">🔄</div>
+            <h4>JPG ↔ PNG</h4>
+            <p>Convert JPG and PNG images easily.</p>
+            <span>Use Tool →</span>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PDF TOOLS -->
+      <div class="category" id="pdf">
+
+        <h3>📄 PDF Tools</h3>
+
+        <div class="tools-grid">
+
+          <a class="tool-card" href="image-to-pdf.html">
+            <div class="tool-icon">📄</div>
+            <h4>Image → PDF</h4>
+            <p>Convert images into a PDF document.</p>
+            <span>Use Tool →</span>
+          </a>
+
+
+          <a class="tool-card" href="pdf-to-image.html">
+            <div class="tool-icon">🖼️</div>
+            <h4>PDF → Image</h4>
+            <p>Convert PDF pages into images.</p>
+            <span>Use Tool →</span>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- QR TOOLS -->
+      <div class="category" id="qr">
+
+        <h3>🔳 QR Tools</h3>
+
+        <div class="tools-grid">
+
+          <a class="tool-card" href="qr-generator.html">
+            <div class="tool-icon">🔳</div>
+            <h4>QR Code Generator</h4>
+            <p>Create QR codes for links, text and more.</p>
+            <span>Use Tool →</span>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- TEXT TOOLS -->
+      <div class="category" id="text">
+
+        <h3>📝 Text Tools</h3>
+
+        <div class="tools-grid">
+
+          <a class="tool-card" href="word-counter.html">
+            <div class="tool-icon">🔢</div>
+            <h4>Word Counter</h4>
+            <p>Count words, characters and sentences.</p>
+            <span>Use Tool →</span>
+          </a>
+
+
+          <a class="tool-card" href="case-converter.html">
+            <div class="tool-icon">🔤</div>
+            <h4>Case Converter</h4>
+            <p>Convert text to uppercase or lowercase.</p>
+            <span>Use Tool →</span>
+          </a>
+
+
+          <a class="tool-card" href="password-generator.html">
+            <div class="tool-icon">🔐</div>
+            <h4>Password Generator</h4>
+            <p>Generate strong random passwords.</p>
+            <span>Use Tool →</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SECOND AD -->
+    <div class="ad-box">
+      <span>ADVERTISEMENT</span>
+    </div>
+
+
+    <!-- WHY US -->
+    <section class="features">
+
+      <h2>Why Use Free Tools Hub?</h2>
+
+      <div class="feature-grid">
+
+        <div>
+          <strong>⚡ Fast</strong>
+          <p>Quick and simple tools.</p>
+        </div>
+
+        <div>
+          <strong>🔒 Private</strong>
+          <p>Your files stay in your browser where supported.</p>
+        </div>
+
+        <div>
+          <strong>📱 Mobile Friendly</strong>
+          <p>Works on phones, tablets and computers.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-logo">
+      ⚡ Free Tools Hub
+    </div>
+
+    <div class="footer-links">
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+    </div>
+
+    <p>
+      © 2026 Free Tools Hub. All rights reserved.
+    </p>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

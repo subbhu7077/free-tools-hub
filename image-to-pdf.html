@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Image to PDF - Free Tools Hub</title>
+  <meta name="description" content="Convert JPG, PNG and WebP images to PDF for free.">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .tool-page {
+      width: 92%;
+      max-width: 850px;
+      margin: 50px auto;
+    }
+
+    .back {
+      color: #76a9ff;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 25px;
+    }
+
+    .tool-box {
+      background: #101622;
+      border: 1px solid #222d40;
+      border-radius: 18px;
+      padding: 25px;
+    }
+
+    .tool-box h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .tool-box > p {
+      color: #8995a8;
+      margin-bottom: 25px;
+    }
+
+    .upload-area {
+      display: block;
+      border: 2px dashed #34415b;
+      border-radius: 15px;
+      padding: 40px 20px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .upload-area:hover {
+      border-color: #76a9ff;
+    }
+
+    .upload-area input {
+      display: none;
+    }
+
+    .upload-icon {
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
+
+    .upload-area strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .upload-area span {
+      color: #8995a8;
+      font-size: 13px;
+    }
+
+    .preview-list {
+      margin-top: 25px;
+    }
+
+    .preview-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 12px;
+      margin-bottom: 10px;
+      background: #182237;
+      border: 1px solid #26344d;
+      border-radius: 10px;
+    }
+
+    .preview-item img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .preview-item div {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .preview-item strong {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .preview-item small {
+      color: #8995a8;
+    }
+
+    .settings {
+      display: none;
+      margin-top: 25px;
+    }
+
+    .settings label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .settings select {
+      width: 100%;
+      padding: 13px;
+      border-radius: 9px;
+      border: 1px solid #303b52;
+      background: #0b1019;
+      color: white;
+      font-size: 15px;
+    }
+
+    .btn {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      border: 0;
+      border-radius: 10px;
+      background: #76a9ff;
+      color: #07101e;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .btn:disabled {
+      opacity: .4;
+      cursor: not-allowed;
+    }
+
+    .status {
+      text-align: center;
+      color: #8995a8;
+      font-size: 13px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+
+  <div class="logo">⚡ Free Tools Hub</div>
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#image">Image</a>
+    <a href="index.html#pdf">PDF</a>
+    <a href="index.html#qr">QR</a>
+    <a href="index.html#text">Text</a>
+  </nav>
+
+</header>
+
+
+<main class="tool-page">
+
+  <a class="back" href="index.html">← Back to All Tools</a>
+
+  <div class="tool-box">
+
+    <h1>📄 Image → PDF</h1>
+
+    <p>
+      Convert one or multiple images into a PDF document.
+      Your images are processed in your browser.
+    </p>
+
+
+    <label class="upload-area">
+
+      <input
+        type="file"
+        id="imageInput"
+        accept="image/*"
+        multiple
+      >
+
+      <div class="upload-icon">📤</div>
+
+      <strong>Choose images</strong>
+
+      <span>
+        You can select multiple images
+      </span>
+
+    </label>
+
+
+    <div
+      class="preview-list"
+      id="previewList"
+    ></div>
+
+
+    <div
+      class="settings"
+      id="settings"
+    >
+
+      <label for="pageSize">
+        PDF Page Size
+      </label>
+
+      <select id="pageSize">
+
+        <option value="a4">
+          A4
+        </option>
+
+        <option value="letter">
+          Letter
+        </option>
+
+      </select>
+
+
+      <button
+        class="btn"
+        id="convertBtn"
+      >
+        📄 Convert to PDF
+      </button>
+
+      <div
+        class="status"
+        id="status"
+      ></div>
+
+    </div>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-logo">
+    ⚡ Free Tools Hub
+  </div>
+
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <p>
+    © 2026 Free Tools Hub. All rights reserved.
+  </p>
+
+</footer>
+
+
+<!-- PDF LIBRARY -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="script.js"></script>
+
+<script>
+
+const imageInput =
+  document.getElementById("imageInput");
+
+const previewList =
+  document.getElementById("previewList");
+
+const settings =
+  document.getElementById("settings");
+
+const convertBtn =
+  document.getElementById("convertBtn");
+
+const statusText =
+  document.getElementById("status");
+
+let selectedFiles = [];
+
+
+/* SELECT IMAGES */
+
+imageInput.addEventListener(
+  "change",
+  function() {
+
+    selectedFiles =
+      Array.from(this.files);
+
+    previewList.innerHTML = "";
+
+    if (!selectedFiles.length) {
+
+      settings.style.display =
+        "none";
+
+      return;
+
+    }
+
+
+    selectedFiles.forEach(
+      (file, index) => {
+
+        const reader =
+          new FileReader();
+
+
+        reader.onload =
+          function(e) {
+
+            const item =
+              document.createElement("div");
+
+            item.className =
+              "preview-item";
+
+
+            item.innerHTML = `
+              <img src="${e.target.result}" alt="Image">
+              <div>
+                <strong>${escapeHTML(file.name)}</strong>
+                <small>
+                  Page ${index + 1} •
+                  ${formatBytes(file.size)}
+                </small>
+              </div>
+            `;
+
+
+            previewList.appendChild(item);
+
+          };
+
+
+        reader.readAsDataURL(file);
+
+      }
+    );
+
+
+    settings.style.display =
+      "block";
+
+  }
+);
+
+
+/* CONVERT TO PDF */
+
+convertBtn.addEventListener(
+  "click",
+  async function() {
+
+    if (!selectedFiles.length) {
+
+      alert(
+        "Please select at least one image."
+      );
+
+      return;
+
+    }
+
+
+    if (
+      typeof window.jspdf ===
+      "undefined"
+    ) {
+
+      alert(
+        "PDF library could not load. Check your internet connection."
+      );
+
+      return;
+
+    }
+
+
+    convertBtn.disabled = true;
+
+    statusText.textContent =
+      "Creating PDF...";
+
+
+    try {
+
+      const {
+        jsPDF
+      } = window.jspdf;
+
+
+      const pageSize =
+        document.getElementById(
+          "pageSize"
+        ).value;
+
+
+      const pdf =
+        new jsPDF({
+          orientation: "portrait",
+          unit: "mm",
+          format: pageSize
+        });
+
+
+      for (
+        let i = 0;
+        i < selectedFiles.length;
+        i++
+      ) {
+
+        if (i > 0) {
+          pdf.addPage();
+        }
+
+
+        const dataURL =
+          await readFile(
+            selectedFiles[i]
+          );
+
+
+        const img =
+          await loadImage(
+            dataURL
+          );
+
+
+        const pageWidth =
+          pdf.internal.pageSize.getWidth();
+
+        const pageHeight =
+          pdf.internal.pageSize.getHeight();
+
+
+        const margin = 10;
+
+        const maxWidth =
+          pageWidth - margin * 2;
+
+        const maxHeight =
+          pageHeight - margin * 2;
+
+
+        const ratio =
+          Math.min(
+            maxWidth / img.width,
+            maxHeight / img.height
+          );
+
+
+        const width =
+          img.width * ratio;
+
+        const height =
+          img.height * ratio;
+
+
+        const x =
+          (pageWidth - width) / 2;
+
+        const y =
+          (pageHeight - height) / 2;
+
+
+        const format =
+          selectedFiles[i].type
+            .includes("png")
+            ? "PNG"
+            : "JPEG";
+
+
+        pdf.addImage(
+          dataURL,
+          format,
+          x,
+          y,
+          width,
+          height
+        );
+
+      }
+
+
+      pdf.save(
+        "free-tools-hub-images.pdf"
+      );
+
+
+      statusText.textContent =
+        "✅ PDF downloaded successfully.";
+
+    } catch (error) {
+
+      console.error(error);
+
+      statusText.textContent =
+        "❌ Could not create PDF.";
+
+    }
+
+
+    convertBtn.disabled = false;
+
+  }
+);
+
+
+/* HELPERS */
+
+function readFile(file) {
+
+  return new Promise(
+    (resolve, reject) => {
+
+      const reader =
+        new FileReader();
+
+      reader.onload =
+        () => resolve(
+          reader.result
+        );
+
+      reader.onerror =
+        reject;
+
+      reader.readAsDataURL(file);
+
+    }
+  );
+
+}
+
+
+function loadImage(src) {
+
+  return new Promise(
+    (resolve, reject) => {
+
+      const img =
+        new Image();
+
+      img.onload =
+        () => resolve(img);
+
+      img.onerror =
+        reject;
+
+      img.src = src;
+
+    }
+  );
+
+}
+
+
+function formatBytes(bytes) {
+
+  if (bytes === 0)
+    return "0 Bytes";
+
+  const units = [
+    "Bytes",
+    "KB",
+    "MB",
+    "GB"
+  ];
+
+  const i =
+    Math.floor(
+      Math.log(bytes) /
+      Math.log(1024)
+    );
+
+  return (
+    (bytes /
+      Math.pow(1024, i)
+    ).toFixed(2)
+    + " "
+    + units[i]
+  );
+
+}
+
+
+function escapeHTML(text) {
+
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+}
+
+</script>
+
+</body>
+</html>

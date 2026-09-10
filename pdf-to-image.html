@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PDF to Image - Free Tools Hub</title>
+  <meta name="description" content="Convert PDF pages to JPG or PNG images online for free.">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .tool-page {
+      width: 92%;
+      max-width: 850px;
+      margin: 50px auto;
+    }
+
+    .back {
+      color: #76a9ff;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 25px;
+    }
+
+    .tool-box {
+      background: #101622;
+      border: 1px solid #222d40;
+      border-radius: 18px;
+      padding: 25px;
+    }
+
+    .tool-box h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .tool-box > p {
+      color: #8995a8;
+      margin-bottom: 25px;
+    }
+
+    .upload-area {
+      display: block;
+      border: 2px dashed #34415b;
+      border-radius: 15px;
+      padding: 40px 20px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .upload-area:hover {
+      border-color: #76a9ff;
+    }
+
+    .upload-area input {
+      display: none;
+    }
+
+    .upload-icon {
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
+
+    .upload-area strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .upload-area span {
+      color: #8995a8;
+      font-size: 13px;
+    }
+
+    .options {
+      display: none;
+      margin-top: 25px;
+    }
+
+    .options label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .options select {
+      width: 100%;
+      padding: 13px;
+      border-radius: 9px;
+      border: 1px solid #303b52;
+      background: #0b1019;
+      color: white;
+      font-size: 15px;
+    }
+
+    .btn {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      border: 0;
+      border-radius: 10px;
+      background: #76a9ff;
+      color: #07101e;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .btn:disabled {
+      opacity: .4;
+      cursor: not-allowed;
+    }
+
+    .status {
+      text-align: center;
+      color: #8995a8;
+      font-size: 13px;
+      margin-top: 15px;
+    }
+
+    .preview-list {
+      margin-top: 25px;
+    }
+
+    .page-card {
+      background: #182237;
+      border: 1px solid #26344d;
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .page-card img {
+      max-width: 100%;
+      max-height: 350px;
+      border-radius: 8px;
+    }
+
+    .page-card p {
+      color: #8995a8;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+
+  <div class="logo">⚡ Free Tools Hub</div>
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#image">Image</a>
+    <a href="index.html#pdf">PDF</a>
+    <a href="index.html#qr">QR</a>
+    <a href="index.html#text">Text</a>
+  </nav>
+
+</header>
+
+
+<main class="tool-page">
+
+  <a class="back" href="index.html">← Back to All Tools</a>
+
+  <div class="tool-box">
+
+    <h1>📄 PDF → Image</h1>
+
+    <p>
+      Convert PDF pages into JPG or PNG images directly in your browser.
+    </p>
+
+
+    <label class="upload-area">
+
+      <input
+        type="file"
+        id="pdfInput"
+        accept="application/pdf"
+      >
+
+      <div class="upload-icon">📄</div>
+
+      <strong>Choose a PDF</strong>
+
+      <span>PDF files only</span>
+
+    </label>
+
+
+    <div
+      class="options"
+      id="options"
+    >
+
+      <label for="imageFormat">
+        Output Format
+      </label>
+
+      <select id="imageFormat">
+
+        <option value="png">
+          PNG
+        </option>
+
+        <option value="jpeg">
+          JPG
+        </option>
+
+      </select>
+
+
+      <button
+        class="btn"
+        id="convertBtn"
+      >
+        🖼️ Convert PDF to Images
+      </button>
+
+
+      <div
+        class="status"
+        id="status"
+      ></div>
+
+    </div>
+
+
+    <div
+      class="preview-list"
+      id="previewList"
+    ></div>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-logo">
+    ⚡ Free Tools Hub
+  </div>
+
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <p>
+    © 2026 Free Tools Hub. All rights reserved.
+  </p>
+
+</footer>
+
+
+<!-- PDF.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs" type="module"></script>
+
+<script src="script.js"></script>
+
+<script type="module">
+
+const pdfInput =
+  document.getElementById("pdfInput");
+
+const options =
+  document.getElementById("options");
+
+const convertBtn =
+  document.getElementById("convertBtn");
+
+const previewList =
+  document.getElementById("previewList");
+
+const statusText =
+  document.getElementById("status");
+
+const imageFormat =
+  document.getElementById("imageFormat");
+
+
+let selectedPDF = null;
+
+
+/* LOAD PDF.JS */
+
+const pdfjsLib =
+  await import(
+    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs"
+  );
+
+
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+  "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs";
+
+
+/* SELECT PDF */
+
+pdfInput.addEventListener(
+  "change",
+  function() {
+
+    selectedPDF =
+      this.files[0];
+
+    previewList.innerHTML = "";
+
+    if (!selectedPDF) {
+
+      options.style.display =
+        "none";
+
+      return;
+
+    }
+
+
+    if (
+      selectedPDF.type !==
+      "application/pdf"
+    ) {
+
+      alert(
+        "Please select a PDF file."
+      );
+
+      this.value = "";
+
+      return;
+
+    }
+
+
+    options.style.display =
+      "block";
+
+    statusText.textContent =
+      "PDF selected: " +
+      selectedPDF.name;
+
+  }
+);
+
+
+/* CONVERT */
+
+convertBtn.addEventListener(
+  "click",
+  async function() {
+
+    if (!selectedPDF) {
+
+      alert(
+        "Please select a PDF first."
+      );
+
+      return;
+
+    }
+
+
+    convertBtn.disabled = true;
+
+    previewList.innerHTML = "";
+
+    statusText.textContent =
+      "Loading PDF...";
+
+
+    try {
+
+      const arrayBuffer =
+        await selectedPDF.arrayBuffer();
+
+
+      const pdf =
+        await pdfjsLib.getDocument({
+          data: arrayBuffer
+        }).promise;
+
+
+      statusText.textContent =
+        "Converting " +
+        pdf.numPages +
+        " page(s)...";
+
+
+      for (
+        let pageNumber = 1;
+        pageNumber <= pdf.numPages;
+        pageNumber++
+      ) {
+
+        const page =
+          await pdf.getPage(
+            pageNumber
+          );
+
+
+        const scale = 2;
+
+        const viewport =
+          page.getViewport({
+            scale: scale
+          });
+
+
+        const canvas =
+          document.createElement(
+            "canvas"
+          );
+
+
+        const context =
+          canvas.getContext("2d");
+
+
+        canvas.width =
+          viewport.width;
+
+        canvas.height =
+          viewport.height;
+
+
+        await page.render({
+          canvasContext: context,
+          viewport: viewport
+        }).promise;
+
+
+        const mimeType =
+          imageFormat.value === "png"
+            ? "image/png"
+            : "image/jpeg";
+
+
+        const quality =
+          imageFormat.value === "png"
+            ? undefined
+            : 0.92;
+
+
+        const dataURL =
+          canvas.toDataURL(
+            mimeType,
+            quality
+          );
+
+
+        const card =
+          document.createElement(
+            "div"
+          );
+
+        card.className =
+          "page-card";
+
+
+        const img =
+          document.createElement(
+            "img"
+          );
+
+        img.src =
+          dataURL;
+
+       

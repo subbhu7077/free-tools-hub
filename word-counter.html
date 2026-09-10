@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Word Counter - Free Tools Hub</title>
+  <meta name="description" content="Count words, characters, sentences and paragraphs online for free.">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .tool-page {
+      width: 92%;
+      max-width: 900px;
+      margin: 50px auto;
+    }
+
+    .back {
+      color: #76a9ff;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 25px;
+    }
+
+    .tool-box {
+      background: #101622;
+      border: 1px solid #222d40;
+      border-radius: 18px;
+      padding: 25px;
+    }
+
+    .tool-box h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .tool-box > p {
+      color: #8995a8;
+      margin-bottom: 25px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 300px;
+      resize: vertical;
+      padding: 18px;
+      border-radius: 12px;
+      border: 1px solid #303b52;
+      background: #0b1019;
+      color: white;
+      outline: none;
+      font-size: 16px;
+      line-height: 1.7;
+      font-family: Arial, sans-serif;
+    }
+
+    textarea:focus {
+      border-color: #76a9ff;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .stat {
+      background: #182237;
+      border: 1px solid #26344d;
+      border-radius: 12px;
+      padding: 18px 10px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 25px;
+      color: #76a9ff;
+    }
+
+    .stat span {
+      color: #8995a8;
+      font-size: 12px;
+    }
+
+    .clear-btn {
+      width: 100%;
+      margin-top: 18px;
+      padding: 13px;
+      border: 1px solid #303b52;
+      border-radius: 10px;
+      background: transparent;
+      color: #cbd5e1;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .clear-btn:hover {
+      background: #182237;
+    }
+
+    @media (max-width: 600px) {
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .tool-box h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+
+  <div class="logo">⚡ Free Tools Hub</div>
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#image">Image</a>
+    <a href="index.html#pdf">PDF</a>
+    <a href="index.html#qr">QR</a>
+    <a href="index.html#text">Text</a>
+  </nav>
+
+</header>
+
+
+<main class="tool-page">
+
+  <a class="back" href="index.html">← Back to All Tools</a>
+
+  <div class="tool-box">
+
+    <h1>🔢 Word Counter</h1>
+
+    <p>
+      Count words, characters, sentences and paragraphs instantly.
+    </p>
+
+
+    <textarea
+      id="textInput"
+      placeholder="Start typing or paste your text here..."
+    ></textarea>
+
+
+    <div class="stats">
+
+      <div class="stat">
+        <strong id="words">0</strong>
+        <span>Words</span>
+      </div>
+
+      <div class="stat">
+        <strong id="characters">0</strong>
+        <span>Characters</span>
+      </div>
+
+      <div class="stat">
+        <strong id="sentences">0</strong>
+        <span>Sentences</span>
+      </div>
+
+      <div class="stat">
+        <strong id="paragraphs">0</strong>
+        <span>Paragraphs</span>
+      </div>
+
+    </div>
+
+
+    <button
+      class="clear-btn"
+      onclick="clearText()"
+    >
+      🗑️ Clear Text
+    </button>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-logo">
+    ⚡ Free Tools Hub
+  </div>
+
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <p>
+    © 2026 Free Tools Hub. All rights reserved.
+  </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+<script>
+
+const textInput =
+  document.getElementById("textInput");
+
+const words =
+  document.getElementById("words");
+
+const characters =
+  document.getElementById("characters");
+
+const sentences =
+  document.getElementById("sentences");
+
+const paragraphs =
+  document.getElementById("paragraphs");
+
+
+textInput.addEventListener(
+  "input",
+  updateStats
+);
+
+
+function updateStats() {
+
+  const text =
+    textInput.value;
+
+
+  /* Characters */
+
+  characters.textContent =
+    text.length;
+
+
+  /* Words */
+
+  const trimmed =
+    text.trim();
+
+  if (!trimmed) {
+
+    words.textContent = "0";
+
+  } else {
+
+    words.textContent =
+      trimmed
+        .split(/\s+/)
+        .filter(Boolean)
+        .length;
+
+  }
+
+
+  /* Sentences */
+
+  if (!trimmed) {
+
+    sentences.textContent = "0";
+
+  } else {
+
+    const matches =
+      trimmed.match(
+        /[^.!?]+[.!?]+/g
+      );
+
+    sentences.textContent =
+      matches
+        ? matches.length
+        : 0;
+
+  }
+
+
+  /* Paragraphs */
+
+  if (!trimmed) {
+
+    paragraphs.textContent = "0";
+
+  } else {
+
+    paragraphs.textContent =
+      trimmed
+        .split(/\n\s*\n/)
+        .filter(
+          paragraph =>
+            paragraph.trim().length > 0
+        )
+        .length;
+
+  }
+
+}
+
+
+function clearText() {
+
+  textInput.value = "";
+
+  updateStats();
+
+  textInput.focus();
+
+}
+
+</script>
+
+</body>
+</html>
