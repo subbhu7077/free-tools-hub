@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://subbhu7077.github.io/free-tools-hub/sitemap.xml
