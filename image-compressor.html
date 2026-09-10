@@ -4,26 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Image Compressor - Free Tools Hub</title>
-  <meta name="description" content="Compress JPG, PNG and WebP images online for free.">
+  <title>Free Image Compressor Online - JPG, PNG, WebP | Free Tools Hub</title>
+
+  <meta
+    name="description"
+    content="Compress JPG, PNG and WebP images online for free. Reduce image file size directly in your browser and download the compressed image."
+  >
+
+  <meta name="robots" content="index, follow">
+
+  <link
+    rel="canonical"
+    href="https://subbhu7077.github.io/free-tools-hub/image-compressor.html"
+  >
 
   <link rel="stylesheet" href="style.css">
 
   <style>
     .tool-page {
       width: 92%;
-      max-width: 800px;
-      margin: 50px auto;
+      max-width: 900px;
+      margin: 45px auto;
     }
 
     .back {
+      display: inline-block;
+      margin-bottom: 22px;
       color: #76a9ff;
       text-decoration: none;
-      display: inline-block;
-      margin-bottom: 25px;
+      font-weight: 600;
     }
 
-    .tool-box {
+    .tool-box,
+    .content-section {
       background: #101622;
       border: 1px solid #222d40;
       border-radius: 18px;
@@ -35,21 +48,25 @@
       margin-bottom: 10px;
     }
 
-    .tool-box > p {
+    .tool-description {
       color: #8995a8;
+      line-height: 1.6;
       margin-bottom: 25px;
     }
 
     .upload-area {
+      display: block;
       border: 2px dashed #34415b;
       border-radius: 15px;
       padding: 40px 20px;
       text-align: center;
       cursor: pointer;
+      transition: .2s;
     }
 
     .upload-area:hover {
       border-color: #76a9ff;
+      background: rgba(118, 169, 255, .04);
     }
 
     .upload-area input {
@@ -63,7 +80,8 @@
 
     .upload-area strong {
       display: block;
-      margin-bottom: 5px;
+      font-size: 17px;
+      margin-bottom: 7px;
     }
 
     .upload-area span {
@@ -77,36 +95,74 @@
 
     .controls label {
       display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-
-    .controls input[type="range"] {
-      width: 100%;
+      margin-bottom: 10px;
+      font-weight: 700;
     }
 
     #qualityValue {
       color: #76a9ff;
     }
 
+    .controls input[type="range"] {
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .quality-info {
+      display: flex;
+      justify-content: space-between;
+      color: #8995a8;
+      font-size: 12px;
+      margin-top: 7px;
+    }
+
     .preview {
       display: none;
-      margin-top: 25px;
+      margin-top: 28px;
+    }
+
+    .preview h3 {
+      margin-bottom: 12px;
     }
 
     .preview img {
-      max-width: 100%;
-      max-height: 350px;
-      border-radius: 12px;
       display: block;
+      max-width: 100%;
+      max-height: 380px;
       margin: 15px auto;
+      border-radius: 12px;
+      object-fit: contain;
     }
 
     .info {
-      color: #8995a8;
-      font-size: 13px;
+      color: #aeb8c8;
+      font-size: 14px;
       text-align: center;
+      line-height: 1.7;
       margin: 15px 0;
+    }
+
+    .result-box {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      border-radius: 12px;
+      background: #0b111c;
+      border: 1px solid #263247;
+      text-align: center;
+    }
+
+    .result-box strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .success {
+      color: #79e6a5;
+    }
+
+    .warning {
+      color: #ffcf70;
     }
 
     .btn {
@@ -119,15 +175,95 @@
       font-size: 15px;
       font-weight: 800;
       cursor: pointer;
+      transition: .2s;
     }
 
     .btn:hover {
       opacity: .9;
+      transform: translateY(-1px);
     }
 
     .btn:disabled {
       opacity: .4;
       cursor: not-allowed;
+      transform: none;
+    }
+
+    .secondary-btn {
+      margin-top: 10px;
+      background: transparent;
+      border: 1px solid #34415b;
+      color: #fff;
+    }
+
+    .content-section {
+      margin-top: 28px;
+    }
+
+    .content-section h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 23px;
+    }
+
+    .content-section p,
+    .content-section li {
+      color: #aeb8c8;
+      line-height: 1.75;
+    }
+
+    .content-section ul,
+    .content-section ol {
+      padding-left: 22px;
+    }
+
+    .faq details {
+      border-top: 1px solid #263247;
+      padding: 15px 0;
+    }
+
+    .faq details:last-child {
+      border-bottom: 1px solid #263247;
+    }
+
+    .faq summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .faq p {
+      margin-bottom: 0;
+    }
+
+    .related-tools a {
+      display: inline-block;
+      color: #76a9ff;
+      text-decoration: none;
+      margin: 5px 15px 5px 0;
+    }
+
+    .privacy-note {
+      font-size: 13px;
+      color: #8995a8;
+    }
+
+    @media (max-width: 600px) {
+      .tool-page {
+        margin: 30px auto;
+      }
+
+      .tool-box,
+      .content-section {
+        padding: 18px;
+      }
+
+      .tool-box h1 {
+        font-size: 25px;
+      }
+
+      .upload-area {
+        padding: 30px 15px;
+      }
     }
   </style>
 </head>
@@ -135,8 +271,14 @@
 <body>
 
 <header class="header">
-  <div class="logo">⚡ Free Tools Hub</div>
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <div class="logo">
+    ⚡ Free Tools Hub
+  </div>
+
+  <button class="menu-btn" onclick="toggleMenu()">
+    ☰
+  </button>
 
   <nav id="navMenu">
     <a href="index.html">Home</a>
@@ -145,22 +287,31 @@
     <a href="index.html#qr">QR</a>
     <a href="index.html#text">Text</a>
   </nav>
+
 </header>
 
 
 <main class="tool-page">
 
-  <a class="back" href="index.html">← Back to All Tools</a>
+  <a class="back" href="index.html">
+    ← Back to All Tools
+  </a>
+
+
+  <!-- TOOL -->
 
   <div class="tool-box">
 
-    <h1>🗜️ Image Compressor</h1>
+    <h1>🗜️ Free Image Compressor</h1>
 
-    <p>
-      Reduce image file size quickly and easily.
-      Works directly in your browser.
+    <p class="tool-description">
+      Compress JPG, PNG and WebP images online for free.
+      Choose your preferred quality and download a smaller JPEG image.
+      The compression is performed directly in your browser.
     </p>
 
+
+    <!-- UPLOAD -->
 
     <label class="upload-area">
 
@@ -170,22 +321,30 @@
         accept="image/jpeg,image/png,image/webp"
       >
 
-      <div class="upload-icon">📤</div>
+      <div class="upload-icon">
+        📤
+      </div>
 
-      <strong>Choose an image</strong>
+      <strong>
+        Choose an image
+      </strong>
 
       <span>
-        JPG, PNG or WebP
+        JPG, PNG or WebP • Select one image
       </span>
 
     </label>
 
 
+    <!-- QUALITY -->
+
     <div class="controls">
 
       <label>
-        Quality:
-        <span id="qualityValue">70%</span>
+        Compression Quality:
+        <span id="qualityValue">
+          70%
+        </span>
       </label>
 
       <input
@@ -196,27 +355,316 @@
         value="70"
       >
 
+      <div class="quality-info">
+        <span>Smaller file</span>
+        <span>Better quality</span>
+      </div>
+
     </div>
 
 
-    <div class="preview" id="preview">
+    <!-- PREVIEW -->
 
-      <h3>Preview</h3>
+    <div
+      class="preview"
+      id="preview"
+    >
 
-      <img id="previewImage" alt="Image preview">
+      <h3>
+        🖼️ Image Preview
+      </h3>
 
-      <div class="info" id="fileInfo"></div>
+      <img
+        id="previewImage"
+        alt="Selected image preview"
+      >
 
-      <button class="btn" id="downloadBtn" disabled>
+      <div
+        class="info"
+        id="fileInfo"
+      ></div>
+
+
+      <button
+        class="btn"
+        id="downloadBtn"
+        disabled
+      >
         ⬇️ Compress & Download
       </button>
+
+
+      <button
+        class="btn secondary-btn"
+        id="resetBtn"
+      >
+        🔄 Choose Another Image
+      </button>
+
+
+      <div
+        class="result-box"
+        id="resultBox"
+      >
+
+        <strong id="resultTitle">
+          Compression Result
+        </strong>
+
+        <span id="resultText"></span>
+
+      </div>
 
     </div>
 
   </div>
 
+
+  <!-- ABOUT TOOL -->
+
+  <section class="content-section">
+
+    <h2>
+      What is an Image Compressor?
+    </h2>
+
+    <p>
+      An image compressor reduces the file size of an image while
+      trying to maintain useful visual quality. Smaller image files
+      are easier to upload, share, store and use on websites.
+    </p>
+
+    <p>
+      Free Tools Hub processes the selected image directly in your
+      browser using standard browser APIs. You can choose the
+      compression quality before creating the downloadable result.
+    </p>
+
+  </section>
+
+
+  <!-- HOW TO -->
+
+  <section class="content-section">
+
+    <h2>
+      How to Compress an Image
+    </h2>
+
+    <ol>
+
+      <li>
+        Tap the upload box and select a JPG, PNG or WebP image.
+      </li>
+
+      <li>
+        Adjust the compression quality using the slider.
+      </li>
+
+      <li>
+        Check the image preview and original file size.
+      </li>
+
+      <li>
+        Tap the “Compress & Download” button.
+      </li>
+
+      <li>
+        Your compressed JPEG file will be downloaded to your device.
+      </li>
+
+    </ol>
+
+  </section>
+
+
+  <!-- BENEFITS -->
+
+  <section class="content-section">
+
+    <h2>
+      Why Compress Images?
+    </h2>
+
+    <ul>
+
+      <li>
+        Reduce image file size before uploading.
+      </li>
+
+      <li>
+        Make images easier to share.
+      </li>
+
+      <li>
+        Save storage space when smaller files are sufficient.
+      </li>
+
+      <li>
+        Prepare smaller images for websites and online forms.
+      </li>
+
+      <li>
+        Choose your preferred balance between quality and size.
+      </li>
+
+    </ul>
+
+  </section>
+
+
+  <!-- PRIVACY -->
+
+  <section class="content-section">
+
+    <h2>
+      Are My Images Uploaded?
+    </h2>
+
+    <p>
+      The compression operation is performed in your web browser
+      using FileReader, Image and Canvas APIs. The tool does not
+      need to upload your selected image to a Free Tools Hub server
+      for compression.
+    </p>
+
+    <p class="privacy-note">
+      For complete information about privacy and third-party services,
+      please read our Privacy Policy.
+    </p>
+
+  </section>
+
+
+  <!-- FAQ -->
+
+  <section class="content-section faq">
+
+    <h2>
+      Image Compressor FAQ
+    </h2>
+
+
+    <details>
+
+      <summary>
+        Is this image compressor free?
+      </summary>
+
+      <p>
+        Yes. You can use this image compressor without purchasing
+        a paid plan.
+      </p>
+
+    </details>
+
+
+    <details>
+
+      <summary>
+        Which image formats are supported?
+      </summary>
+
+      <p>
+        You can select JPG, PNG and WebP images. The current
+        compression output is downloaded as a JPEG file.
+      </p>
+
+    </details>
+
+
+    <details>
+
+      <summary>
+        Does compression always reduce the file size?
+      </summary>
+
+      <p>
+        No. The final size depends on the original image and the
+        selected quality. An image that is already highly optimized
+        may not become significantly smaller.
+      </p>
+
+    </details>
+
+
+    <details>
+
+      <summary>
+        What quality should I use?
+      </summary>
+
+      <p>
+        A quality around 60–80% is a useful starting point for many
+        photographs. You can try different values to find the balance
+        you prefer.
+      </p>
+
+    </details>
+
+
+    <details>
+
+      <summary>
+        Does the tool upload my image?
+      </summary>
+
+      <p>
+        The compression code processes the selected image locally
+        in your browser. No server upload is required for the
+        compression operation.
+      </p>
+
+    </details>
+
+
+    <details>
+
+      <summary>
+        What happens to a transparent PNG?
+      </summary>
+
+      <p>
+        Because the downloaded result is JPEG, JPEG does not retain
+        transparency. Transparent areas may therefore appear with
+        a solid background in the compressed result.
+      </p>
+
+    </details>
+
+  </section>
+
+
+  <!-- RELATED -->
+
+  <section class="content-section related-tools">
+
+    <h2>
+      Related Free Tools
+    </h2>
+
+    <a href="image-resizer.html">
+      🖼️ Image Resizer
+    </a>
+
+    <a href="jpg-png.html">
+      🔄 JPG PNG Converter
+    </a>
+
+    <a href="image-to-pdf.html">
+      📄 Image to PDF
+    </a>
+
+    <a href="pdf-to-image.html">
+      🖼️ PDF to Image
+    </a>
+
+  </section>
+
 </main>
 
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -225,148 +673,493 @@
   </div>
 
   <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Contact</a>
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="privacy-policy.html">
+      Privacy Policy
+    </a>
+
+    <a href="terms.html">
+      Terms
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
   </div>
 
-  <p>© 2026 Free Tools Hub. All rights reserved.</p>
+  <p>
+    © 2026 Free Tools Hub. All rights reserved.
+  </p>
 
 </footer>
 
 
 <script src="script.js"></script>
 
+
 <script>
 
-const imageInput = document.getElementById("imageInput");
-const quality = document.getElementById("quality");
-const qualityValue = document.getElementById("qualityValue");
-const preview = document.getElementById("preview");
-const previewImage = document.getElementById("previewImage");
-const fileInfo = document.getElementById("fileInfo");
-const downloadBtn = document.getElementById("downloadBtn");
+const imageInput =
+  document.getElementById("imageInput");
+
+const quality =
+  document.getElementById("quality");
+
+const qualityValue =
+  document.getElementById("qualityValue");
+
+const preview =
+  document.getElementById("preview");
+
+const previewImage =
+  document.getElementById("previewImage");
+
+const fileInfo =
+  document.getElementById("fileInfo");
+
+const downloadBtn =
+  document.getElementById("downloadBtn");
+
+const resetBtn =
+  document.getElementById("resetBtn");
+
+const resultBox =
+  document.getElementById("resultBox");
+
+const resultTitle =
+  document.getElementById("resultTitle");
+
+const resultText =
+  document.getElementById("resultText");
+
 
 let selectedFile = null;
 
-quality.addEventListener("input", () => {
-  qualityValue.textContent = quality.value + "%";
+
+/* QUALITY SLIDER */
+
+quality.addEventListener("input", function () {
+
+  qualityValue.textContent =
+    this.value + "%";
+
 });
+
+
+/* FILE SELECT */
 
 imageInput.addEventListener("change", function () {
 
-  selectedFile = this.files[0];
+  const file = this.files[0];
 
-  if (!selectedFile) return;
+  if (!file) {
+    return;
+  }
 
-  const reader = new FileReader();
 
-  reader.onload = function(e) {
+  if (!file.type.startsWith("image/")) {
 
-    previewImage.src = e.target.result;
+    alert("Please select a valid image file.");
 
-    preview.style.display = "block";
+    this.value = "";
 
-    fileInfo.textContent =
-      "Original size: " +
-      formatBytes(selectedFile.size);
+    return;
+  }
 
-    downloadBtn.disabled = false;
+
+  selectedFile = file;
+
+
+  const reader =
+    new FileReader();
+
+
+  reader.onload = function (event) {
+
+    previewImage.src =
+      event.target.result;
+
+
+    preview.style.display =
+      "block";
+
+
+    downloadBtn.disabled =
+      false;
+
+
+    resultBox.style.display =
+      "none";
+
+
+    fileInfo.innerHTML =
+      "<strong>Original file:</strong> " +
+      escapeHTML(file.name) +
+      "<br>" +
+      "<strong>Original size:</strong> " +
+      formatBytes(file.size);
+
   };
 
-  reader.readAsDataURL(selectedFile);
+
+  reader.onerror = function () {
+
+    alert("Unable to read this image.");
+
+  };
+
+
+  reader.readAsDataURL(file);
+
 });
 
+
+/* COMPRESS + DOWNLOAD */
 
 downloadBtn.addEventListener("click", function () {
 
-  if (!selectedFile) return;
+  if (!selectedFile) {
 
-  const reader = new FileReader();
+    alert("Please select an image first.");
 
-  reader.onload = function(e) {
+    return;
+  }
 
-    const img = new Image();
 
-    img.onload = function() {
+  downloadBtn.disabled =
+    true;
 
-      const canvas = document.createElement("canvas");
+  downloadBtn.textContent =
+    "⏳ Compressing...";
 
-      canvas.width = img.width;
-      canvas.height = img.height;
 
-      const ctx = canvas.getContext("2d");
+  const reader =
+    new FileReader();
 
-      ctx.drawImage(img, 0, 0);
 
-      canvas.toBlob(function(blob) {
+  reader.onload = function (event) {
 
-        if (!blob) {
-          alert("Compression failed.");
-          return;
-        }
+    const img =
+      new Image();
 
-        const url = URL.createObjectURL(blob);
 
-        const a = document.createElement("a");
+    img.onload = function () {
 
-        a.href = url;
+      const canvas =
+        document.createElement("canvas");
 
-        const originalName =
-          selectedFile.name.replace(/\.[^/.]+$/, "");
 
-        a.download =
-          originalName + "-compressed.jpg";
+      canvas.width =
+        img.naturalWidth;
 
-        document.body.appendChild(a);
+      canvas.height =
+        img.naturalHeight;
 
-        a.click();
 
-        a.remove();
+      const ctx =
+        canvas.getContext("2d");
 
-        URL.revokeObjectURL(url);
 
-        fileInfo.textContent =
-          "Original: " +
-          formatBytes(selectedFile.size) +
-          " | Compressed: " +
-          formatBytes(blob.size);
+      if (!ctx) {
 
-      }, "image/jpeg", Number(quality.value) / 100);
+        showError();
+
+        return;
+      }
+
+
+      /*
+        JPEG does not support transparency.
+        Fill the canvas white before drawing.
+      */
+
+      ctx.fillStyle =
+        "#ffffff";
+
+      ctx.fillRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
+
+
+      ctx.drawImage(
+        img,
+        0,
+        0
+      );
+
+
+      const qualityNumber =
+        Number(quality.value) / 100;
+
+
+      canvas.toBlob(
+
+        function (blob) {
+
+          if (!blob) {
+
+            showError();
+
+            return;
+          }
+
+
+          const originalSize =
+            selectedFile.size;
+
+          const compressedSize =
+            blob.size;
+
+
+          const reduction =
+            originalSize > 0
+              ? ((originalSize - compressedSize) /
+                 originalSize) * 100
+              : 0;
+
+
+          const url =
+            URL.createObjectURL(blob);
+
+
+          const a =
+            document.createElement("a");
+
+
+          const originalName =
+            selectedFile.name
+              .replace(/\.[^/.]+$/, "");
+
+
+          a.href =
+            url;
+
+
+          a.download =
+            originalName +
+            "-compressed.jpg";
+
+
+          document.body.appendChild(a);
+
+          a.click();
+
+          a.remove();
+
+
+          setTimeout(function () {
+
+            URL.revokeObjectURL(url);
+
+          }, 1000);
+
+
+          fileInfo.innerHTML =
+            "<strong>Original:</strong> " +
+            formatBytes(originalSize) +
+            "<br>" +
+            "<strong>Compressed:</strong> " +
+            formatBytes(compressedSize);
+
+
+          resultBox.style.display =
+            "block";
+
+
+          if (reduction > 0) {
+
+            resultTitle.textContent =
+              "✅ Compression Complete";
+
+            resultTitle.className =
+              "success";
+
+
+            resultText.textContent =
+              "File size reduced by " +
+              reduction.toFixed(1) +
+              "%";
+
+          } else {
+
+            resultTitle.textContent =
+              "ℹ️ Compression Complete";
+
+            resultTitle.className =
+              "warning";
+
+
+            resultText.textContent =
+              "The compressed file is not smaller than the original.";
+
+          }
+
+
+          downloadBtn.disabled =
+            false;
+
+          downloadBtn.textContent =
+            "⬇️ Compress & Download";
+
+        },
+
+        "image/jpeg",
+
+        qualityNumber
+
+      );
 
     };
 
-    img.src = e.target.result;
+
+    img.onerror = function () {
+
+      showError();
+
+    };
+
+
+    img.src =
+      event.target.result;
 
   };
+
+
+  reader.onerror = function () {
+
+    showError();
+
+  };
+
 
   reader.readAsDataURL(selectedFile);
 
 });
 
 
+/* RESET */
+
+resetBtn.addEventListener("click", function () {
+
+  selectedFile =
+    null;
+
+
+  imageInput.value =
+    "";
+
+
+  previewImage.src =
+    "";
+
+
+  preview.style.display =
+    "none";
+
+
+  resultBox.style.display =
+    "none";
+
+
+  downloadBtn.disabled =
+    true;
+
+
+  downloadBtn.textContent =
+    "⬇️ Compress & Download";
+
+
+  fileInfo.textContent =
+    "";
+
+});
+
+
+/* ERROR */
+
+function showError() {
+
+  alert(
+    "Compression failed. Please try another image."
+  );
+
+
+  downloadBtn.disabled =
+    false;
+
+
+  downloadBtn.textContent =
+    "⬇️ Compress & Download";
+
+}
+
+
+/* FILE SIZE */
+
 function formatBytes(bytes) {
 
-  if (bytes === 0) return "0 Bytes";
+  if (bytes === 0) {
+
+    return "0 Bytes";
+
+  }
+
 
   const units = [
+
     "Bytes",
     "KB",
     "MB",
     "GB"
+
   ];
+
 
   const i =
     Math.floor(
-      Math.log(bytes) / Math.log(1024)
+      Math.log(bytes) /
+      Math.log(1024)
     );
 
+
   return (
-    (bytes / Math.pow(1024, i))
-      .toFixed(2)
-    + " "
-    + units[i]
-  );
+    bytes /
+    Math.pow(1024, i)
+  ).toFixed(2)
+  + " "
+  + units[i];
+
+}
+
+
+/* HTML SAFETY */
+
+function escapeHTML(value) {
+
+  return String(value)
+
+    .replace(/&/g, "&amp;")
+
+    .replace(/</g, "&lt;")
+
+    .replace(/>/g, "&gt;")
+
+    .replace(/"/g, "&quot;")
+
+    .replace(/'/g, "&#039;");
+
 }
 
 </script>
