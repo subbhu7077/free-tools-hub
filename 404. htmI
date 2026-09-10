@@ -1,414 +1,647 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>404 - Page Not Found | Free Tools Hub</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="The page you are looking for could not be found. Return to Free Tools Hub and use our free online tools.">
-<meta name="robots" content="noindex,follow">
+<title>404 | Page Not Found - Free Tools Hub</title>
+
+<meta name="description"
+      content="The page you are looking for was not found. Return to Free Tools Hub and use our free online tools.">
+
+<meta name="robots" content="noindex, follow">
 
 <style>
+
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-  min-height:100vh;
-  font-family:Arial,Helvetica,sans-serif;
-  color:#fff;
-  background:#050816;
-  overflow-x:hidden;
-  display:flex;
-  flex-direction:column;
+    min-height:100vh;
+    background:#050816;
+    color:#ffffff;
+    font-family:Arial,Helvetica,sans-serif;
+    display:flex;
+    flex-direction:column;
+    overflow-x:hidden;
 }
 
 /* BACKGROUND */
 
 body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  opacity:.08;
-  background-image:
-    radial-gradient(circle,#fff 1px,transparent 1px);
-  background-size:45px 45px;
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background-image:
+        radial-gradient(circle,rgba(255,255,255,.7) 1px,transparent 1px);
+
+    background-size:45px 45px;
+
+    opacity:.08;
+
+    pointer-events:none;
 }
 
 body::after{
-  content:"";
-  position:fixed;
-  width:500px;
-  height:500px;
-  left:-180px;
-  top:-180px;
-  border-radius:50%;
-  background:#00ffff;
-  filter:blur(150px);
-  opacity:.12;
-  pointer-events:none;
+    content:"";
+    position:fixed;
+
+    width:420px;
+    height:420px;
+
+    left:-180px;
+    top:-180px;
+
+    border-radius:50%;
+
+    background:#00ffff;
+
+    filter:blur(150px);
+
+    opacity:.10;
+
+    pointer-events:none;
 }
 
 /* HEADER */
 
 header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  padding:16px 6%;
-  background:rgba(5,8,22,.82);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(0,255,255,.15);
+    width:100%;
+
+    padding:16px 6%;
+
+    background:rgba(5,8,22,.90);
+
+    border-bottom:1px solid rgba(0,255,255,.18);
+
+    position:relative;
+    z-index:10;
 }
 
 .nav{
-  max-width:1150px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+    max-width:1150px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
-  font-size:23px;
-  font-weight:900;
-  text-decoration:none;
-  background:linear-gradient(
-    90deg,
-    #00ffff,
-    #7c5cff,
-    #ff00d4,
-    #00ffff
-  );
-  background-size:300%;
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-  animation:logoGlow 5s linear infinite;
+    text-decoration:none;
+
+    font-size:23px;
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00ffff,
+            #7c5cff,
+            #ff00cc,
+            #00ffff
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    animation:logoMove 5s linear infinite;
 }
 
-@keyframes logoGlow{
-  to{
-    background-position:300%;
-  }
+@keyframes logoMove{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:300%;
+    }
+
 }
 
 nav{
-  display:flex;
-  gap:22px;
+    display:flex;
+    gap:22px;
 }
 
 nav a{
-  color:#ccc;
-  text-decoration:none;
-  font-size:15px;
-  transition:.25s;
+    color:#cccccc;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    transition:.25s;
 }
 
 nav a:hover{
-  color:#00ffff;
-  text-shadow:0 0 12px #00ffff;
+    color:#00ffff;
+
+    text-shadow:
+        0 0 10px #00ffff;
 }
 
+/* MOBILE MENU */
+
 .menu{
-  display:none;
-  font-size:28px;
-  cursor:pointer;
-  color:#00ffff;
+    display:none;
+
+    font-size:28px;
+
+    color:#00ffff;
+
+    cursor:pointer;
 }
 
 /* MAIN */
 
 main{
-  flex:1;
-  width:100%;
+    flex:1;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:100%;
 }
 
 .error-section{
-  min-height:calc(100vh - 150px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:60px 20px;
-  position:relative;
+    width:100%;
+
+    min-height:calc(100vh - 145px);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:50px 20px;
+
+    text-align:center;
+
+    position:relative;
 }
 
-/* GLOW CIRCLES */
+/* GLOW ORBS */
 
 .orb{
-  position:absolute;
-  border-radius:50%;
-  pointer-events:none;
-  filter:blur(2px);
+    position:absolute;
+
+    border-radius:50%;
+
+    pointer-events:none;
 }
 
-.orb.one{
-  width:180px;
-  height:180px;
-  background:#00ffff;
-  opacity:.08;
-  right:8%;
-  top:15%;
-  box-shadow:0 0 100px #00ffff;
-  animation:float1 5s ease-in-out infinite;
+.orb1{
+
+    width:220px;
+    height:220px;
+
+    right:5%;
+    top:15%;
+
+    background:#00ffff;
+
+    opacity:.08;
+
+    filter:blur(40px);
+
+    animation:floatOne 5s ease-in-out infinite;
+
 }
 
-.orb.two{
-  width:140px;
-  height:140px;
-  background:#ff00cc;
-  opacity:.08;
-  left:10%;
-  bottom:15%;
-  box-shadow:0 0 100px #ff00cc;
-  animation:float2 6s ease-in-out infinite;
+.orb2{
+
+    width:180px;
+    height:180px;
+
+    left:5%;
+    bottom:15%;
+
+    background:#ff00cc;
+
+    opacity:.08;
+
+    filter:blur(40px);
+
+    animation:floatTwo 6s ease-in-out infinite;
+
 }
 
-@keyframes float1{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-25px)}
+@keyframes floatOne{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-30px);
+    }
+
 }
 
-@keyframes float2{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(25px)}
+@keyframes floatTwo{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(30px);
+    }
+
 }
+
+/* ERROR CONTENT */
 
 .error-box{
-  position:relative;
-  z-index:2;
-  max-width:750px;
+    position:relative;
+
+    z-index:2;
+
+    max-width:800px;
+
+    width:100%;
 }
 
-/* 404 */
+/* 404 NUMBER */
 
-.error-code{
-  font-size:clamp(100px,25vw,220px);
-  line-height:.85;
-  font-weight:1000;
-  letter-spacing:-10px;
+.error-number{
 
-  background:linear-gradient(
-    90deg,
-    #00ffff,
-    #7c5cff,
-    #ff00cc,
-    #00ffff
-  );
+    font-size:
+        clamp(110px,25vw,230px);
 
-  background-size:300%;
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
+    line-height:.85;
 
-  animation:
-    gradientMove 5s linear infinite,
-    glitch 3s infinite;
+    font-weight:1000;
 
-  text-shadow:
-    0 0 30px rgba(0,255,255,.15);
+    letter-spacing:-12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00ffff,
+            #7c5cff,
+            #ff00cc,
+            #00ffff
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    animation:
+        gradientMove 5s linear infinite,
+        glitch 3s infinite;
+
+    filter:
+        drop-shadow(0 0 25px rgba(0,255,255,.25));
+
 }
 
 @keyframes gradientMove{
-  to{
-    background-position:300%;
-  }
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:300%;
+    }
+
 }
 
 @keyframes glitch{
-  0%,90%,100%{
-    transform:translate(0);
-  }
 
-  92%{
-    transform:translate(-4px,2px);
-  }
+    0%,
+    90%,
+    100%{
+        transform:translate(0);
+    }
 
-  94%{
-    transform:translate(4px,-2px);
-  }
+    92%{
+        transform:translate(-4px,2px);
+    }
 
-  96%{
-    transform:translate(-2px,1px);
-  }
+    94%{
+        transform:translate(4px,-2px);
+    }
+
+    96%{
+        transform:translate(-2px,1px);
+    }
+
 }
 
+/* TEXT */
+
 .error-box h1{
-  font-size:clamp(26px,5vw,44px);
-  margin:25px 0 12px;
+
+    margin-top:30px;
+
+    font-size:
+        clamp(27px,5vw,46px);
+
 }
 
 .error-box p{
-  color:#aaa;
-  line-height:1.7;
-  max-width:600px;
-  margin:auto;
-  font-size:16px;
+
+    max-width:620px;
+
+    margin:15px auto 0;
+
+    color:#aaaaaa;
+
+    line-height:1.7;
+
+    font-size:16px;
+
 }
 
 /* BUTTONS */
 
 .buttons{
-  margin-top:30px;
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:12px;
+
+    margin-top:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
 }
 
 .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:160px;
-  padding:14px 20px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:bold;
-  transition:.25s;
+
+    min-width:170px;
+
+    padding:15px 20px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.25s;
+
 }
 
-.btn-primary{
-  color:#041015;
-  background:#00ffff;
-  box-shadow:0 0 25px rgba(0,255,255,.35);
+.home-btn{
+
+    color:#031116;
+
+    background:#00ffff;
+
+    box-shadow:
+        0 0 20px rgba(0,255,255,.35);
+
 }
 
-.btn-primary:hover{
-  transform:translateY(-3px);
-  box-shadow:0 0 40px rgba(0,255,255,.65);
+.home-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 0 40px rgba(0,255,255,.70);
+
 }
 
-.btn-secondary{
-  color:#fff;
-  border:1px solid rgba(255,255,255,.2);
-  background:rgba(255,255,255,.05);
+.tool-btn{
+
+    color:#ffffff;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.20);
+
 }
 
-.btn-secondary:hover{
-  border-color:#8b5cf6;
-  box-shadow:0 0 25px rgba(139,92,246,.3);
-  transform:translateY(-3px);
+.tool-btn:hover{
+
+    transform:translateY(-4px);
+
+    border-color:#8b5cf6;
+
+    box-shadow:
+        0 0 30px rgba(139,92,246,.30);
+
 }
 
-/* TOOL LINKS */
+/* QUICK TOOLS */
+
+.quick-title{
+
+    margin-top:45px;
+
+    color:#777777;
+
+    font-size:14px;
+
+}
 
 .quick-tools{
-  margin-top:45px;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:10px;
+
+    margin-top:15px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:10px;
+
 }
 
 .quick-tools a{
-  padding:10px 14px;
-  border-radius:10px;
-  color:#aaa;
-  text-decoration:none;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.1);
-  transition:.25s;
+
+    color:#aaaaaa;
+
+    text-decoration:none;
+
+    padding:10px 13px;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    font-size:13px;
+
+    transition:.25s;
+
 }
 
 .quick-tools a:hover{
-  color:#00ffff;
-  border-color:#00ffff55;
-  box-shadow:0 0 18px rgba(0,255,255,.15);
+
+    color:#00ffff;
+
+    border-color:#00ffff55;
+
+    box-shadow:
+        0 0 15px rgba(0,255,255,.18);
+
 }
 
 /* FOOTER */
 
 footer{
-  padding:28px 20px;
-  text-align:center;
-  color:#777;
-  border-top:1px solid rgba(255,255,255,.08);
-  background:rgba(0,0,0,.15);
+
+    text-align:center;
+
+    padding:28px 20px;
+
+    color:#777777;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+
 }
 
 footer p{
-  margin:6px 0;
+
+    margin:6px 0;
+
 }
 
 footer a{
-  color:#aaa;
-  text-decoration:none;
-  margin:0 7px;
+
+    color:#aaaaaa;
+
+    text-decoration:none;
+
+    margin:0 7px;
+
 }
 
 footer a:hover{
-  color:#00ffff;
+
+    color:#00ffff;
+
 }
 
 /* MOBILE */
 
 @media(max-width:700px){
 
-  nav{
-    display:none;
-    position:absolute;
-    left:0;
-    right:0;
-    top:65px;
-    padding:20px;
-    flex-direction:column;
-    background:#070a18;
-    border-bottom:1px solid #00ffff22;
-  }
+    nav{
 
-  nav.show{
-    display:flex;
-  }
+        display:none;
 
-  .menu{
-    display:block;
-  }
+        position:absolute;
 
-  .error-section{
-    min-height:calc(100vh - 130px);
-    padding:45px 18px;
-  }
+        top:65px;
+        left:0;
+        right:0;
 
-  .error-code{
-    letter-spacing:-5px;
-  }
+        background:#070a18;
 
-  .error-box h1{
-    margin-top:20px;
-  }
+        padding:20px;
 
-  .buttons{
-    flex-direction:column;
-    align-items:center;
-  }
+        flex-direction:column;
 
-  .btn{
-    width:100%;
-    max-width:300px;
-  }
+        gap:18px;
 
-  .quick-tools{
-    margin-top:35px;
-  }
+        border-bottom:
+            1px solid #00ffff22;
 
-  .quick-tools a{
-    font-size:13px;
-  }
+    }
+
+    nav.show{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .error-section{
+
+        min-height:
+            calc(100vh - 130px);
+
+        padding:
+            45px 18px;
+
+    }
+
+    .error-number{
+
+        letter-spacing:-6px;
+
+    }
+
+    .error-box h1{
+
+        margin-top:22px;
+
+    }
+
+    .buttons{
+
+        flex-direction:column;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+        max-width:300px;
+
+    }
+
+    .quick-tools{
+
+        max-width:360px;
+
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+
 }
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- HEADER -->
 
 <header>
 
@@ -418,13 +651,18 @@ footer a:hover{
 ⚡ Free Tools Hub
 </a>
 
-<div class="menu" onclick="toggleMenu()">
+<div
+    class="menu"
+    onclick="document.getElementById('nav').classList.toggle('show')"
+>
 ☰
 </div>
 
 <nav id="nav">
 
-<a href="index.html">Home</a>
+<a href="index.html">
+Home
+</a>
 
 <a href="image-compressor.html">
 Image Tools
@@ -453,77 +691,115 @@ Contact
 </header>
 
 
+<!-- MAIN -->
+
 <main>
 
 <section class="error-section">
 
-<div class="orb one"></div>
-<div class="orb two"></div>
+<div class="orb orb1"></div>
+
+<div class="orb orb2"></div>
+
 
 <div class="error-box">
 
-<div class="error-code">
+
+<div class="error-number">
 404
 </div>
 
-<h1>Oops! Page Not Found</h1>
+
+<h1>
+Oops! Page Not Found
+</h1>
+
 
 <p>
-The page you're looking for doesn't exist, has been moved,
-or the URL may be incorrect.
+The page you're looking for doesn't exist,
+has been moved, or the URL may be incorrect.
+Don't worry — you can return to Free Tools Hub
+and continue using our free tools.
 </p>
+
 
 <div class="buttons">
 
-<a href="index.html" class="btn btn-primary">
+
+<a
+    href="index.html"
+    class="btn home-btn"
+>
 🏠 Back to Home
 </a>
 
-<a href="qr-generator.html" class="btn btn-secondary">
+
+<a
+    href="qr-generator.html"
+    class="btn tool-btn"
+>
 🔲 Try a Free Tool
 </a>
 
+
 </div>
 
+
+<div class="quick-title">
+Popular Free Tools
+</div>
+
+
 <div class="quick-tools">
+
 
 <a href="image-compressor.html">
 📸 Image Compressor
 </a>
 
+
 <a href="image-resizer.html">
 📐 Image Resizer
 </a>
+
 
 <a href="jpg-png.html">
 🖼 JPG ↔ PNG
 </a>
 
+
 <a href="image-to-pdf.html">
 📄 Image to PDF
 </a>
+
 
 <a href="pdf-to-image.html">
 📑 PDF to Image
 </a>
 
+
 <a href="qr-generator.html">
 🔲 QR Generator
 </a>
+
 
 <a href="word-counter.html">
 📝 Word Counter
 </a>
 
+
 <a href="case-converter.html">
 🔤 Case Converter
 </a>
+
 
 <a href="password-generator.html">
 🔐 Password Generator
 </a>
 
+
 </div>
+
 
 </div>
 
@@ -532,6 +808,8 @@ or the URL may be incorrect.
 </main>
 
 
+<!-- FOOTER -->
+
 <footer>
 
 <p>
@@ -539,10 +817,23 @@ or the URL may be incorrect.
 </p>
 
 <p>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<a href="privacy-policy.html">Privacy</a>
-<a href="terms.html">Terms</a>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+<a href="privacy-policy.html">
+Privacy
+</a>
+
+<a href="terms.html">
+Terms
+</a>
+
 </p>
 
 </footer>
@@ -550,15 +841,17 @@ or the URL may be incorrect.
 
 <script>
 
-function toggleMenu(){
+function closeMenu(){
 
-  document
-    .getElementById("nav")
-    .classList.toggle("show");
+    document
+        .getElementById("nav")
+        .classList.remove("show");
 
 }
 
 </script>
 
+
 </body>
+
 </html>
